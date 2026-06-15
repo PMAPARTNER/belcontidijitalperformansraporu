@@ -102,9 +102,9 @@
   .top-nav-inner::-webkit-scrollbar{display:none;}
   .nav-item{display:flex;align-items:center;gap:6px;padding:14px 16px;color:rgba(255,255,255,.6);font-size:13px;font-weight:500;text-decoration:none;white-space:nowrap;cursor:pointer;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;}
   .nav-item:hover,.nav-item.active{color:var(--gold2);border-bottom-color:var(--gold2);}
-  .accordion{bbder:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:12px;}
+  .accordion{border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:12px;}
   .accordion-header{display:flex;justify-content:space-between;align-items:center;padding:18px 24px;background:var(--light);cursor:pointer;user-select:none;}
-  .accordion-header:hover{bbackground:#f0f4f8;}
+  .accordion-header:hover{background:#f0f4f8;}
   .accordion-title{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;}
   .accordion-arrow{font-size:12px;color:var(--muted);transition:transform .25s;}
   .accordion.open .accordion-arrow{transform:rotate(180deg);}
@@ -142,6 +142,7 @@
     <a class="nav-item" href="#sec-callcenter">&#128222; Call Center</a>
     <a class="nav-item" href="#sec-faaliyet">&#9889; Faaliyet</a>
     <a class="nav-item" href="#sec-ozet">&#128204; Ozet</a>
+    <a class="nav-item" href="#sec-haziran">&#128197; Haziran Pazarlama Plani</a>
   </div>
 </nav>
 
@@ -150,7 +151,7 @@
     <div class="header-top">
       <div class="hotel-brand">
         <div class="hotel-icon">
-          <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0ia2F0bWFuXzIiIGRhdGEtbmFtZT0ia2F0bWFuIDIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDIwMi41MyA2MC40NiI+CiAgPGRlZnM+PHN0eWxlPi5jbHMtMSwuY2xzLTJ7ZmlsbDojZmZmO3N0cm9rZS13aWR0aDowcHh9LmNscy0ye2ZpbGwtcnVsZTpldmVub2RkfTwvc3R5bGU+PC9kZWZzPgogIDxnIGlkPSJTbGlkZXIiPjxnPgogICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTM2LjU1LDQxLjk1YzIuMzMsMi4yOSw1LjE2LDMuNDMsOC41MSwzLjQzczYuMTgtMS4xNCw4LjUxLTMuNDNjMi4zMy0yLjI5LDMuNDktNS4xMiwzLjQ5LTguNTFzLTEuMTgtNi4wOS0zLjU1LTguNDJjLTIuMzUtMi4zNS01LjE3LTMuNTItOC40NS0zLjUycy02LjExLDEuMTctOC40OCwzLjUyYy0yLjM1LDIuMzMtMy41Miw1LjE0LTMuNTIsOC40MnMxLjE2LDYuMjIsMy40OSw4LjUxWk0xMzguNSwyNi44OGMxLjc0LTEuOCwzLjkzLTIuNyw2LjU2LTIuN3M0LjgzLjkxLDYuNTksMi43M2MxLjcsMS43OCwyLjU1LDMuOTYsMi41NSw2LjUzcy0uOSw0Ljc5LTIuNyw2LjU5Yy0xLjgsMS43OC0zLjk1LDIuNjctNi40NCwyLjY3cy00LgY0LS44OS02LjQ0LTIuNjdjLTEuOC0xLjgtMi43LTQtMi43LTYuNTlzLjg2LTQuNzYsMi41OC02LjU2WiIvPgogICAgPHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjE2My4zOSAyNy44MiAxODAuNTkgNDUuODQgMTgwLjU5IDIxLjk5IDE3Ny43MyAyMS45OSAxNzcuNzMgMzguOTEgMTYwLjU0IDIwLjg5IDE2MC41NCA0NC45IDE2My4zOSA0NC45IDE2My4zOSAyNy44MiIvPgogICAgPHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjE4Ny45NyA0NC45IDE5MC44MyA0NC45IDE5MC44MyAyNC42IDE5Ni4yNyAyNC42IDE5Ni4yNyAyMS45OSAxODIuNTMgMjEuOTkgMTgyLjUzIDI0LjYgMTg3Ljk3IDI0LjYgMTg3Ljk3IDQ0LjkiLz4KICAgIDxyZWN0IGNsYXNzPSJjbHMtMSIgeD0iMTk3LjkzIiB5PSIyMS45OSIgd2lkdGg9IjIuODYiIGhlaWdodD0iMjIuOTEiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTM2LjcyLDE4LjkxYy45Ni0xLjYuMzItMi4xNC0zLjk1LTEuNzEtNC4yNy40My05LjMuNjQtOS4wOC4xMS4yMS0uNTMsNi44NC0yLjU2LDYuODQtMi41NiwwLDAsMTUuMzktNS42NiwzLjMxLTYuMi00LjAyLS4xOC04LjQ4LjQyLTEyLjY2LDEuMjguMDMtNC40Ny4wNS03LjUxLjA1LTcuNjksMC0uNzUtLjIxLTIuMDMtMS43MS0yLjE0LTEuNS0uMTEtMS41LDIuODgtMS41LDIuODgsMCwwLC4xMSwyLjQ2LDAsNC4yNy0uMDIuMzYsMCwxLjYuMDMsMy4zOC02Ljk1LDEuNzEtMTIuNDIsMy44OC0xMi40MiwzLjg4LDAsMC0uMzIsMS4xOC4xMSwxLjgyLjQzLjY0LDEuNzEuNTMsMy40Mi4xMSwxLjIxLS4zLDUuMDktMS42Nyw4Ljk2LTIuNzkuMDIsMSwuMDUsMi4wOC4wOCwzLjIyLTMuNTksMS41NC02Ljc0LDMuMjYtNS43Miw0LjE3LjcuNjIsMy4wNS42OSw1LjgzLjU0LjA2LDIuMjguMTEsNC42My4xNyw2Ljg5QzEwLjEzLDMzLjc2LjQ0LDM5Ljk3LjA3LDQwLjM5Yy0uNjQuNzUsMy4yMSwxLjYsMy4yMSwxLjYsMCwwLDcuNDItNC45LDE1LjI3LTEwLjIuMDcsMy4zNS4xMiw2LjI2LjEyLDguMDYsMCw3LjA1LjIxLDExLjg2LDEuMTgsMTIuMDcuOTYuMjEsMS4wNy0xLjM5LDEuMDctMS4zOSwwLDAsLjA3LTkuNzEuMTQtMjAuNDQsNy43Ni01LjI2LDE1LjIyLTEwLjQzLDE1LjY4LTExLjE5WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNNDYuNDQsMjEuMTZsLS4xMS0xLjI4czE0LjEtMS4xOCwxNC4zMi0zLjMxYy4yMS0yLjE0LTE0LjUzLTUuNDUtMTQuNTMtNS40NWwuMjEtMS43MSwxNy44NC0uNTNzLjMyLS44NS4zMi0xLjYtLjk2LTEuMjgtLjk2LTEuMjhjMCwwLTEwLjg3LjEyLTE3LjQxLjg4di0xLjk1cy0xLjYtLjExLTIuMTQsMGMtLjUzLjExLS4zNywyLjMzLS4zNywyLjMzYy0uOTguMTktMS43NC40MS0yLjA5LjY2LTIuMzUsMS43MS0xLjI4LDIuODguODYsMy44NS45NC40MiwxLjM1LjYsMS41LjY2di0uMDJzLjIuMSwwLC4wMnY1LjU0cy02LjQxLjQzLTYuMiwyLjc4Yy4yMSwyLjM1LDYuMDksMi40Niw2LjA5LDIuNDZsLjExLDEuMjhzLTUuMjQuNDMtNS4xMywxLjgyYy4xMSwxLjM5LDUuMDIsMTAuMzYsNi4zLDEwLjM2czEuMDctNC45MSwxLjA3LTQuOTFsLjExLTUuMDJzMTMuNjgtMS43MSwxMy42OC0zLjc0LTEzLjQ2LTEuODItMTMuNDYtMS44MloiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIyOC44OCA0NS4zMSAyNy43OSA0MS44OSAyNi42OSA0NS4zMSAyMy4xIDQ1LjI5IDI2LjAyIDQ3LjM5IDI0Ljg5IDUwLjggMjcuNzkgNDguNjggMzAuNjggNTAuOCAyOS41NiA0Ny4zOSAzMi40NyA0NS4yOSAyOC44OCA0NS4zMSIvPgogICAgPHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjQyLjAzIDQ1LjMxIDQwLjkzIDQxLjg5IDM5Ljg0IDQ1LjMxIDM2LjI1IDQ1LjI5IDM5LjE2IDQ3LjM5IDM4LjA0IDUwLjggNDAuOTMgNDguNjggNDMuODMgNTAuOCA0Mi43IDQ3LjM5IDQ1LjYyIDQ1LjI5IDQyLjAzIDQ1LjMxIi8+CiAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iNTQuMDEgNDUuMzEgNTIuOTIgNDEuODkgNTEuODIgNDUuMzEgNDguMjMgNDUuMjkgNTEuMTUgNDcuMzkgNTAuMDIgNTAuOCA1Mi45MiA0OC42OCA1NS44MSA1MC44IDU0LjY5IDQ3LjM5IDU3LjYgNDUuMjkgNTQuMDEgNDUuMzEiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSI2NS4zOCA0NS4zMSA2NC4yOSA0MS44OSA2My4xOSA0NS4zMSA1OS42IDQ1LjI5IDYyLjUyIDQ3LjM5IDYxLjM5IDUwLjggNjQuMjkgNDguNjggNjcuMTggNTAuOCA2Ni4wNiA0Ny4zOSA2OC49NyA0NS4yOSA2NS4zOCA0NS4zMSIvPgogICAgPHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9Ijc3LjQ2IDQ1LjMxIDc2LjM3IDQxLjg5IDc1LjI3IDQ1LjMxIDcxLjY4IDQ1LjI5IDc0LjYgNDcuMzkgNzMuNDcgNTAuOCA3Ni4zNyA0OC42OCA3OS4yNiA1MC44IDc4LjE0IDQ3LjM5IDgxLjA1IDQ1LjI5IDc3LjQ2IDQ1LjMxIi8+CiAgPC9nPjwvZz4KPC9zdmc+" alt="Belconti">
+          <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0ia2F0bWFuXzIiIGRhdGEtbmFtZT0ia2F0bWFuIDIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDIwMi41MyA2MC40NiI+CiAgPGRlZnM+PHN0eWxlPi5jbHMtMSwuY2xzLTJ7ZmlsbDojZmZmO3N0cm9rZS13aWR0aDowcHh9LmNscy0ye2ZpbGwtcnVsZTpldmVub2RkfTwvc3R5bGU+PC9kZWZzPgogIDxnIGlkPSJTbGlkZXIiPjxnPgogICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTM2LjU1LDQxLjk1YzIuMzMsMi4yOSw1LjE2LDMuNDMsOC41MSwzLjQzczYuMTgtMS4xNCw4LjUxLTMuNDNjMi4zMy0yLjI5LDMuNDktNS4xMiwzLjQ5LTguNTFzLTEuMTgtNi4wOS0zLjU1LTguNDJjLTIuMzUtMi4zNS01LjE3LTMuNTItOC40NS0zLjUycy02LjExLDEuMTctOC40OCwzLjUyYy0yLjM1LDIuMzMtMy41Miw1LjE0LTMuNTIsOC40MnMxLjE2LDYuMjIsMy40OSw4LjUxWk0xMzguNSwyNi44OGMxLjc0LTEuOCwzLjkzLTIuNyw2LjU2LTIuN3M0LjgzLjkxLDYuNTksMi43M2MxLjcsMS43OCwyLjU1LDMuOTYsMi41NSw2LjUzcy0uOSw0Ljc5LTIuNyw2LjU5Yy0xLjgsMS43OC0zLjk1LDIuNjctNi40NCwyLjY3cy00LjY0LS44OS02LjQ0LTIuNjdjLTEuOC0xLjgtMi43LTQtMi43LTYuNTlzLjg2LTQuNzYsMi41OC02LjU2WiIvPgogICAgPHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjE2My4zOSAyNy44MiAxODAuNTkgNDUuODQgMTgwLjU5IDIxLjk5IDE3Ny43MyAyMS45OSAxNzcuNzMgMzguOTEgMTYwLjU0IDIwLjg5IDE2MC41NCA0NC45IDE2My4zOSA0NC45IDE2My4zOSAyNy44MiIvPgogICAgPHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjE4Ny45NyA0NC45IDE5MC44MyA0NC45IDE5MC44MyAyNC42IDE5Ni4yNyAyNC42IDE5Ni4yNyAyMS45OSAxODIuNTMgMjEuOTkgMTgyLjUzIDI0LjYgMTg3Ljk3IDI0LjYgMTg3Ljk3IDQ0LjkiLz4KICAgIDxyZWN0IGNsYXNzPSJjbHMtMSIgeD0iMTk3LjkzIiB5PSIyMS45OSIgd2lkdGg9IjIuODYiIGhlaWdodD0iMjIuOTEiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTM2LjcyLDE4LjkxYy45Ni0xLjYuMzItMi4xNC0zLjk1LTEuNzEtNC4yNy40My05LjMuNjQtOS4wOC4xMS4yMS0uNTMsNi44NC0yLjU2LDYuODQtMi41NiwwLDAsMTUuMzktNS42NiwzLjMxLTYuMi00LjAyLS4xOC04LjQ4LjQyLTEyLjY2LDEuMjguMDMtNC40Ny4wNS03LjUxLjA1LTcuNjksMC0uNzUtLjIxLTIuMDMtMS43MS0yLjE0LTEuNS0uMTEtMS41LDIuODgtMS41LDIuODgsMCwwLC4xMSwyLjQ2LDAsNC4yNy0uMDIuMzYsMCwxLjYuMDMsMy4zOC02Ljk1LDEuNzEtMTIuNDIsMy44OC0xMi40MiwzLjg4LDAsMC0uMzIsMS4xOC4xMSwxLjgyLjQzLjY0LDEuNzEuNTMsMy40Mi4xMSwxLjIxLS4zLDUuMDktMS42Nyw4Ljk2LTIuNzkuMDIsMSwuMDUsMi4wOC4wOCwzLjIyLTMuNTksMS41NC02Ljc0LDMuMjYtNS43Miw0LjE3LjcuNjIsMy4wNS42OSw1LjgzLjU0LjA2LDIuMjguMTEsNC42My4xNyw2Ljg5QzEwLjEzLDMzLjc2LjQ0LDM5Ljk3LjA3LDQwLjM5Yy0uNjQuNzUsMy4yMSwxLjYsMy4yMSwxLjYsMCwwLDcuNDItNC45LDE1LjI3LTEwLjIuMDcsMy4zNS4xMiw2LjI2LjEyLDguMDYsMCw3LjA1LjIxLDExLjg2LDEuMTgsMTIuMDcuOTYuMjEsMS4wNy0xLjM5LDEuMDctMS4zOSwwLDAsLjA3LTkuNzEuMTQtMjAuNDQsNy43Ni01LjI2LDE1LjIyLTEwLjQzLDE1LjY4LTExLjE5WiIvPgogICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNNDYuNDQsMjEuMTZsLS4xMS0xLjI4czE0LjEtMS4xOCwxNC4zMi0zLjMxYy4yMS0yLjE0LTE0LjUzLTUuNDUtMTQuNTMtNS40NWwuMjEtMS43MSwxNy44NC0uNTNzLjMyLS44NS4zMi0xLjYtLjk2LTEuMjgtLjk2LTEuMjhjMCwwLTEwLjg3LjEyLTE3LjQxLjg4di0xLjk1cy0xLjYtLjExLTIuMTQsMGMtLjUzLjExLS4zNywyLjMzLS4zNywyLjMzYy0uOTguMTktMS43NC40MS0yLjA5LjY2LTIuMzUsMS43MS0xLjI4LDIuODguODYsMy44NS45NC40MiwxLjM1LjYsMS41LjY2di0uMDJzLjIuMSwwLC4wMnY1LjU0cy02LjQxLjQzLTYuMiwyLjc4Yy4yMSwyLjM1LDYuMDksMi40Niw2LjA5LDIuNDZsLjExLDEuMjhzLTUuMjQuNDMtNS4xMywxLjgyYy4xMSwxLjM5LDUuMDIsMTAuMzYsNi4zLDEwLjM2czEuMDctNC45MSwxLjA3LTQuOTFsLjExLTUuMDJzMTMuNjgtMS43MSwxMy42OC0zLjc0LTEzLjQ2LTEuODItMTMuNDYtMS44MloiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIyOC44OCA0NS4zMSAyNy43OSA0MS44OSAyNi42OSA0NS4zMSAyMy4xIDQ1LjI5IDI2LjAyIDQ3LjM5IDI0Ljg5IDUwLjggMjcuNzkgNDguNjggMzAuNjggNTAuOCAyOS41NiA0Ny4zOSAzMi40NyA0NS4yOSAyOC44OCA0NS4zMSIvPgogICAgPHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9IjQyLjAzIDQ1LjMxIDQwLjkzIDQxLjg5IDM5Ljg0IDQ1LjMxIDM2LjI1IDQ1LjI5IDM5LjE2IDQ3LjM5IDM4LjA0IDUwLjggNDAuOTMgNDguNjggNDMuODMgNTAuOCA0Mi43IDQ3LjM5IDQ1LjYyIDQ1LjI5IDQyLjAzIDQ1LjMxIi8+CiAgICA8cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iNTQuMDEgNDUuMzEgNTIuOTIgNDEuODkgNTEuODIgNDUuMzEgNDguMjMgNDUuMjkgNTEuMTUgNDcuMzkgNTAuMDIgNTAuOCA1Mi45MiA0OC42OCA1NS44MSA1MC44IDU0LjY5IDQ3LjM5IDU3LjYgNDUuMjkgNTQuMDEgNDUuMzEiLz4KICAgIDxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSI2NS4zOCA0NS4zMSA2NC4yOSA0MS44OSA2My4xOSA0NS4zMSA1OS42IDQ1LjI5IDYyLjUyIDQ3LjM5IDYxLjM5IDUwLjggNjQuMjkgNDguNjggNjcuMTggNTAuOCA2Ni4wNiA0Ny4zOSA2OC45NyA0NS4yOSA2NS4zOCA0NS4zMSIvPgogICAgPHBvbHlnb24gY2xhc3M9ImNscy0yIiBwb2ludHM9Ijc3LjQ2IDQ1LjMxIDc2LjM3IDQxLjg5IDc1LjI3IDQ1LjMxIDcxLjY4IDQ1LjI5IDc0LjYgNDcuMzkgNzMuNDcgNTAuOCA3Ni4zNyA0OC42OCA3OS4yNiA1MC44IDc4LjE0IDQ3LjM5IDgxLjA1IDQ1LjI5IDc3LjQ2IDQ1LjMxIi8+CiAgPC9nPjwvZz4KPC9zdmc+" alt="Belconti">
         </div>
         <div>
           <div class="hotel-name">Belconti Resort Hotel &middot; Belek, Antalya</div>
@@ -282,7 +283,7 @@
         <div class="kpi-card orange" onclick="openModal('Toplam Harcama','524.315 TL','PMAX TR: 144.721 TL|PMAX Ingiltere: 58.906 TL|PMAX DE: 58.716 TL|PMAX Isitma: 48.119 TL|Jenerik DE: 29.721 TL|Jenerik TR: 20.666 TL')">
           <div class="kpi-label">Toplam Harcama</div><div class="kpi-val">&#8378;524.315</div>
         </div>
-        <div class="kpi-card green" onclick="openModal('Toplam Donusum','55.828','WP/Iletisim Tiklamalari dahil|Form doldurma dahil|Telefon tiklamasi dahil|Rezervasyon baslatma dahil|Maliyet/Donusum: 9.39 TI|En iyi: PMAX TR 34.226 donusum')">
+        <div class="kpi-card green" onclick="openModal('Toplam Donusum','55.828','WP/Iletisim Tiklamalari dahil|Form doldurma dahil|Telefon tiklamasi dahil|Rezervasyon baslatma dahil|Maliyet/Donusum: 9.39 TL|En iyi: PMAX TR 34.226 donusum')">
           <div class="kpi-label">Toplam Donusum</div><div class="kpi-val">55.828</div><div class="kpi-sub">WP tiklama dahil &middot; &#8378;9.39/donusum</div>
         </div>
       </div>
@@ -548,6 +549,310 @@
       </div>
     </div>
   </div>
+
+  <!-- HAZIRAN PAZARLAMA PLANI -->
+  <div class="section" id="sec-haziran">
+    <div class="section-header">
+      <div class="section-icon icon-blue">&#128197;</div>
+      <div>
+        <h2>Haziran 2026 Dijital Pazarlama Plani</h2>
+        <div class="sub">Google Ads Sezon Basi Performans &amp; Buyume Plani &mdash; PMA Partner</div>
+      </div>
+    </div>
+    <div class="section-body">
+
+      <!-- Hesap Ozeti KPI -->
+      <div class="kpi-grid" style="margin-bottom:28px;">
+        <div class="kpi-card blue" onclick="openModal('90 Gunluk Reklam Yatirimi','₺763.382','Kanal: Performance Max + Arama|Donem: Sezon Oncesi 90 Gun|Durum: Aktif ve yuksek hacimli')">
+          <div class="kpi-label">90 Gun Yatirim</div>
+          <div class="kpi-val" style="font-size:30px;">₺763.382</div>
+          <div class="kpi-sub">Saglam temel uzerine kuruyoruz</div>
+        </div>
+        <div class="kpi-card teal" onclick="openModal('Gosterim &amp; Tiklama','7.154.453 Gosterim','Tiklama: 680.852|TO (Ortalama): %9.5|Kanal: PMAX + Arama')">
+          <div class="kpi-label">Gosterim</div>
+          <div class="kpi-val" style="font-size:30px;">7,15M</div>
+          <div class="kpi-sub">680.852 tiklama</div>
+        </div>
+        <div class="kpi-card purple" onclick="openModal('Hazir Remarketing Kitlesi','470.000+','Tum Ziyaretciler: 470K|Arama boyutu: 480K|Sitede 2dk+: 62K|Sepet terk: 130')">
+          <div class="kpi-label">Remarketing Kitlesi</div>
+          <div class="kpi-val" style="font-size:30px;">470B+</div>
+          <div class="kpi-sub">Win-back icin hazir</div>
+        </div>
+        <div class="kpi-card green" onclick="openModal('Yeni Kampanyalar','2 Kampanya Canli','TR Arama: ₺6.670/gun|Almanya-Turkler Arama: ₺4.000/gun|Hedef: Maks. Donusum')">
+          <div class="kpi-label">Yeni Kampanya</div>
+          <div class="kpi-val" style="font-size:30px;">2 ✅</div>
+          <div class="kpi-sub">Yayinda &mdash; sezon basinda canli</div>
+        </div>
+      </div>
+
+      <!-- Yonetici Ozeti -->
+      <div class="callout" style="margin-bottom:24px;">
+        <div class="callout-title">&#128204; Yonetici Ozeti</div>
+        <div class="callout-text">Sezon basinda Belconti Resort Google Ads hesabini basan sona inceledik. Kanal kurgusundaki gelisim alanlarini tespit ettik, duzeltik ve <strong>talep yakalama + talep artirma + eski misafirleri geri kazanma</strong> ekseninde yeni yapiyi canliya aldik. Aylik butce ₺500&ndash;700K &mdash; hedef reklam maliyeti satisla %3&ndash;4.</div>
+      </div>
+
+      <!-- Uc Eksen -->
+      <h3 style="font-size:16px;font-weight:700;margin-bottom:16px;">Uc Eksende Hareket Ediyoruz</h3>
+      <div class="three-col" style="margin-bottom:28px;">
+        <div style="padding:22px;background:linear-gradient(135deg,#eff6ff,#dbeafe);border-radius:14px;border:1px solid #bfdbfe;">
+          <div style="font-size:26px;margin-bottom:10px;">&#128269;</div>
+          <h4 style="font-size:14px;font-weight:700;color:#1e40af;margin-bottom:10px;">1 &middot; Talebi Yakala</h4>
+          <div style="font-size:13px;color:#1d4ed8;line-height:1.8;">&bull; TR Arama: yuksek niyetli kelimeler<br>&bull; Marka + jenerik + rakip ayrimi<br>&bull; %10 teklif mesaji reklam metninde</div>
+        </div>
+        <div style="padding:22px;background:linear-gradient(135deg,#f0fdf4,#d1fae5);border-radius:14px;border:1px solid #a7f3d0;">
+          <div style="font-size:26px;margin-bottom:10px;">&#128200;</div>
+          <h4 style="font-size:14px;font-weight:700;color:#065f46;margin-bottom:10px;">2 &middot; Talebi Artir</h4>
+          <div style="font-size:13px;color:#047857;line-height:1.8;">&bull; PMAX ile genis talep olusturma<br>&bull; Almanya-Turkler buyume<br>&bull; Gorsel + video ile bilinirlik</div>
+        </div>
+        <div style="padding:22px;background:linear-gradient(135deg,#fdf4ff,#f3e8ff);border-radius:14px;border:1px solid #e9d5ff;">
+          <div style="font-size:26px;margin-bottom:10px;">&#8617;&#65039;</div>
+          <h4 style="font-size:14px;font-weight:700;color:#6d28d9;margin-bottom:10px;">3 &middot; Geri Kazan</h4>
+          <div style="font-size:13px;color:#7c3aed;line-height:1.8;">&bull; 470B+ ziyaretci kitlesi (win-back)<br>&bull; Gecmis misafir listesi (Customer Match)<br>&bull; Remarketing + RLSA katmani</div>
+        </div>
+      </div>
+
+      <!-- Gecmis Performans -->
+      <div class="accordion open" style="margin-bottom:12px;">
+        <div class="accordion-header" onclick="toggleAccordion(this.parentElement)">
+          <div class="accordion-title">&#128202; Gecmis Performans &mdash; Kanal &amp; Ulke Bazli Veri (90 Gun)</div>
+          <div class="accordion-arrow">&#9660;</div>
+        </div>
+        <div class="accordion-body">
+          <div class="two-col">
+            <div>
+              <h4 style="font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;">Kanal Bazinda Yatirim</h4>
+              <table>
+                <thead><tr><th>Kanal</th><th class="num">Maliyet</th><th class="num">Gosterim</th><th class="num">TO</th></tr></thead>
+                <tbody>
+                  <tr><td><strong>Performance Max</strong></td><td class="num">₺565.797</td><td class="num">6.832.694</td><td class="num">%9,8</td></tr>
+                  <tr><td><strong>Arama Agi</strong></td><td class="num">₺197.585</td><td class="num">321.759</td><td class="num">%3,5</td></tr>
+                  <tr class="total-row"><td><strong>Toplam</strong></td><td class="num"><strong>₺763.382</strong></td><td class="num"><strong>7.154.453</strong></td><td class="num"></td></tr>
+                </tbody>
+              </table>
+              <div style="font-size:12px;color:var(--muted);margin-top:10px;">Aksiyonumuz: Arama agini guclendirup dengeyi yuksek niyetli talebe cekiyoruz.</div>
+            </div>
+            <div>
+              <h4 style="font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;">Ulke Bazinda Yatirim</h4>
+              <table>
+                <thead><tr><th>Ulke</th><th class="num">Maliyet</th><th>Durum</th></tr></thead>
+                <tbody>
+                  <tr><td>Turkiye</td><td class="num">₺316.358</td><td><span class="badge-blue">Cekirdek</span></td></tr>
+                  <tr><td>Almanya</td><td class="num">₺221.517</td><td><span class="badge-blue">Cekirdek</span></td></tr>
+                  <tr><td>B. Kraallık</td><td class="num">₺126.755</td><td><span class="badge-orange">Odak disi</span></td></tr>
+                  <tr><td>Polonya</td><td class="num">₺30.143</td><td><span class="badge-orange">Odak disi</span></td></tr>
+                  <tr><td>Diger</td><td class="num">₺68.609</td><td><span class="badge-orange">Odak disi</span></td></tr>
+                </tbody>
+              </table>
+              <div style="font-size:12px;color:var(--muted);margin-top:10px;">Aksiyonumuz: Butce Turkiye + Almanya-Turkler eksenine odaklandi.</div>
+            </div>
+          </div>
+          <div style="margin-top:20px;">
+            <h4 style="font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;">Hazir Remarketing Kitleleri</h4>
+            <table>
+              <thead><tr><th>Kitle</th><th class="num">Arama Boyutu</th><th class="num">Goruntulu Boyut</th></tr></thead>
+              <tbody>
+                <tr><td>AdWords Optimize Listesi</td><td class="num">480.000</td><td class="num">230.000</td></tr>
+                <tr><td>Tum Belconti Ziyaretcileri</td><td class="num">470.000</td><td class="num">230.000</td></tr>
+                <tr><td>Sitede 2dk. Uzeri Kalanlar</td><td class="num">62.000</td><td class="num">26.000</td></tr>
+                <tr><td>Sepet Terk Edenler</td><td class="num">130</td><td class="num">48</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Butce Dagilimi -->
+      <div class="accordion open" style="margin-bottom:12px;">
+        <div class="accordion-header" onclick="toggleAccordion(this.parentElement)">
+          <div class="accordion-title">&#128176; Aylik Butce Tahlisi &mdash; ₺600K Baz</div>
+          <div class="accordion-arrow">&#9660;</div>
+        </div>
+        <div class="accordion-body">
+          <div class="two-col">
+            <div>
+              <table>
+                <thead><tr><th>Kampanya Bloku</th><th class="num">Butce</th><th class="num">Pay</th></tr></thead>
+                <tbody>
+                  <tr><td>TR Arama — Jenerik + Marka + Rakip</td><td class="num">₺200K</td><td class="num">%33</td></tr>
+                  <tr><td>TR PMAX (talep artirma)</td><td class="num">₺120K</td><td class="num">%20</td></tr>
+                  <tr><td>Almanya-Turkler (Arama + PMAX)</td><td class="num">₺120K</td><td class="num">%20</td></tr>
+                  <tr><td>Remarketing / Geri Kazanim</td><td class="num">₺90K</td><td class="num">%15</td></tr>
+                  <tr><td>%10 Son Dakika (10 Temmuz)</td><td class="num">₺70K</td><td class="num">%12</td></tr>
+                  <tr class="total-row"><td><strong>Toplam</strong></td><td class="num"><strong>₺600K</strong></td><td class="num"><strong>%100</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div>
+              <h4 style="font-size:14px;font-weight:700;margin-bottom:16px;">Beklenen Geri Donus</h4>
+              <div style="background:linear-gradient(135deg,#0a1628,#1a4070);color:white;border-radius:14px;padding:24px;text-align:center;">
+                <div style="font-size:13px;opacity:.7;text-transform:uppercase;letter-spacing:1px;">Hedef Reklam Maliyeti</div>
+                <div style="font-size:48px;font-weight:900;color:#e8c877;margin:8px 0;">%3&ndash;4</div>
+                <div style="font-size:14px;opacity:.8;">ROAS ~28x</div>
+                <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;opacity:.7;">₺600K bütçe → ~₺16,7M ciro · ~304 rez/ay</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:20px;">
+            <h4 style="font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;">Kanal Bazinda Hedef &amp; Beklenen Getiri</h4>
+            <table>
+              <thead><tr><th>Kanal</th><th class="num">Butce/Ay</th><th class="num">Rek. Mal.</th><th class="num">ROAS</th><th class="num">Beklenen Ciro</th><th class="num">~Rez.</th></tr></thead>
+              <tbody>
+                <tr><td>TR Arama (Marka+Jenerik+Rakip)</td><td class="num">₺200K</td><td class="num">%3,5</td><td class="num">29x</td><td class="num">₺5.714.286</td><td class="num">~104</td></tr>
+                <tr><td>Almanya-Turkler (Arama+PMAX)</td><td class="num">₺120K</td><td class="num">%4,0</td><td class="num">25x</td><td class="num">₺3.000.000</td><td class="num">~55</td></tr>
+                <tr><td>TR PMAX (talep artirma)</td><td class="num">₺120K</td><td class="num">%5,0</td><td class="num">20x</td><td class="num">₺2.400.000</td><td class="num">~44</td></tr>
+                <tr><td>Remarketing / Geri Kazanim</td><td class="num">₺90K</td><td class="num">%2,5</td><td class="num">40x</td><td class="num">₺3.600.000</td><td class="num">~65</td></tr>
+                <tr><td>%10 Son Dakika (10 Tem.)</td><td class="num">₺70K</td><td class="num">%3,5</td><td class="num">29x</td><td class="num">₺2.000.000</td><td class="num">~36</td></tr>
+                <tr class="total-row"><td><strong>Toplam</strong></td><td class="num"><strong>₺600K</strong></td><td class="num"><strong>%3,6</strong></td><td class="num"><strong>~28x</strong></td><td class="num"><strong>₺16.714.286</strong></td><td class="num"><strong>~304</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kampanyalar & Anahtar Kelimeler -->
+      <div class="accordion" style="margin-bottom:12px;">
+        <div class="accordion-header" onclick="toggleAccordion(this.parentElement)">
+          <div class="accordion-title">&#127919; Canli Kampanyalar &amp; Anahtar Kelimeler</div>
+          <div class="accordion-arrow">&#9660;</div>
+        </div>
+        <div class="accordion-body">
+          <div style="margin-bottom:20px;">
+            <h4 style="font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;">Yayindaki Kampanyalar</h4>
+            <table>
+              <thead><tr><th>Kampanya</th><th>Hedef</th><th class="num">Gunluk Butce</th><th>Icerik</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><span style="color:var(--green);font-weight:700;">&#9679; CANLI</span> Belconti_Search_Jenerik_TR_2026_REV</td>
+                  <td>Turkiye &middot; Turkce</td>
+                  <td class="num">₺6.670/gun (~₺200K/ay)</td>
+                  <td>8 kelime + RSA + 3 win-back kitlesi</td>
+                </tr>
+                <tr>
+                  <td><span style="color:var(--green);font-weight:700;">&#9679; CANLI</span> Belconti_Search_Almanya_Turkler_2026_REV</td>
+                  <td>Almanya &middot; Turkce</td>
+                  <td class="num">₺4.000/gun (~₺120K/ay)</td>
+                  <td>7 kelime + RSA + 3 win-back kitlesi</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="two-col">
+            <div>
+              <h4 style="font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;">Anahtar Kelime Gruplari</h4>
+              <table>
+                <thead><tr><th>Grup</th><th>Ornek Kelimeler</th><th>Eslesme</th></tr></thead>
+                <tbody>
+                  <tr><td>&#128273; Marka</td><td>belconti · belconti resort</td><td>Tam/Sirali</td></tr>
+                  <tr><td>&#11088; Yuksek Niyetli</td><td>belek 5 yildiz · ultra herseydhil</td><td>Sirali/Tam</td></tr>
+                  <tr><td>&#128197; Erken Rez.</td><td>belek erken rezervasyon 2026</td><td>Sirali</td></tr>
+                  <tr><td>&#128106; Aile &amp; Segment</td><td>belek aile oteli · cocuklu otel</td><td>Sirali</td></tr>
+                  <tr><td>&#128101; Rakip</td><td>rakip 5&#9733; Belek otel adlari</td><td>Sirali</td></tr>
+                  <tr><td>&#128683; Negatif</td><td>ucuz · bedava · is ilani · kiralık</td><td>&mdash;</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div>
+              <h4 style="font-size:13px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;">Hedefleme Ayarlari</h4>
+              <table>
+                <thead><tr><th>Boyut</th><th>TR</th><th>Almanya-TR</th></tr></thead>
+                <tbody>
+                  <tr><td>Konum</td><td>Turkiye</td><td>Almanya</td></tr>
+                  <tr><td>Dil</td><td>Turkce</td><td>Turkce</td></tr>
+                  <tr><td>Cihaz</td><td>Tumü (mobil ag.)</td><td>Tumu</td></tr>
+                  <tr><td>Kitle (gozlem)</td><td>Tum Ziy. + Opt. + 2dk</td><td>Ayni kitleler</td></tr>
+                  <tr><td>Teklif Str.</td><td>Maks. Donusum</td><td>Maks. Donusum</td></tr>
+                </tbody>
+              </table>
+              <div style="margin-top:16px;background:#fef3c7;border-radius:10px;padding:14px;font-size:13px;color:#92400e;">
+                <strong>%10 Son Dakika Teklifi:</strong> Yalnizca Turkiye'de gecerli. 10 Temmuz 2026'ya kadar. Almanya kampanyasinda teklif gosterilmez.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Meta + Yandex -->
+      <div class="accordion" style="margin-bottom:12px;">
+        <div class="accordion-header" onclick="toggleAccordion(this.parentElement)">
+          <div class="accordion-title">&#128241; Meta + Yandex Reklam Planı</div>
+          <div class="accordion-arrow">&#9660;</div>
+        </div>
+        <div class="accordion-body">
+          <div class="two-col">
+            <div>
+              <h4 style="font-size:14px;font-weight:700;margin-bottom:14px;">&#128241; Meta (Instagram + Facebook)</h4>
+              <div style="font-size:13px;color:var(--muted);margin-bottom:14px;">Google talebi yakalar, Meta talebi yaratir. 3 katmanli huni:</div>
+              <table>
+                <thead><tr><th>Katman</th><th>Hedef</th><th class="num">Pay</th><th class="num">Rek. Mal.</th></tr></thead>
+                <tbody>
+                  <tr><td>Bilinirlik &amp; Talep</td><td>Erisim / Video</td><td class="num">%30</td><td class="num">%6&ndash;7</td></tr>
+                  <tr><td>Ilgi &amp; Trafik</td><td>Trafik / Etkilesim</td><td class="num">%25</td><td class="num">%5</td></tr>
+                  <tr><td>Donusum &amp; Remarketing</td><td>Satis / Donusum</td><td class="num">%45</td><td class="num">%2&ndash;3</td></tr>
+                </tbody>
+              </table>
+              <div style="margin-top:12px;padding:12px;background:#f0f4f8;border-radius:10px;font-size:13px;">
+                Aylik Meta butcesi: <strong>₺120&ndash;180K</strong> | Blended rek. mal.: <strong>~%4&ndash;5</strong> | ~<strong>60 rez/ay</strong>
+              </div>
+            </div>
+            <div>
+              <h4 style="font-size:14px;font-weight:700;margin-bottom:14px;">&#127981; Yandex (Rusya &mdash; Sadece Arama)</h4>
+              <div style="font-size:13px;color:var(--muted);margin-bottom:14px;">Rusya'da arama motoru lideri Yandex. 4 kampanya yapisi:</div>
+              <table>
+                <thead><tr><th>Kampanya</th><th>Amac</th></tr></thead>
+                <tbody>
+                  <tr><td>&#128273; Marka</td><td>Belconti'yi arayanı yakala</td></tr>
+                  <tr><td>&#11088; Jenerik — Herseydhil</td><td>Belek/Antalya herseydhil arayan</td></tr>
+                  <tr><td>&#128197; Erken Rezervasyon</td><td>Sezon planlayan Rus tatilci</td></tr>
+                  <tr><td>&#128106; Aile &amp; Segment</td><td>Aile / deniz tatili arayan</td></tr>
+                </tbody>
+              </table>
+              <div style="margin-top:12px;padding:12px;background:#f0f4f8;border-radius:10px;font-size:13px;">
+                Aylik Yandex butcesi: <strong>₺80&ndash;120K</strong> | Hedef rek. mal.: <strong>~%4&ndash;5</strong> | ~<strong>40 rez/ay</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Uygulama Takvimi -->
+      <div class="accordion" style="margin-bottom:0;">
+        <div class="accordion-header" onclick="toggleAccordion(this.parentElement)">
+          <div class="accordion-title">&#128197; 14 Gunluk Devreye Alma Takvimi</div>
+          <div class="accordion-arrow">&#9660;</div>
+        </div>
+        <div class="accordion-body">
+          <div class="three-col">
+            <div style="padding:20px;background:#f0fdf4;border-radius:12px;border:1px solid #a7f3d0;">
+              <div style="font-size:12px;font-weight:700;color:#065f46;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Gun 0 &#9989;</div>
+              <div style="font-size:14px;font-weight:700;color:#065f46;margin-bottom:8px;">Yayina Alindi</div>
+              <div style="font-size:13px;color:#047857;line-height:1.7;">TR Arama + Almanya-Turkler Arama canli; win-back kitleleri bagli; %10 teklif mesaji islendi.</div>
+            </div>
+            <div style="padding:20px;background:#eff6ff;border-radius:12px;border:1px solid #bfdbfe;">
+              <div style="font-size:12px;font-weight:700;color:#1e40af;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Gun 1&ndash;5</div>
+              <div style="font-size:14px;font-weight:700;color:#1e40af;margin-bottom:8px;">Genisleme</div>
+              <div style="font-size:13px;color:#1d4ed8;line-height:1.7;">PMAX talep artirma + remarketing/RLSA katmani; arama terimi izleme basladi.</div>
+            </div>
+            <div style="padding:20px;background:#fdf4ff;border-radius:12px;border:1px solid #e9d5ff;">
+              <div style="font-size:12px;font-weight:700;color:#6d28d9;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">Gun 5&ndash;14</div>
+              <div style="font-size:14px;font-weight:700;color:#6d28d9;margin-bottom:8px;">Optimizasyon</div>
+              <div style="font-size:13px;color:#7c3aed;line-height:1.7;">Teklif &amp; butce ayari, RSA varyant testi; yeterli veride gelire (tROAS) gecis.</div>
+            </div>
+          </div>
+          <div class="callout" style="margin-top:20px;">
+            <div class="callout-title">&#128640; Etkiyi Buyutmek Icin 3 Adim</div>
+            <div class="callout-text">
+              <strong>1. Rezervasyon degeri olcumu:</strong> Booking motorunda rezervasyon-gelir izlemenin tamamlanmasi &rarr; tam ROAS gorünurlugu.<br>
+              <strong>2. Gecmis misafir listesi:</strong> Customer Match icin misafir e-posta/telefonu (ozellikle Almanya) &rarr; geri kazanim gucu artar.<br>
+              <strong>3. Kreatif zenginlestirme:</strong> Otel gorselleri + kisa videolar &rarr; PMAX ve goruntulu kanallarda daha yuksek performans.
+            </div>
+          </div>
+          <div style="margin-top:16px;font-size:12px;color:var(--muted);text-align:center;">Veriler canli Google Ads API (v21) ile 65 kampanya kaydından cekilmistir &middot; Hesap 344-928-3245 &middot; PMA Partner &middot; Haziran 2026</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </main>
 
 <script>
