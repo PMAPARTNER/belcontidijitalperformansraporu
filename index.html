@@ -10,139 +10,196 @@
 <style>
 :root{
   --green:#16A34A;--green-light:#DCFCE7;--green-mid:#86EFAC;--green-dark:#15803D;
-  --bg:#FFFFFF;--bg-alt:#F9FAFB;--border:#E5E7EB;--border-light:#F3F4F6;
+  --bg:#fff;--bg-alt:#F9FAFB;--border:#E5E7EB;--border-light:#F3F4F6;
   --text:#111827;--muted:#6B7280;--muted-light:#9CA3AF;
-  --shadow:0 1px 3px rgba(0,0,0,.06);--shadow-md:0 4px 6px -1px rgba(0,0,0,.07);
-  --shadow-lg:0 10px 15px -3px rgba(0,0,0,.07);--radius:12px;--radius-sm:8px;
+  --shadow:0 1px 3px rgba(0,0,0,.07);--shadow-md:0 4px 12px rgba(0,0,0,.09);
+  --shadow-lg:0 12px 32px rgba(0,0,0,.13);--radius:12px;--radius-sm:8px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased}
-.month-tabs{position:sticky;top:0;z-index:300;background:var(--bg);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 40px}
-.month-tab{padding:16px 28px;font-size:13px;font-weight:600;letter-spacing:.03em;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap;user-select:none}
-.month-tab:hover{color:var(--text)}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* ── MONTH TABS ── */
+.month-tabs{position:sticky;top:0;z-index:300;background:var(--bg);border-bottom:2px solid var(--border);display:flex;align-items:stretch;padding:0 40px}
+.month-tab{padding:16px 28px;font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap;user-select:none}
+.month-tab:hover{color:var(--text);background:var(--bg-alt)}
 .month-tab.active{color:var(--green);border-bottom-color:var(--green)}
-.month-tab-badge{display:inline-block;font-size:10px;font-weight:700;padding:1px 6px;border-radius:99px;margin-left:6px;background:var(--green-light);color:var(--green-dark)}
-.section-nav{position:sticky;top:53px;z-index:200;background:var(--bg);border-bottom:1px solid var(--border-light);padding:0 40px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.month-tab-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px;margin-left:7px;background:var(--green-light);color:var(--green-dark)}
+
+/* ── SECTION NAV ── */
+.section-nav{position:sticky;top:55px;z-index:200;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border-light);padding:6px 40px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
 .section-nav::-webkit-scrollbar{display:none}
-.nav-link{padding:10px 14px;font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;border-radius:var(--radius-sm);white-space:nowrap;transition:all .2s}
+.nav-link{padding:8px 14px;font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;border-radius:var(--radius-sm);white-space:nowrap;transition:all .15s;border:none;background:none}
 .nav-link:hover{color:var(--text);background:var(--bg-alt)}
-.nav-link.active{color:var(--green);background:var(--green-light)}
-.report-header{padding:48px 40px 40px;border-bottom:1px solid var(--border)}
-.header-eyebrow{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:12px}
-.header-title{font-size:32px;font-weight:800;color:var(--text);line-height:1.2;margin-bottom:8px}
-.header-sub{font-size:15px;color:var(--muted);margin-bottom:36px}
+.nav-link.active{color:var(--green);background:var(--green-light);font-weight:600}
+
+/* ── HEADER ── */
+.report-header{padding:52px 40px 44px;border-bottom:1px solid var(--border)}
+.header-eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+.header-title{font-size:34px;font-weight:800;color:var(--text);line-height:1.2;margin-bottom:8px}
+.header-sub{font-size:15px;color:var(--muted);margin-bottom:40px;line-height:1.6}
 .header-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.hkpi{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:24px;position:relative;overflow:hidden;transition:box-shadow .2s;cursor:pointer}
-.hkpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);border-radius:var(--radius) var(--radius) 0 0}
-.hkpi:hover{box-shadow:var(--shadow-md)}
-.hkpi-label{font-size:11px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.hkpi-val{font-size:28px;font-weight:800;color:var(--green);line-height:1}
-.hkpi-sub{font-size:12px;color:var(--muted);margin-top:6px}
-.hkpi-icon{position:absolute;top:20px;right:20px;width:36px;height:36px;background:var(--green-light);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--green)}
-.section{padding:48px 40px;border-bottom:1px solid var(--border)}
+.hkpi{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:24px 22px;position:relative;overflow:hidden;transition:all .2s;cursor:pointer}
+.hkpi::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green)}
+.hkpi:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
+.hkpi-icon{position:absolute;top:18px;right:18px;width:36px;height:36px;background:var(--green-light);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--green)}
+.hkpi-label{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.hkpi-val{font-size:30px;font-weight:800;color:var(--green);line-height:1}
+.hkpi-sub{font-size:12px;color:var(--muted);margin-top:7px}
+.hkpi-trend{position:absolute;bottom:14px;right:18px;font-size:11px;font-weight:700}
+.hkpi-trend.up{color:var(--green)}
+.hkpi-trend.neutral{color:var(--muted)}
+
+/* ── SECTION ── */
+.section{padding:52px 40px;border-bottom:1px solid var(--border)}
 .section:last-child{border-bottom:none}
-.section-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:32px}
-.section-icon-wrap{width:44px;height:44px;border-radius:10px;background:var(--green-light);display:flex;align-items:center;justify-content:center;color:var(--green);flex-shrink:0}
-.section-title{font-size:20px;font-weight:700;color:var(--text);line-height:1.3}
-.section-sub{font-size:13px;color:var(--muted);margin-top:3px}
+.section-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:34px}
+.section-icon-wrap{width:46px;height:46px;border-radius:11px;background:var(--green-light);display:flex;align-items:center;justify-content:center;color:var(--green);flex-shrink:0}
+.section-title{font-size:21px;font-weight:700;color:var(--text);line-height:1.3}
+.section-sub{font-size:13px;color:var(--muted);margin-top:4px}
+
+/* ── KPI CARDS ── */
 .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .kpi-grid-3{grid-template-columns:repeat(3,1fr)}
-.kpi-grid-2{grid-template-columns:repeat(2,1fr)}
 .kpi-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
 .kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:transparent;transition:background .2s}
-.kpi-card:hover{border-color:var(--green-mid);box-shadow:var(--shadow-md)}
+.kpi-card:hover{border-color:var(--green-mid);box-shadow:var(--shadow-md);transform:translateY(-1px)}
 .kpi-card:hover::before{background:var(--green)}
-.kpi-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:8px}
-.kpi-val{font-size:26px;font-weight:800;color:var(--green);line-height:1}
-.kpi-sub{font-size:12px;color:var(--muted);margin-top:6px}
-.kpi-badge{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;margin-top:8px;background:var(--green-light);color:var(--green-dark)}
-.kpi-badge.neutral{background:#F3F4F6;color:var(--muted)}
-.kpi-badge.amber{background:#FEF3C7;color:#92400E}
+.kpi-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px}
+.kpi-val{font-size:27px;font-weight:800;color:var(--green);line-height:1}
+.kpi-sub{font-size:12px;color:var(--muted);margin-top:7px}
+.kpi-trend{display:inline-flex;align-items:center;gap:3px;font-size:12px;font-weight:700;margin-top:8px;padding:2px 8px;border-radius:99px}
+.kpi-trend.up{background:var(--green-light);color:var(--green-dark)}
+.kpi-trend.down{background:#FEF2F2;color:#DC2626}
+.kpi-trend.neutral{background:#F3F4F6;color:var(--muted)}
 .kpi-icon{position:absolute;top:16px;right:16px;width:32px;height:32px;background:var(--green-light);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--green)}
-.table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius);margin-top:8px}
+
+/* ── TABLES ── */
+.table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius)}
 table{width:100%;border-collapse:collapse}
-thead th{background:var(--bg-alt);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);padding:12px 16px;text-align:left;border-bottom:1px solid var(--border)}
+thead th{background:var(--bg-alt);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:13px 16px;text-align:left;border-bottom:1px solid var(--border)}
 thead th.num{text-align:right}
-tbody td{padding:12px 16px;border-bottom:1px solid var(--border-light);font-size:13px;color:var(--text)}
+tbody td{padding:13px 16px;border-bottom:1px solid var(--border-light);font-size:13px;color:var(--text);line-height:1.5}
 tbody td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:500}
 tbody tr:last-child td{border-bottom:none}
 tbody tr:hover td{background:var(--bg-alt)}
 .total-row td{font-weight:700;background:var(--green-light)!important;color:var(--green-dark)}
-.chart-wrap{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin-top:8px}
-.chart-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:20px}
-.chart-inner{position:relative;height:260px}
+
+/* ── CHARTS ── */
+.chart-wrap{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:28px;cursor:pointer;transition:all .2s;position:relative}
+.chart-wrap:hover{box-shadow:var(--shadow-md)}
+.chart-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:6px;display:flex;align-items:center;justify-content:space-between}
+.chart-sub{font-size:12px;color:var(--muted);margin-bottom:20px}
+.chart-inner{position:relative;height:240px}
+.chart-expand-hint{font-size:11px;color:var(--muted-light);display:flex;align-items:center;gap:4px}
+.chart-expand-hint svg{width:13px;height:13px}
+
+/* ── CHART MODAL ── */
+.chart-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:2000;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px)}
+.chart-modal.open{display:flex}
+.chart-modal-inner{background:var(--bg);border-radius:16px;padding:36px;width:100%;max-width:860px;box-shadow:var(--shadow-lg);position:relative;max-height:90vh;overflow-y:auto}
+.chart-modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:8px;border:1px solid var(--border);background:var(--bg);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:18px}
+.chart-modal-close:hover{background:var(--bg-alt)}
+.chart-modal-canvas{height:400px;position:relative}
+
+/* ── TWO/THREE COL ── */
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+
+/* ── STAT ROWS ── */
 .stat-row{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--border-light)}
 .stat-row:last-child{border-bottom:none}
-.stat-label{flex:1;font-size:13px;color:var(--text)}
-.stat-bar-wrap{width:160px;height:6px;background:var(--border);border-radius:99px;overflow:hidden}
-.stat-bar{height:100%;background:var(--green);border-radius:99px}
-.stat-val{font-size:13px;font-weight:600;color:var(--text);min-width:90px;text-align:right}
-.badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px;background:var(--green-light);color:var(--green-dark)}
+.stat-label{flex:1;font-size:13px;color:var(--text);line-height:1.4}
+.stat-bar-wrap{width:140px;height:6px;background:var(--border);border-radius:99px;overflow:hidden;flex-shrink:0}
+.stat-bar{height:100%;background:var(--green);border-radius:99px;transition:width .6s ease}
+.stat-val{font-size:13px;font-weight:600;color:var(--text);min-width:100px;text-align:right}
+
+/* ── BADGES ── */
+.badge{display:inline-flex;align-items:center;font-size:11px;font-weight:700;padding:3px 9px;border-radius:99px;background:var(--green-light);color:var(--green-dark)}
 .badge.neutral{background:#F3F4F6;color:var(--muted)}
 .badge.amber{background:#FEF3C7;color:#92400E}
 .badge.blue{background:#EFF6FF;color:#1E40AF}
-.callout{background:var(--green-light);border-left:3px solid var(--green);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:16px 20px;margin-top:16px}
-.callout-title{font-size:13px;font-weight:700;color:var(--green-dark);margin-bottom:4px}
-.callout-text{font-size:13px;color:#166534;line-height:1.7}
+.badge.red{background:#FEF2F2;color:#DC2626}
+
+/* ── CALLOUT ── */
+.callout{background:var(--green-light);border-left:3px solid var(--green);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:16px 20px;margin-top:18px}
+.callout-title{font-size:13px;font-weight:700;color:var(--green-dark);margin-bottom:5px}
+.callout-text{font-size:13px;color:#166534;line-height:1.75}
+
+/* ── ACCORDION ── */
 .accordion{border:1px solid var(--border);border-radius:var(--radius);margin-bottom:10px;overflow:hidden}
-.accordion-header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:var(--bg);transition:background .15s}
+.accordion-header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;background:var(--bg);transition:background .15s;gap:12px}
 .accordion-header:hover{background:var(--bg-alt)}
-.accordion-title{font-size:14px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:10px}
-.accordion-title svg{color:var(--green)}
-.accordion-arrow{width:20px;height:20px;color:var(--muted);transition:transform .25s;flex-shrink:0}
+.accordion-title{font-size:14px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:10px;line-height:1.4}
+.accordion-title svg{color:var(--green);flex-shrink:0}
+.accordion-arrow{width:18px;height:18px;color:var(--muted);transition:transform .25s;flex-shrink:0}
 .accordion.open .accordion-arrow{transform:rotate(180deg)}
-.accordion-body{max-height:0;overflow:hidden;transition:max-height .3s ease}
-.accordion.open .accordion-body{max-height:2000px}
-.accordion-inner{padding:20px 22px;border-top:1px solid var(--border-light)}
-.accordion-inner ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.accordion-inner li{font-size:13px;color:var(--muted);padding-left:16px;position:relative;line-height:1.6}
-.accordion-inner li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--green)}
+.accordion-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.accordion.open .accordion-body{max-height:3000px}
+.accordion-inner{padding:22px;border-top:1px solid var(--border-light)}
+.accordion-inner ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.accordion-inner li{font-size:14px;color:var(--muted);padding-left:18px;position:relative;line-height:1.65}
+.accordion-inner li::before{content:'';position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--green)}
 .accordion-inner li strong{color:var(--text)}
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(2px)}
+
+/* ── DETAIL MODAL ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1000;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(3px)}
 .modal-overlay.open{display:flex}
-.modal{background:var(--bg);border-radius:16px;padding:36px;max-width:480px;width:90%;box-shadow:var(--shadow-lg);position:relative}
-.modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:8px;border:1px solid var(--border);background:var(--bg);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:18px;line-height:1}
+.modal{background:var(--bg);border-radius:16px;padding:36px;max-width:500px;width:100%;box-shadow:var(--shadow-lg);position:relative}
+.modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:8px;border:1px solid var(--border);background:var(--bg);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:18px}
 .modal-close:hover{background:var(--bg-alt)}
-.modal-kpi-val{font-size:40px;font-weight:800;color:var(--green);line-height:1;margin-bottom:6px}
-.modal-kpi-title{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:20px}
-.modal-details{display:flex;flex-direction:column;gap:8px}
-.modal-detail-row{font-size:13px;color:var(--text);padding:10px 0;border-bottom:1px solid var(--border-light);display:flex;justify-content:space-between}
+.modal-kpi-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px}
+.modal-kpi-val{font-size:42px;font-weight:800;color:var(--green);line-height:1;margin-bottom:24px}
+.modal-details{display:flex;flex-direction:column}
+.modal-detail-row{font-size:14px;color:var(--text);padding:12px 0;border-bottom:1px solid var(--border-light);display:flex;justify-content:space-between;gap:16px;line-height:1.5}
 .modal-detail-row:last-child{border-bottom:none}
+.modal-detail-row span:first-child{color:var(--muted);flex-shrink:0}
+.modal-detail-row span:last-child{font-weight:600;text-align:right}
+
+/* ── MONTH CONTENT ── */
 .month-content{display:none}
 .month-content.active{display:block}
-.coming-soon{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:80px 40px;text-align:center}
-.coming-soon-icon{width:64px;height:64px;background:var(--bg-alt);border-radius:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:var(--muted-light)}
-.coming-soon-title{font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px}
-.coming-soon-sub{font-size:14px;color:var(--muted);max-width:360px}
-.plan-kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
-.plan-kpi{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center}
-.plan-kpi-val{font-size:24px;font-weight:800;color:var(--green)}
-.plan-kpi-label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-top:4px}
-.timeline{display:flex;flex-direction:column;gap:0}
-.timeline-item{display:flex;gap:20px;padding:16px 0;position:relative}
-.timeline-item::before{content:'';position:absolute;left:19px;top:40px;bottom:-16px;width:1px;background:var(--border)}
+
+/* ── COMING SOON ── */
+.coming-soon{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:100px 40px;text-align:center;min-height:60vh}
+.coming-soon-icon{width:72px;height:72px;background:var(--bg-alt);border:1px solid var(--border);border-radius:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;color:var(--muted-light)}
+.coming-soon-title{font-size:20px;font-weight:700;color:var(--text);margin-bottom:10px}
+.coming-soon-sub{font-size:15px;color:var(--muted);max-width:400px;line-height:1.7}
+
+/* ── TIMELINE ── */
+.timeline{display:flex;flex-direction:column}
+.timeline-item{display:flex;gap:20px;padding:18px 0;position:relative}
+.timeline-item::before{content:'';position:absolute;left:19px;top:42px;bottom:-18px;width:2px;background:var(--border)}
 .timeline-item:last-child::before{display:none}
 .timeline-dot{width:40px;height:40px;border-radius:50%;background:var(--green-light);border:2px solid var(--green);display:flex;align-items:center;justify-content:center;color:var(--green);flex-shrink:0;font-size:11px;font-weight:700;z-index:1}
 .timeline-content{flex:1;padding-top:8px}
-.timeline-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px}
-.timeline-sub{font-size:12px;color:var(--muted)}
-footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
-.footer-brand{font-size:13px;font-weight:700;color:var(--text)}
-.footer-sub{font-size:12px;color:var(--muted);margin-top:2px}
-.footer-badge{font-size:11px;color:var(--muted-light);background:var(--bg-alt);border:1px solid var(--border);padding:4px 10px;border-radius:99px}
+.timeline-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:4px}
+.timeline-sub{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* ── PLAN KPI ── */
+.plan-kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.plan-kpi{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:22px;text-align:center}
+.plan-kpi-val{font-size:26px;font-weight:800;color:var(--green)}
+.plan-kpi-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:6px}
+
+/* ── FOOTER ── */
+footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-brand{font-size:14px;font-weight:700;color:var(--text)}
+.footer-sub{font-size:12px;color:var(--muted);margin-top:3px}
+.footer-badge{font-size:11px;color:var(--muted-light);background:var(--bg-alt);border:1px solid var(--border);padding:5px 12px;border-radius:99px;font-weight:500}
+
+/* ── RESPONSIVE ── */
 @media(max-width:900px){
-  .month-tabs,.section-nav,.report-header,.section{padding-left:20px;padding-right:20px}
+  .month-tabs,.section-nav,.report-header,.section,footer{padding-left:20px;padding-right:20px}
   .header-kpis{grid-template-columns:repeat(2,1fr)}
   .kpi-grid{grid-template-columns:repeat(2,1fr)}
   .kpi-grid-3{grid-template-columns:repeat(2,1fr)}
   .three-col,.two-col{grid-template-columns:1fr}
-  .header-title{font-size:24px}.hkpi-val{font-size:22px}
+  .header-title{font-size:26px}
+  .plan-kpi-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:560px){
   .header-kpis,.kpi-grid,.kpi-grid-3,.plan-kpi-grid{grid-template-columns:1fr}
-  .month-tab{padding:14px 16px;font-size:12px}
+  .month-tab{padding:13px 14px;font-size:12px}
 }
 </style>
 </head>
@@ -157,61 +214,63 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
 
 <!-- NAV MAYIS -->
 <nav class="section-nav" id="nav-mayis">
-  <a class="nav-link" onclick="scrollSec('sec-ga4')">Web Analitik</a>
-  <a class="nav-link" onclick="scrollSec('sec-search')">Organik Arama</a>
-  <a class="nav-link" onclick="scrollSec('sec-gads')">Google Reklamlar</a>
-  <a class="nav-link" onclick="scrollSec('sec-roas')">ROAS</a>
-  <a class="nav-link" onclick="scrollSec('sec-meta')">Meta Reklamlar</a>
-  <a class="nav-link" onclick="scrollSec('sec-social')">Sosyal Medya</a>
-  <a class="nav-link" onclick="scrollSec('sec-rezervasyon')">Web Rezervasyon</a>
-  <a class="nav-link" onclick="scrollSec('sec-callcenter')">Call Center</a>
-  <a class="nav-link" onclick="scrollSec('sec-faaliyet')">Faaliyet Raporu</a>
-  <a class="nav-link" onclick="scrollSec('sec-ozet')">Özet</a>
+  <button class="nav-link" onclick="scrollSec('sec-ga4')">Web Analitik</button>
+  <button class="nav-link" onclick="scrollSec('sec-search')">Organik Arama</button>
+  <button class="nav-link" onclick="scrollSec('sec-gads')">Google Reklamlar</button>
+  <button class="nav-link" onclick="scrollSec('sec-roas')">ROAS</button>
+  <button class="nav-link" onclick="scrollSec('sec-meta')">Meta Reklamlar</button>
+  <button class="nav-link" onclick="scrollSec('sec-social')">Sosyal Medya</button>
+  <button class="nav-link" onclick="scrollSec('sec-rezervasyon')">Web Rezervasyon</button>
+  <button class="nav-link" onclick="scrollSec('sec-callcenter')">Call Center</button>
+  <button class="nav-link" onclick="scrollSec('sec-faaliyet')">Faaliyet Raporu</button>
+  <button class="nav-link" onclick="scrollSec('sec-ozet')">Özet</button>
+  <button class="nav-link" onclick="scrollSec('sec-haziran-plan')" style="color:var(--green);font-weight:700">Haziran Planı</button>
 </nav>
 <!-- NAV HAZIRAN -->
 <nav class="section-nav" id="nav-haziran" style="display:none">
-  <a class="nav-link" onclick="scrollSec('hz-ozet')">Yönetici Özeti</a>
-  <a class="nav-link" onclick="scrollSec('hz-butce')">Bütçe Dağılımı</a>
-  <a class="nav-link" onclick="scrollSec('hz-kampanyalar')">Kampanyalar</a>
-  <a class="nav-link" onclick="scrollSec('hz-meta')">Meta + Yandex</a>
-  <a class="nav-link" onclick="scrollSec('hz-takvim')">14 Günlük Takvim</a>
+  <button class="nav-link">Haziran raporu hazırlanıyor</button>
 </nav>
 <!-- NAV TEMMUZ -->
 <nav class="section-nav" id="nav-temmuz" style="display:none">
-  <a class="nav-link">Yakında</a>
+  <button class="nav-link">Temmuz raporu hazırlanıyor</button>
 </nav>
 
-<!-- ══════════════ MAYIS ══════════════ -->
+<!-- ════════════════════════════════ MAYIS ════════════════════════════════ -->
 <div id="content-mayis" class="month-content active">
 
+<!-- HEADER -->
 <header class="report-header">
   <div class="header-eyebrow">Dijital Performans Raporu</div>
   <h1 class="header-title">Belconti Resort Hotel</h1>
-  <div class="header-sub">Mayıs 2026 · Tüm Kanallar · GA4 + Google Ads + Meta + SednaBI + Call Center</div>
+  <p class="header-sub">Mayıs 2026 · Tüm Kanallar · GA4 + Google Ads + Meta + SednaBI + Call Center<br>Her kartın üzerine tıklayarak detayları görüntüleyin · Grafikler büyütülebilir</p>
   <div class="header-kpis">
     <div class="hkpi" onclick="openModal('Aktif Kullanıcı','233.024','Mayıs 2026 toplam aktif kullanıcı|Cross-network: 355.000 oturum|Önceki dönem büyümesi: +%34|Kaynak: GA4')">
       <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 17v-1a4 4 0 00-4-4H7a4 4 0 00-4 4v1"/><circle cx="8.5" cy="7" r="3"/><path d="M17 17v-1a3 3 0 00-2-2.83M13 5a3 3 0 012.83 2"/></svg></div>
       <div class="hkpi-label">Aktif Kullanıcı</div>
       <div class="hkpi-val">233K</div>
       <div class="hkpi-sub">GA4 · Tüm kanallar</div>
+      <div class="hkpi-trend up">↑ %34</div>
     </div>
-    <div class="hkpi" onclick="openModal('Call Center Ciro','₺8.028.716','601 çağrı · 203 satış|%33.8 kapanış oranı|+ €57.703 EUR|Kaynak: CC Haftalık Rapor')">
+    <div class="hkpi" onclick="openModal('Call Center Ciro','₺8.028.716','601 çağrı · 203 satış|%33.8 kapanış oranı|En iyi hafta: H2 %44.2|+ €57.703 EUR ayrıca')">
       <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 3h3l1.5 3.5-2 1.5c.8 1.8 2 3 3.8 3.8l1.5-2L16 11v3a2 2 0 01-2 2C6.5 16 4 9.5 5 3z"/></svg></div>
       <div class="hkpi-label">Call Center Ciro</div>
       <div class="hkpi-val">₺8.02M</div>
       <div class="hkpi-sub">+ €57.703 EUR</div>
+      <div class="hkpi-trend up">↑ 203 satış</div>
     </div>
     <div class="hkpi" onclick="openModal('Web Rezervasyon','€1.999.905','1.676 rezervasyon|9.201 oda gecelemesi|Ort. €217.36/oda|Kaynak: SednaBI')">
       <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg></div>
       <div class="hkpi-label">Web Rezervasyon</div>
       <div class="hkpi-val">€2M</div>
       <div class="hkpi-sub">1.676 rezervasyon</div>
+      <div class="hkpi-trend up">↑ 9.201 gece</div>
     </div>
-    <div class="hkpi" onclick="openModal('ROAS','15.3x','₺524.315 harcama → ₺8.02M ciro|Google Ads + Meta toplam|Sektör ort: 4–8x|Hesaplama: 8.028.716 / 524.315')">
+    <div class="hkpi" onclick="openModal('ROAS','15.3x','₺524.315 harcama → ₺8.02M ciro|Hesaplama: 8.028.716 / 524.315|Sektör ortalaması: 4–8x|Hedef 2026: 12x+')">
       <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 14l5-5 3 3 5-6"/><path d="M12 6h4v4"/></svg></div>
       <div class="hkpi-label">ROAS</div>
       <div class="hkpi-val">15.3x</div>
       <div class="hkpi-sub">Sektör ort. 4–8x</div>
+      <div class="hkpi-trend up">↑ 2x sektör</div>
     </div>
   </div>
 </header>
@@ -223,25 +282,25 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
     <div><div class="section-title">Web Analitik — GA4 Genel Bakış</div><div class="section-sub">Mayıs 2026 · Tüm trafik kaynakları · Google Analytics 4</div></div>
   </div>
   <div class="kpi-grid">
-    <div class="kpi-card" onclick="openModal('Aktif Kullanıcı','233.024','Benzersiz ziyaretçi|Önceki aya göre: +%34|Kanal: Tüm Kanallar|Kaynak: GA4')">
+    <div class="kpi-card" onclick="openModal('Aktif Kullanıcı','233.024','Benzersiz ziyaretçi|Önceki aya göre: +%34|Tüm kanallar dahil|Kaynak: GA4')">
       <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 17v-1a4 4 0 00-4-4H7a4 4 0 00-4 4v1"/><circle cx="8.5" cy="7" r="3"/></svg></div>
       <div class="kpi-label">Aktif Kullanıcı</div>
       <div class="kpi-val">233.024</div>
-      <div class="kpi-badge">+%34 büyüme</div>
+      <span class="kpi-trend up">↑ %34</span>
     </div>
-    <div class="kpi-card" onclick="openModal('Toplam Oturum','374.200+','Tüm kanallarda oturum|Cross-network: 355.000|Direct: 7.000|Organik: 6.400')">
+    <div class="kpi-card" onclick="openModal('Toplam Oturum','374.200+','Cross-network: 355.000|Direct: 7.000|Organik Arama: 6.400|Ücretli Arama: 5.800')">
       <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/></svg></div>
       <div class="kpi-label">Toplam Oturum</div>
       <div class="kpi-val">374.200+</div>
       <div class="kpi-sub">Tüm kanallar</div>
     </div>
-    <div class="kpi-card" onclick="openModal('Ort. Etkileşim Süresi','16 sn','Ortalama sayfa etkileşim süresi|Geliştirme gerekli|Hedef: 45+ sn|Kaynak: GA4')">
+    <div class="kpi-card" onclick="openModal('Ort. Etkileşim Süresi','16 sn','Ortalama sayfa etkileşim süresi|Hedef: 45+ saniye|İyileştirme gerekli|Kaynak: GA4')">
       <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/></svg></div>
       <div class="kpi-label">Ort. Etkileşim</div>
       <div class="kpi-val">16 sn</div>
-      <div class="kpi-badge neutral">Geliştirme gerekli</div>
+      <span class="kpi-trend neutral">→ İyileştirme gerekli</span>
     </div>
-    <div class="kpi-card" onclick="openModal('Dönüşüm','55.828','PMAX + Arama kampanyaları toplam|PMAX TR: 34.000+|Maliyet/dönüşüm: ₺9.39|Kaynak: GA4 + GAds')">
+    <div class="kpi-card" onclick="openModal('Dönüşüm','55.828','PMAX TR: 34.000+|Arama: ~21.000|Maliyet/dönüşüm: ₺9.39|Kaynak: GA4 + Google Ads')">
       <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M7 10l2 2 4-4"/></svg></div>
       <div class="kpi-label">Dönüşüm</div>
       <div class="kpi-val">55.828</div>
@@ -249,62 +308,63 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
     </div>
   </div>
   <div class="two-col" style="margin-top:24px">
-    <div class="chart-wrap">
-      <div class="chart-title">Trafik Kaynakları — Oturum Dağılımı</div>
+    <div class="chart-wrap" onclick="openChartModal('chartTraffic','Trafik Kaynakları — Detay','Mayıs 2026 tüm kanallar')">
+      <div class="chart-title">Trafik Kaynakları — Oturum Dağılımı <span class="chart-expand-hint"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8V3h5M17 12v5h-5M3 12l14-9M17 8L3 17"/></svg> büyüt</span></div>
+      <div class="chart-sub">Kaynak bazlı oturum sayısı</div>
       <div class="chart-inner"><canvas id="chartTraffic"></canvas></div>
     </div>
     <div>
-      <div style="margin-bottom:16px;font-size:13px;font-weight:600;color:var(--text)">Ülke Bazlı Dağılım</div>
-      <div class="stat-row"><div class="stat-label"><strong>Türkiye</strong></div><div class="stat-bar-wrap"><div class="stat-bar" style="width:100%"></div></div><div class="stat-val">182.000</div></div>
-      <div class="stat-row"><div class="stat-label"><strong>Almanya</strong></div><div class="stat-bar-wrap"><div class="stat-bar" style="width:16%"></div></div><div class="stat-val">30.000</div></div>
+      <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:16px;text-transform:uppercase;letter-spacing:.05em">Ülke Bazlı Kullanıcı Dağılımı</div>
+      <div class="stat-row"><div class="stat-label"><strong>Türkiye</strong></div><div class="stat-bar-wrap"><div class="stat-bar" style="width:100%"></div></div><div class="stat-val">182.000 <span style="color:var(--green);font-size:11px">↑%78.3</span></div></div>
+      <div class="stat-row"><div class="stat-label"><strong>Almanya</strong></div><div class="stat-bar-wrap"><div class="stat-bar" style="width:16.5%"></div></div><div class="stat-val">30.000</div></div>
       <div class="stat-row"><div class="stat-label"><strong>İngiltere</strong></div><div class="stat-bar-wrap"><div class="stat-bar" style="width:5.5%"></div></div><div class="stat-val">10.000</div></div>
       <div class="stat-row"><div class="stat-label">Diğer</div><div class="stat-bar-wrap"><div class="stat-bar" style="width:6%"></div></div><div class="stat-val">11.024</div></div>
-      <div style="margin-top:20px;margin-bottom:10px;font-size:13px;font-weight:600;color:var(--text)">Demografi</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <div style="margin-top:22px;font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em">Demografi</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
         <span class="badge">Kadın %72.9</span>
         <span class="badge neutral">Erkek %27.1</span>
-        <span class="badge">35–44 baskın</span>
-        <span class="badge neutral">25–34 ikinci</span>
+        <span class="badge">35–44 yaş baskın</span>
+        <span class="badge neutral">25–34 ikinci grup</span>
       </div>
-      <div style="margin-top:18px;font-size:13px;font-weight:600;color:var(--text);margin-bottom:10px">En Çok Ziyaret Edilen Sayfalar</div>
-      <div class="stat-row"><div class="stat-label">Ana Sayfa</div><div class="stat-val" style="font-size:12px;color:var(--muted)">27.000 oturum</div></div>
-      <div class="stat-row"><div class="stat-label">Rezervasyon Sayfası</div><div class="stat-val" style="font-size:12px;color:var(--muted)">15.200 oturum</div></div>
-      <div class="stat-row"><div class="stat-label">Oda Tipleri</div><div class="stat-val" style="font-size:12px;color:var(--muted)">9.800 oturum</div></div>
+      <div style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:12px;text-transform:uppercase;letter-spacing:.05em">En Çok Ziyaret Edilen Sayfalar</div>
+      <div class="stat-row"><div class="stat-label">Ana Sayfa</div><div class="stat-val" style="color:var(--muted);font-size:12px">27.000 oturum</div></div>
+      <div class="stat-row"><div class="stat-label">Rezervasyon Sayfası</div><div class="stat-val" style="color:var(--muted);font-size:12px">15.200 oturum</div></div>
+      <div class="stat-row"><div class="stat-label">Oda Tipleri</div><div class="stat-val" style="color:var(--muted);font-size:12px">9.800 oturum</div></div>
     </div>
   </div>
 </section>
 
-<!-- ORGANIK ARAMA -->
+<!-- ORGANİK ARAMA -->
 <section class="section" id="sec-search">
   <div class="section-header">
     <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4 4"/></svg></div>
-    <div><div class="section-title">Organik Arama Performansı</div><div class="section-sub">Google Search Console · Mayıs 2026</div></div>
+    <div><div class="section-title">Organik Arama Performansı</div><div class="section-sub">Google Search Console · Mayıs 2026 · Tüm anahtar kelimeler</div></div>
   </div>
   <div class="kpi-grid">
-    <div class="kpi-card" onclick="openModal('Organik Tıklama','6.400','Search Console tıklama sayısı|Önceki aya göre: +%12|Hedef: branded sorgular|Kaynak: GSC')">
+    <div class="kpi-card" onclick="openModal('Organik Tıklama','6.400','Search Console toplam tıklama|Önceki aya göre: +%12|Branded sorgular ağırlıklı|Kaynak: Google Search Console')">
       <div class="kpi-label">Organik Tıklama</div>
       <div class="kpi-val">6.400</div>
-      <div class="kpi-badge">+%12 büyüme</div>
+      <span class="kpi-trend up">↑ %12</span>
     </div>
-    <div class="kpi-card" onclick="openModal('Gösterim','790.000','Organik arama görünürlüğü|SERP pozisyon 1–100|Kaynak: GSC')">
+    <div class="kpi-card" onclick="openModal('Gösterim','790.000','Organik arama görünürlüğü|SERP pozisyon 1–100 arası|Branded + non-branded|Kaynak: GSC')">
       <div class="kpi-label">Gösterim</div>
       <div class="kpi-val">790.000</div>
       <div class="kpi-sub">SERP 1–100</div>
     </div>
-    <div class="kpi-card" onclick="openModal('Ortalama CTR','%0.81','Tıklama oranı: 6.400 / 790.000|Sektör ort.: %1.5–3.0|Gelişim alanı: snippet opt.|Kaynak: GSC')">
+    <div class="kpi-card" onclick="openModal('Ortalama CTR','%0.81','6.400 tıklama / 790.000 gösterim|Sektör ortalaması: %1.5–3.0|İyileştirme alanı: snippet optimizasyonu|Kaynak: GSC')">
       <div class="kpi-label">Ort. CTR</div>
       <div class="kpi-val">%0.81</div>
-      <div class="kpi-badge neutral">Sektör ort. %1.5+</div>
+      <span class="kpi-trend neutral">→ Sektör ort. %1.5+</span>
     </div>
-    <div class="kpi-card" onclick="openModal('Ort. Pozisyon','28.4','SERP ortalama sıralama|İlk sayfa hedefi: < 10|Marka sorguları daha iyi|Kaynak: GSC')">
+    <div class="kpi-card" onclick="openModal('Ort. Pozisyon','28.4','SERP ortalama sıralama|Hedef: pozisyon 10 altı|Marka sorguları daha üst sırada|Kaynak: GSC')">
       <div class="kpi-label">Ort. Pozisyon</div>
       <div class="kpi-val">28.4</div>
-      <div class="kpi-badge amber">Hedef: Top 10</div>
+      <span class="kpi-trend down">↓ Hedef: Top 10</span>
     </div>
   </div>
-  <div class="callout" style="margin-top:20px">
-    <div class="callout-title">Öneri: Meta Açıklama & Snippet Optimizasyonu</div>
-    <div class="callout-text">CTR %0.81 sektör ortalamasının altında. Başlık etiketleri ve meta açıklamalar güçlendirilmeli; schema.org/Hotel yapılandırılmış verisi eklenmeli. Hedef: CTR %1.5+ ve pozisyon &lt;15.</div>
+  <div class="callout">
+    <div class="callout-title">Öneri: Snippet ve Meta Açıklama Optimizasyonu</div>
+    <div class="callout-text">CTR %0.81, sektör ortalamasının (%1.5+) altında kalıyor. Başlık etiketleri ve meta açıklamalar daha çekici hale getirilmeli; schema.org/Hotel yapılandırılmış verisi eklenmeli. Hedef: CTR %1.5 ve pozisyon 15 altı.</div>
   </div>
 </section>
 
@@ -315,29 +375,30 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
     <div><div class="section-title">Google Ads Kampanya Performansı</div><div class="section-sub">Mayıs 2026 · PMAX + Arama · Tüm ülkeler</div></div>
   </div>
   <div class="kpi-grid">
-    <div class="kpi-card" onclick="openModal('Gösterim','5.240.000','Tüm Google Ads kampanyaları|PMAX ağırlıklı|TR + DE + UK + Diğer|Kaynak: Google Ads')">
+    <div class="kpi-card" onclick="openModal('Gösterim','5.240.000','Tüm Google Ads kampanyaları|PMAX TR: 3.200.000|PMAX DE: 820.000|PMAX UK + Diğer: 1.220.000')">
       <div class="kpi-label">Gösterim</div>
       <div class="kpi-val">5.24M</div>
       <div class="kpi-sub">Tüm kampanyalar</div>
     </div>
-    <div class="kpi-card" onclick="openModal('Tıklama','475.935','Toplam reklam tıklaması|Ort. CTR: %9.07|PMAX TR en yüksek|Kaynak: Google Ads')">
+    <div class="kpi-card" onclick="openModal('Tıklama','475.935','Toplam reklam tıklaması|Ortalama CTR: %9.07|PMAX TR: 322.000|Arama Marka: 36.935')">
       <div class="kpi-label">Tıklama</div>
       <div class="kpi-val">475.935</div>
-      <div class="kpi-badge">CTR %9.07</div>
+      <span class="kpi-trend up">↑ CTR %9.07</span>
     </div>
-    <div class="kpi-card" onclick="openModal('Reklam Harcaması','₺524.315','Toplam Google Ads harcaması|Ort. TBM: ₺1.10|Haftalık rapordan dağılım|Kaynak: Google Ads')">
+    <div class="kpi-card" onclick="openModal('Reklam Harcaması','₺524.315','Toplam Google Ads harcaması|Ortalama TBM: ₺1.10|PMAX TR: ₺310.000|Kaynak: Google Ads')">
       <div class="kpi-label">Harcama</div>
       <div class="kpi-val">₺524.315</div>
       <div class="kpi-sub">Ort. TBM ₺1.10</div>
     </div>
-    <div class="kpi-card" onclick="openModal('Dönüşüm','55.828','Toplam dönüşüm|PMAX TR: 34.000+|Arama: ~21.000|Maliyet/dönüşüm: ₺9.39')">
+    <div class="kpi-card" onclick="openModal('Dönüşüm','55.828','PMAX TR: 34.000+|Arama kampanyaları: ~21.000|Maliyet/dönüşüm: ₺9.39|Kaynak: GA4 bağlantılı')">
       <div class="kpi-label">Dönüşüm</div>
       <div class="kpi-val">55.828</div>
       <div class="kpi-sub">₺9.39/dönüşüm</div>
     </div>
   </div>
-  <div class="chart-wrap" style="margin-top:20px">
-    <div class="chart-title">Kampanya Karşılaştırması — Tıklama & Harcama</div>
+  <div class="chart-wrap" style="margin-top:20px" onclick="openChartModal('chartGads','Google Ads Kampanya Karşılaştırması — Detay','Tıklama ve harcama karşılaştırması')">
+    <div class="chart-title">Kampanya Karşılaştırması — Tıklama & Harcama <span class="chart-expand-hint"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8V3h5M17 12v5h-5M3 12l14-9M17 8L3 17"/></svg> büyüt</span></div>
+    <div class="chart-sub">Kampanya bazlı tıklama (sol eksen) ve harcama ₺ (sağ eksen)</div>
     <div class="chart-inner"><canvas id="chartGads"></canvas></div>
   </div>
   <div class="table-wrap" style="margin-top:20px">
@@ -359,32 +420,33 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
 <section class="section" id="sec-roas">
   <div class="section-header">
     <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 14l5-5 3 3 5-6"/><path d="M12 6h4v4"/></svg></div>
-    <div><div class="section-title">ROAS Analizi</div><div class="section-sub">Mayıs 2026 · Reklam Harcaması Getiri Oranı</div></div>
+    <div><div class="section-title">ROAS Analizi</div><div class="section-sub">Mayıs 2026 · Reklam Harcaması Getiri Oranı · Tüm kanallar</div></div>
   </div>
   <div class="kpi-grid kpi-grid-3">
-    <div class="kpi-card" onclick="openModal('ROAS','15.3x','₺524.315 harcama → ₺8.028.716 ciro|Hesaplama: 8.028.716 / 524.315 = 15.31|Sektör ort: 4–8x|Hedef 2026: 12x+')">
+    <div class="kpi-card" onclick="openModal('ROAS','15.3x','₺524.315 harcama → ₺8.028.716 ciro|Hesaplama: 8.028.716 / 524.315 = 15.31|Sektör ortalaması: 4–8x|Hedef 2026: 12x+')">
       <div class="kpi-label">ROAS</div>
       <div class="kpi-val">15.3x</div>
-      <div class="kpi-badge">Sektör ort. 4–8x</div>
+      <span class="kpi-trend up">↑ Sektör 2x üstü</span>
     </div>
-    <div class="kpi-card" onclick="openModal('Toplam Harcama','₺527.341','Google Ads: ₺524.315|Meta Ads: ₺3.026|Toplam dijital harcama')">
+    <div class="kpi-card" onclick="openModal('Toplam Harcama','₺527.341','Google Ads: ₺524.315|Meta Ads: ₺3.026|Toplam dijital reklam harcaması')">
       <div class="kpi-label">Toplam Harcama</div>
       <div class="kpi-val">₺527.341</div>
       <div class="kpi-sub">Google + Meta</div>
     </div>
-    <div class="kpi-card" onclick="openModal('CC Ciro','₺8.028.716','Call Center cirosu baz alındı|+ €57.703 EUR|Web rezervasyon: €1.999.905 ayrı|ROAS: 15.3x')">
-      <div class="kpi-label">CC Ciro</div>
+    <div class="kpi-card" onclick="openModal('CC Ciro','₺8.028.716','Call Center cirosu ROAS hesabında kullanıldı|+ €57.703 EUR ek gelir|Web rezervasyon €1.999.905 ayrı|ROAS: 15.3x')">
+      <div class="kpi-label">CC Ciro (ROAS Baz)</div>
       <div class="kpi-val">₺8.02M</div>
-      <div class="kpi-sub">+ €57.703</div>
+      <div class="kpi-sub">+ €57.703 ayrıca</div>
     </div>
   </div>
-  <div class="chart-wrap" style="margin-top:20px">
-    <div class="chart-title">Gelir Karşılaştırması</div>
+  <div class="chart-wrap" style="margin-top:20px" onclick="openChartModal('chartRevenue','Gelir ve Harcama Karşılaştırması — Detay','₺ bazlı büyütülmüş görünüm')">
+    <div class="chart-title">Gelir ve Harcama Karşılaştırması <span class="chart-expand-hint"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8V3h5M17 12v5h-5M3 12l14-9M17 8L3 17"/></svg> büyüt</span></div>
+    <div class="chart-sub">Call Center ciroya karşı reklam harcaması — ₺ eşdeğeri</div>
     <div class="chart-inner"><canvas id="chartRevenue"></canvas></div>
   </div>
-  <div class="callout" style="margin-top:20px">
+  <div class="callout">
     <div class="callout-title">15.3x ROAS — Olağanüstü Performans</div>
-    <div class="callout-text">Belconti Mayıs 2026 ROAS'ı sektör ortalamasının iki katını aşmaktadır. Haziran'da DE ve LV bütçelerinin artırılması ile D2C oranının %35'e çıkarılması önerilmektedir.</div>
+    <div class="callout-text">Belconti Mayıs 2026 ROAS'ı, sektör ortalamasının (4–8x) yaklaşık iki katıdır. Bu başarının sürdürülebilir kılınması için Haziran'da DE ve LV bütçelerinin artırılması ile D2C oranının %27'den %35'e çıkarılması planlanmaktadır.</div>
   </div>
 </section>
 
@@ -395,24 +457,25 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
     <div><div class="section-title">Meta Reklamlar — Facebook & Instagram</div><div class="section-sub">Mayıs 2026 · Meta Ads Manager · Tüm kampanyalar</div></div>
   </div>
   <div class="kpi-grid">
-    <div class="kpi-card" onclick="openModal('Meta Tıklama','4.716','Facebook + Instagram tıklama|CPC: ₺0.64|CTR: %9.35|Kaynak: Meta Ads')">
+    <div class="kpi-card" onclick="openModal('Meta Tıklama','4.716','Facebook + Instagram toplam tıklama|CPC: ₺0.64|CTR: %9.35|Kaynak: Meta Ads Manager')">
       <div class="kpi-label">Meta Tıklama</div>
       <div class="kpi-val">4.716</div>
-      <div class="kpi-badge">CTR %9.35</div>
+      <span class="kpi-trend up">↑ CTR %9.35</span>
     </div>
-    <div class="kpi-card" onclick="openModal('Gösterim','50.490','Meta reklam toplam gösterimi|Hedef: 25–55 yaş seyahat ilgili|TR + DE + UK|Kaynak: Meta Ads')">
+    <div class="kpi-card" onclick="openModal('Gösterim','50.490','Meta reklam toplam gösterim|Hedef: 25–55 yaş seyahat ilgili|TR + DE + UK|Kaynak: Meta Ads')">
       <div class="kpi-label">Gösterim</div>
       <div class="kpi-val">50.490</div>
+      <div class="kpi-sub">Tüm kampanyalar</div>
     </div>
-    <div class="kpi-card" onclick="openModal('Harcama','₺3.026','Meta reklam harcaması|CPC: ₺0.64|CPM: ₺59.9|Kaynak: Meta Ads')">
+    <div class="kpi-card" onclick="openModal('Harcama','₺3.026','Meta reklam harcaması|CPC: ₺0.64|CPM: ₺59.9|Küçük bütçe, yüksek CTR')">
       <div class="kpi-label">Harcama</div>
       <div class="kpi-val">₺3.026</div>
       <div class="kpi-sub">CPC ₺0.64</div>
     </div>
-    <div class="kpi-card" onclick="openModal('Meta CPC','₺0.64','Tıklama başına maliyet|Sektör ort: ₺2–5|Düşük maliyet, yüksek CTR|Haziran bütçe artışı önerilir')">
+    <div class="kpi-card" onclick="openModal('Meta CPC','₺0.64','Tıklama başına maliyet|Sektör ortalaması: ₺2–5|Haziran bütçe artışı önerilir|Yüksek potansiyel')">
       <div class="kpi-label">CPC</div>
       <div class="kpi-val">₺0.64</div>
-      <div class="kpi-badge">Sektör ort. ₺2–5</div>
+      <span class="kpi-trend up">↑ Sektör ort. ₺2–5</span>
     </div>
   </div>
 </section>
@@ -425,27 +488,27 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
   </div>
   <div class="two-col">
     <div style="border:1px solid var(--border);border-radius:var(--radius);padding:24px">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px">
-        <div style="width:36px;height:36px;background:linear-gradient(135deg,#E1306C,#F77737,#FCAF45);border-radius:10px;display:flex;align-items:center;justify-content:center">
-          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.5"/><circle cx="14.5" cy="5.5" r="0.8" fill="white" stroke="none"/></svg>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px">
+        <div style="width:38px;height:38px;background:linear-gradient(135deg,#E1306C,#F77737,#FCAF45);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="3" width="14" height="14" rx="4"/><circle cx="10" cy="10" r="3.5"/><circle cx="14.5" cy="5.5" r="0.8" fill="white" stroke="none"/></svg>
         </div>
-        <div><div style="font-size:14px;font-weight:700">Instagram</div><div style="font-size:11px;color:var(--muted)">Organik · Mayıs 2026</div></div>
+        <div><div style="font-size:15px;font-weight:700">Instagram</div><div style="font-size:12px;color:var(--muted)">Organik · Mayıs 2026</div></div>
       </div>
-      <div class="stat-row"><div class="stat-label">Görüntüleme</div><div class="stat-val"><strong>159.564</strong> <span style="color:var(--green);font-size:12px">↑%5.7</span></div></div>
-      <div class="stat-row"><div class="stat-label">Erişim</div><div class="stat-val"><strong>29.300</strong> <span style="color:var(--green);font-size:12px">↑%177.6</span></div></div>
-      <div class="stat-row"><div class="stat-label">Etkileşim</div><div class="stat-val"><strong>1.200</strong> <span style="color:var(--green);font-size:12px">↑%28.8</span></div></div>
+      <div class="stat-row"><div class="stat-label">Görüntüleme</div><div class="stat-val"><strong>159.564</strong> <span style="color:var(--green);font-size:12px;font-weight:700">↑%5.7</span></div></div>
+      <div class="stat-row"><div class="stat-label">Erişim</div><div class="stat-val"><strong>29.300</strong> <span style="color:var(--green);font-size:12px;font-weight:700">↑%177.6</span></div></div>
+      <div class="stat-row"><div class="stat-label">Etkileşim</div><div class="stat-val"><strong>1.200</strong> <span style="color:var(--green);font-size:12px;font-weight:700">↑%28.8</span></div></div>
       <div class="stat-row"><div class="stat-label">Yeni Takipçi</div><div class="stat-val"><strong>267</strong></div></div>
     </div>
     <div style="border:1px solid var(--border);border-radius:var(--radius);padding:24px">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px">
-        <div style="width:36px;height:36px;background:#1877F2;border-radius:10px;display:flex;align-items:center;justify-content:center">
-          <svg width="16" height="16" viewBox="0 0 20 20" fill="white"><path d="M18 10a8 8 0 10-9.25 7.9v-5.6H6.75V10H8.75V8.25c0-2 1.2-3.1 3-3.1.87 0 1.75.15 1.75.15V7.2h-.98c-.97 0-1.27.6-1.27 1.22V10h2.18l-.35 2.3H11.25V17.9A8 8 0 0018 10z"/></svg>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px">
+        <div style="width:38px;height:38px;background:#1877F2;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg width="17" height="17" viewBox="0 0 20 20" fill="white"><path d="M18 10a8 8 0 10-9.25 7.9v-5.6H6.75V10H8.75V8.25c0-2 1.2-3.1 3-3.1.87 0 1.75.15 1.75.15V7.2h-.98c-.97 0-1.27.6-1.27 1.22V10h2.18l-.35 2.3H11.25V17.9A8 8 0 0018 10z"/></svg>
         </div>
-        <div><div style="font-size:14px;font-weight:700">Facebook</div><div style="font-size:11px;color:var(--muted)">Organik · Mayıs 2026</div></div>
+        <div><div style="font-size:15px;font-weight:700">Facebook</div><div style="font-size:12px;color:var(--muted)">Organik · Mayıs 2026</div></div>
       </div>
-      <div class="stat-row"><div class="stat-label">Görüntüleme</div><div class="stat-val"><strong>40.636</strong> <span style="color:var(--green);font-size:12px">↑%59.1</span></div></div>
-      <div class="stat-row"><div class="stat-label">Görüntüleyenler</div><div class="stat-val"><strong>13.475</strong> <span style="color:var(--green);font-size:12px">↑%120.8</span></div></div>
-      <div class="stat-row"><div class="stat-label">Etkileşim</div><div class="stat-val"><strong>656</strong> <span style="color:var(--green);font-size:12px">↑%68.6</span></div></div>
+      <div class="stat-row"><div class="stat-label">Görüntüleme</div><div class="stat-val"><strong>40.636</strong> <span style="color:var(--green);font-size:12px;font-weight:700">↑%59.1</span></div></div>
+      <div class="stat-row"><div class="stat-label">Görüntüleyenler</div><div class="stat-val"><strong>13.475</strong> <span style="color:var(--green);font-size:12px;font-weight:700">↑%120.8</span></div></div>
+      <div class="stat-row"><div class="stat-label">Etkileşim</div><div class="stat-val"><strong>656</strong> <span style="color:var(--green);font-size:12px;font-weight:700">↑%68.6</span></div></div>
       <div class="stat-row"><div class="stat-label">Sayfa Ziyareti</div><div class="stat-val"><strong>3.500</strong></div></div>
     </div>
   </div>
@@ -455,37 +518,34 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
 <section class="section" id="sec-rezervasyon">
   <div class="section-header">
     <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg></div>
-    <div><div class="section-title">Web Rezervasyon Performansı</div><div class="section-sub">SednaBI · Mayıs 2026 · Tüm kanallar</div></div>
+    <div><div class="section-title">Web Rezervasyon Performansı</div><div class="section-sub">SednaBI · Mayıs 2026 · Belconti Aylık Toplam · Tüm kanallar</div></div>
   </div>
   <div class="kpi-grid">
-    <div class="kpi-card" onclick="openModal('Toplam Oda Geliri','€1.999.905','9.201 gece × €217.36 ort.|Kişi başı: €87.02|1.676 rezervasyon|Kaynak: SednaBI')">
+    <div class="kpi-card" onclick="openModal('Toplam Oda Geliri','€1.999.905','9.201 gece × €217.36 oda ortalaması|Kişi başı ortalama: €87.02|Toplam rezervasyon: 1.676|Kaynak: SednaBI')">
       <div class="kpi-label">Toplam Oda Geliri</div>
       <div class="kpi-val">€1.999.905</div>
       <div class="kpi-sub">Aylık toplam</div>
     </div>
-    <div class="kpi-card" onclick="openModal('Oda Gecelemesi','9.201','1.676 rezervasyon|Rez. başına: ~5.5 gece|Oda ort: €217.36|Kaynak: SednaBI')">
+    <div class="kpi-card" onclick="openModal('Oda Gecelemesi','9.201','1.676 rezervasyon|Rezervasyon başına: ~5.5 gece|Oda ortalaması: €217.36|Kaynak: SednaBI')">
       <div class="kpi-label">Oda Geceleme</div>
       <div class="kpi-val">9.201</div>
       <div class="kpi-sub">1.676 rezervasyon</div>
     </div>
-    <div class="kpi-card" onclick="openModal('Kişi Ortalaması','€87.02','Toplam gelir / toplam kişi|Booking.com en yüksek: €113/kişi|Call Center: €101/kişi')">
+    <div class="kpi-card" onclick="openModal('Kişi Ortalaması','€87.02','Toplam gelir / toplam kişi sayısı|Booking.com en yüksek: €113/kişi|Call Center: €101/kişi')">
       <div class="kpi-label">Kişi Ort.</div>
       <div class="kpi-val">€87.02</div>
       <div class="kpi-sub">Kişi başı</div>
     </div>
-    <div class="kpi-card" onclick="openModal('Oda Ortalaması','€217.36','Oda başı gelir ort.|9.201 gece / 1.676 rez = 5.5 gece|En yüksek: Booking.com seg.')">
+    <div class="kpi-card" onclick="openModal('Oda Ortalaması','€217.36','Oda başı gelir ortalaması|9.201 gece / 1.676 rez = 5.5 gece|En yüksek: Booking.com segmenti')">
       <div class="kpi-label">Oda Ort.</div>
       <div class="kpi-val">€217.36</div>
       <div class="kpi-sub">Oda başı</div>
     </div>
   </div>
-  <div style="margin-top:24px">
-    <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:14px">Kanal Bazlı Dağılım</div>
-    <div class="stat-row"><div class="stat-label"><strong>Pegas Touristik</strong> <span class="badge neutral" style="font-size:10px;margin-left:6px">B2B</span></div><div class="stat-bar-wrap" style="width:200px"><div class="stat-bar" style="width:100%"></div></div><div class="stat-val">1.363 kişi · €78/kişi</div></div>
-    <div class="stat-row"><div class="stat-label"><strong>Anex Tour</strong> <span class="badge neutral" style="font-size:10px;margin-left:6px">B2B</span></div><div class="stat-bar-wrap" style="width:200px"><div class="stat-bar" style="width:69%"></div></div><div class="stat-val">940 kişi · €86/kişi</div></div>
-    <div class="stat-row"><div class="stat-label"><strong>FIT Holidays</strong> <span class="badge neutral" style="font-size:10px;margin-left:6px">B2B</span></div><div class="stat-bar-wrap" style="width:200px"><div class="stat-bar" style="width:64%"></div></div><div class="stat-val">876 kişi · €91/kişi</div></div>
-    <div class="stat-row"><div class="stat-label"><strong>Booking.com</strong> <span class="badge" style="font-size:10px;margin-left:6px">OTA</span></div><div class="stat-bar-wrap" style="width:200px"><div class="stat-bar" style="width:51%"></div></div><div class="stat-val">694 kişi · €113/kişi</div></div>
-    <div class="stat-row"><div class="stat-label"><strong>Call Center</strong> <span class="badge blue" style="font-size:10px;margin-left:6px">D2C</span></div><div class="stat-bar-wrap" style="width:200px"><div class="stat-bar" style="width:49%"></div></div><div class="stat-val">668 kişi · €101/kişi</div></div>
+  <div class="chart-wrap" style="margin-top:20px" onclick="openChartModal('chartKanal','Kanal Bazlı Kişi ve Gelir Karşılaştırması — Detay','B2B ve B2C kanallar')">
+    <div class="chart-title">Kanal Bazlı Kişi Dağılımı <span class="chart-expand-hint"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8V3h5M17 12v5h-5M3 12l14-9M17 8L3 17"/></svg> büyüt</span></div>
+    <div class="chart-sub">Kanal başına kişi sayısı ve kişi başı gelir (€)</div>
+    <div class="chart-inner"><canvas id="chartKanal"></canvas></div>
   </div>
 </section>
 
@@ -493,18 +553,18 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
 <section class="section" id="sec-callcenter">
   <div class="section-header">
     <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 3h3l1.5 3.5-2 1.5c.8 1.8 2 3 3.8 3.8l1.5-2L16 11v3a2 2 0 01-2 2C6.5 16 4 9.5 5 3z"/></svg></div>
-    <div><div class="section-title">Call Center Performansı</div><div class="section-sub">Mayıs 2026 · TL + EUR · Haftalık maliyet dahil</div></div>
+    <div><div class="section-title">Call Center Performansı</div><div class="section-sub">Mayıs 2026 · TL + EUR · Haftalık maliyet dahil · Toplamlar doğrulanmış</div></div>
   </div>
   <div class="kpi-grid kpi-grid-3">
-    <div class="kpi-card" onclick="openModal('Toplam Çağrı','601','H1 (1-7 May): 103|H2 (8-14 May): 120|H3 (15-21 May): 127|H4 (22-31 May): 251|En yoğun: Cuma–Cumartesi')">
+    <div class="kpi-card" onclick="openModal('Toplam Çağrı','601','H1 (1-7 Mayıs): 103 çağrı|H2 (8-14 Mayıs): 120 çağrı|H3 (15-21 Mayıs): 127 çağrı|H4 (22-31 Mayıs): 251 çağrı|En yoğun gün: Cuma–Cumartesi')">
       <div class="kpi-label">Toplam Çağrı</div>
       <div class="kpi-val">601</div>
       <div class="kpi-sub">En yoğun: Cuma</div>
     </div>
-    <div class="kpi-card" onclick="openModal('Gerçekleşen Satış','203','Kapanış oranı: %33.8|En iyi hafta: H2 %44.2|D2C kanali|Düzeltilmiş: ~213')">
+    <div class="kpi-card" onclick="openModal('Gerçekleşen Satış','203 satış','Kapanış oranı: %33.8|En iyi hafta: H2 %44.2 kapanış|Düzeltilmiş: ~213 (+%5)|D2C direkt satış kanalı')">
       <div class="kpi-label">Gerçekleşen Satış</div>
       <div class="kpi-val">203</div>
-      <div class="kpi-badge">%33.8 kapanış</div>
+      <span class="kpi-trend up">↑ %33.8 kapanış</span>
     </div>
     <div class="kpi-card" onclick="openModal('Toplam Ciro','₺8.028.716 + €57.703','H1: ₺1.673.280 + €11.655|H2: ₺1.599.993 + €15.062|H3: ₺2.110.612 + €11.655|H4: ₺2.644.831 + €19.331')">
       <div class="kpi-label">Toplam Ciro</div>
@@ -512,14 +572,19 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
       <div class="kpi-sub">+ €57.703 EUR</div>
     </div>
   </div>
+  <div class="chart-wrap" style="margin-top:20px" onclick="openChartModal('chartCC','Call Center Haftalık Performans — Detay','Çağrı, satış ve ciro haftalık dağılım')">
+    <div class="chart-title">Haftalık Çağrı & Satış Performansı <span class="chart-expand-hint"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8V3h5M17 12v5h-5M3 12l14-9M17 8L3 17"/></svg> büyüt</span></div>
+    <div class="chart-sub">Haftalık çağrı sayısı ve gerçekleşen satış</div>
+    <div class="chart-inner"><canvas id="chartCC"></canvas></div>
+  </div>
   <div class="table-wrap" style="margin-top:20px">
     <table>
       <thead><tr><th>Hafta</th><th class="num">Çağrı</th><th class="num">Satış</th><th class="num">Kapanış %</th><th class="num">Ciro (₺)</th><th class="num">Ciro (€)</th><th class="num">Haftalık Maliyet</th></tr></thead>
       <tbody>
         <tr><td>1–7 Mayıs</td><td class="num">103</td><td class="num">41</td><td class="num">%39.8</td><td class="num">₺1.673.280</td><td class="num">€11.655</td><td class="num">₺106.026</td></tr>
-        <tr><td>8–14 Mayıs</td><td class="num">120</td><td class="num">53</td><td class="num">%44.2</td><td class="num">₺1.599.993</td><td class="num">€15.062</td><td class="num">₺136.963</td></tr>
+        <tr><td>8–14 Mayıs</td><td class="num">120</td><td class="num">53</td><td class="num"><strong>%44.2</strong></td><td class="num">₺1.599.993</td><td class="num">€15.062</td><td class="num">₺136.963</td></tr>
         <tr><td>15–21 Mayıs</td><td class="num">127</td><td class="num">41</td><td class="num">%32.3</td><td class="num">₺2.110.612</td><td class="num">€11.655</td><td class="num">₺106.026</td></tr>
-        <tr><td>22–31 Mayıs (10 gün)</td><td class="num">251</td><td class="num">68</td><td class="num">%27.1</td><td class="num">₺2.644.831</td><td class="num">€19.331</td><td class="num">₺175.300</td></tr>
+        <tr><td>22–31 Mayıs <span style="font-size:11px;color:var(--muted)">(10 gün)</span></td><td class="num">251</td><td class="num">68</td><td class="num">%27.1</td><td class="num">₺2.644.831</td><td class="num">€19.331</td><td class="num">₺175.300</td></tr>
         <tr class="total-row"><td>TOPLAM</td><td class="num">601</td><td class="num">203</td><td class="num">%33.8</td><td class="num">₺8.028.716</td><td class="num">€57.703</td><td class="num">₺524.315</td></tr>
       </tbody>
     </table>
@@ -530,7 +595,7 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
 <section class="section" id="sec-faaliyet">
   <div class="section-header">
     <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="3" width="10" height="14" rx="2"/><path d="M8 7h4M8 10h4M8 13h2"/></svg></div>
-    <div><div class="section-title">Aylık Faaliyet Raporu</div><div class="section-sub">Mayıs 2026 · Tamamlanan işler</div></div>
+    <div><div class="section-title">Aylık Faaliyet Raporu</div><div class="section-sub">Mayıs 2026 · Tamamlanan çalışmalar · Kategori bazlı</div></div>
   </div>
   <div class="accordion open" onclick="toggleAccordion(this)">
     <div class="accordion-header">
@@ -538,9 +603,9 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
       <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
     </div>
     <div class="accordion-body"><div class="accordion-inner"><ul>
-      <li><strong>Belconti10 kampanyası</strong> Google ve Meta'da yayına alındı. CTR ortalaması <strong>%22 arttı.</strong></li>
-      <li><strong>Balkan ve Ortadoğu</strong> kreatifler hazırlandı, A/B testleri tamamlandı.</li>
-      <li>Genel Müdür röportajı, Aşçıbaşı ve F&amp;B Müdürü PR içerikleri üretildi.</li>
+      <li><strong>Belconti10 kampanyası</strong> Google ve Meta'da yayına alındı; CTR ortalaması <strong>%22 arttı.</strong></li>
+      <li><strong>Balkan ve Ortadoğu</strong> kreatifleri hazırlandı, A/B testleri tamamlandı.</li>
+      <li>Genel Müdür röportajı, Aşçıbaşı ve F&amp;B Müdürü için PR içerikleri üretildi.</li>
       <li><strong>Rus vlogger</strong> iş birliği anlaşması sağlandı.</li>
     </ul></div></div>
   </div>
@@ -551,7 +616,7 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
     </div>
     <div class="accordion-body"><div class="accordion-inner"><ul>
       <li>PPG bülten altyapısı <strong>KVKK uyumlu</strong> olarak entegre edildi.</li>
-      <li><strong>Her Pazartesi</strong> otomatik bülten gönderimi planlandı.</li>
+      <li><strong>Her Pazartesi</strong> otomatik bülten gönderimi planlandı ve test edildi.</li>
     </ul></div></div>
   </div>
   <div class="accordion" onclick="toggleAccordion(this)">
@@ -560,7 +625,7 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
       <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
     </div>
     <div class="accordion-body"><div class="accordion-inner"><ul>
-      <li>OTA kanal denetimleri ve harici platform araştırmaları yapıldı.</li>
+      <li>OTA kanal denetimleri ve harici platform araştırmaları gerçekleştirildi.</li>
       <li>COP31 kapsamında çok yönlü medya PR çalışmaları yürütüldü.</li>
     </ul></div></div>
   </div>
@@ -573,99 +638,89 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
     <div><div class="section-title">Özet &amp; Haziran Önerileri</div><div class="section-sub">Mayıs 2026 — Genel Değerlendirme</div></div>
   </div>
   <div class="three-col">
-    <div style="padding:24px;background:var(--green-light);border:1px solid var(--green-mid);border-radius:var(--radius)">
-      <div style="width:36px;height:36px;background:var(--green);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:14px">
+    <div style="padding:26px;background:var(--green-light);border:1px solid var(--green-mid);border-radius:var(--radius)">
+      <div style="width:38px;height:38px;background:var(--green);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
         <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M7 10l2 2 4-4"/></svg>
       </div>
-      <div style="font-size:14px;font-weight:700;color:#166534;margin-bottom:10px">Güçlü Yönler</div>
-      <div style="font-size:13px;color:#166534;line-height:2">ROAS 15.3x · CC %33.8 kapanış · Instagram erişimi ↑%177 · Facebook görüntüleme ↑%59 · PMAX TR 34K dönüşüm</div>
+      <div style="font-size:14px;font-weight:700;color:#166534;margin-bottom:12px">Güçlü Yönler</div>
+      <div style="font-size:14px;color:#166534;line-height:2">ROAS 15.3x · CC %33.8 kapanış · Instagram erişimi ↑%177 · Facebook görüntüleme ↑%59 · PMAX TR 34K dönüşüm</div>
     </div>
-    <div style="padding:24px;background:#FFFBEB;border:1px solid #FDE68A;border-radius:var(--radius)">
-      <div style="width:36px;height:36px;background:#F59E0B;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:14px">
+    <div style="padding:26px;background:#FFFBEB;border:1px solid #FDE68A;border-radius:var(--radius)">
+      <div style="width:38px;height:38px;background:#F59E0B;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
         <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"><path d="M10 3L2 17h16L10 3z"/><path d="M10 8v4M10 14v.5"/></svg>
       </div>
-      <div style="font-size:14px;font-weight:700;color:#92400E;margin-bottom:10px">Gelişim Alanları</div>
-      <div style="font-size:13px;color:#92400E;line-height:2">Organik CTR %0.81 · DE/LV bütçe sınırlı · 160 iptal optimize edilmeli · D2C oranı %27→%35 hedef · Etkileşim süresi 16 sn</div>
+      <div style="font-size:14px;font-weight:700;color:#92400E;margin-bottom:12px">Gelişim Alanları</div>
+      <div style="font-size:14px;color:#92400E;line-height:2">Organik CTR %0.81 · DE/LV bütçesi sınırlı · 160 iptal optimize edilmeli · D2C oranı %27 → %35 hedef · Etkileşim süresi 16 sn</div>
     </div>
-    <div style="padding:24px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius)">
-      <div style="width:36px;height:36px;background:#2563EB;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:14px">
+    <div style="padding:26px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius)">
+      <div style="width:38px;height:38px;background:#2563EB;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
         <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"><path d="M10 3v14M3 10l7-7 7 7"/></svg>
       </div>
-      <div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:10px">Haziran Aksiyonları</div>
-      <div style="font-size:13px;color:#1E40AF;line-height:2">DE &amp; LV bütçesi artır · PPG newsletter ilk gönderim · Yaz sezonu kreatifler · Rus vlogger içerik yayınla</div>
+      <div style="font-size:14px;font-weight:700;color:#1E40AF;margin-bottom:12px">Haziran Aksiyonları</div>
+      <div style="font-size:14px;color:#1E40AF;line-height:2">DE &amp; LV bütçesi artır · PPG newsletter ilk gönderim · Yaz sezonu kreatifleri · Rus vlogger içerik yayınla · D2C oranını artır</div>
     </div>
   </div>
 </section>
 
-</div><!-- /content-mayis -->
-
-<!-- ══════════════ HAZİRAN ══════════════ -->
-<div id="content-haziran" class="month-content">
-
-<header class="report-header">
-  <div class="header-eyebrow">Dijital Pazarlama Planı</div>
-  <h1 class="header-title">Haziran 2026 — Stratejik Plan</h1>
-  <div class="header-sub">90 Günlük Performans Analizi &amp; Haziran Aksiyon Planı · Belconti Resort Hotel</div>
-  <div class="plan-kpi-grid">
+<!-- ═══════════════════ HAZİRAN PAZARLAMA PLANI (MAYIS İÇİNDE) ═══════════════════ -->
+<section class="section" id="sec-haziran-plan" style="background:var(--bg-alt)">
+  <div class="section-header">
+    <div class="section-icon-wrap" style="background:#EFF6FF;color:#2563EB"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg></div>
+    <div>
+      <div class="section-title">Haziran 2026 — Dijital Pazarlama Planı</div>
+      <div class="section-sub">90 Günlük Performans Analizi &amp; Haziran Aksiyon Planı · Belconti Resort Hotel</div>
+    </div>
+  </div>
+  <div class="plan-kpi-grid" style="margin-top:0;margin-bottom:32px">
     <div class="plan-kpi"><div class="plan-kpi-val">₺763.305</div><div class="plan-kpi-label">90 Günlük Yatırım</div></div>
     <div class="plan-kpi"><div class="plan-kpi-val">7.153.952</div><div class="plan-kpi-label">Toplam Gösterim</div></div>
-    <div class="plan-kpi"><div class="plan-kpi-val">470B+</div><div class="plan-kpi-label">Remarketing Erişim</div></div>
+    <div class="plan-kpi"><div class="plan-kpi-val">470B+</div><div class="plan-kpi-label">Remarketing Havuzu</div></div>
   </div>
-</header>
 
-<!-- YÖNETİCİ ÖZETİ -->
-<section class="section" id="hz-ozet">
-  <div class="section-header">
-    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="5" y="3" width="10" height="14" rx="2"/><path d="M8 7h4M8 10h4M8 13h2"/></svg></div>
-    <div><div class="section-title">Yönetici Özeti</div><div class="section-sub">Haziran 2026 Dijital Pazarlama Planı — Genel Çerçeve</div></div>
-  </div>
-  <div class="accordion open" onclick="toggleAccordion(this)">
+  <!-- Üç Eksen -->
+  <div class="accordion open" onclick="toggleAccordion(this)" style="background:var(--bg)">
     <div class="accordion-header">
       <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 14l5-5 3 3 5-6"/><path d="M12 6h4v4"/></svg> Üç Eksen Strateji</div>
       <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
     </div>
     <div class="accordion-body"><div class="accordion-inner">
-      <div class="three-col" style="margin-top:4px">
-        <div style="padding:16px;background:var(--green-light);border-radius:var(--radius-sm)">
-          <div style="font-size:12px;font-weight:700;color:var(--green-dark);margin-bottom:6px">ÇEKME (Pull)</div>
-          <div style="font-size:12px;color:#166534;line-height:1.7">Google PMAX ile aktif arayan kullanıcılara ulaş. Yüksek ROAS koruması ile sezon fırsatlarını yakala.</div>
+      <div class="three-col">
+        <div style="padding:18px;background:var(--green-light);border-radius:var(--radius-sm)">
+          <div style="font-size:12px;font-weight:700;color:var(--green-dark);margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">ÇEKME (Pull)</div>
+          <div style="font-size:14px;color:#166534;line-height:1.75">Google PMAX ile aktif arayan kullanıcılara ulaş. Yüksek ROAS koruması ile sezon fırsatlarını yakala.</div>
         </div>
-        <div style="padding:16px;background:#EFF6FF;border-radius:var(--radius-sm)">
-          <div style="font-size:12px;font-weight:700;color:#1E40AF;margin-bottom:6px">İTME (Push)</div>
-          <div style="font-size:12px;color:#1D4ED8;line-height:1.7">Meta &amp; Yandex remarketing ile 470B+ kişilik havuzu yeniden aktive et. Yaz kampanyaları ile dönüşüm artır.</div>
+        <div style="padding:18px;background:#EFF6FF;border-radius:var(--radius-sm)">
+          <div style="font-size:12px;font-weight:700;color:#1E40AF;margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">İTME (Push)</div>
+          <div style="font-size:14px;color:#1D4ED8;line-height:1.75">Meta &amp; Yandex remarketing ile 470B+ kişilik havuzu yeniden aktive et. Yaz kampanyaları ile dönüşüm artır.</div>
         </div>
-        <div style="padding:16px;background:#FEF3C7;border-radius:var(--radius-sm)">
-          <div style="font-size:12px;font-weight:700;color:#92400E;margin-bottom:6px">NURTURING</div>
-          <div style="font-size:12px;color:#B45309;line-height:1.7">PPG Newsletter ile haftalık dokunuş. Sadık müşteri tabanını koru, tekrar rezervasyon oranını artır.</div>
+        <div style="padding:18px;background:#FEF3C7;border-radius:var(--radius-sm)">
+          <div style="font-size:12px;font-weight:700;color:#92400E;margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">NURTURING</div>
+          <div style="font-size:14px;color:#B45309;line-height:1.75">PPG Newsletter ile haftalık dokunuş. Sadık müşteri tabanını koru, tekrar rezervasyon oranını artır.</div>
         </div>
       </div>
     </div></div>
   </div>
-  <div class="accordion" onclick="toggleAccordion(this)">
+
+  <!-- Geçmiş Performans -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
     <div class="accordion-header">
       <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/></svg> Geçmiş 90 Gün Performansı</div>
       <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
     </div>
     <div class="accordion-body"><div class="accordion-inner">
       <div class="kpi-grid">
-        <div class="kpi-card" style="cursor:default"><div class="kpi-label">Toplam Yatırım</div><div class="kpi-val">₺763.305</div></div>
-        <div class="kpi-card" style="cursor:default"><div class="kpi-label">Toplam Gösterim</div><div class="kpi-val">7.153.952</div></div>
-        <div class="kpi-card" style="cursor:default"><div class="kpi-label">Toplam Tıklama</div><div class="kpi-val">658.291</div></div>
-        <div class="kpi-card" style="cursor:default"><div class="kpi-label">Remarketing Havuzu</div><div class="kpi-val">470B+</div></div>
+        <div class="kpi-card" style="cursor:default;background:var(--bg-alt)"><div class="kpi-label">Toplam Yatırım</div><div class="kpi-val">₺763.305</div></div>
+        <div class="kpi-card" style="cursor:default;background:var(--bg-alt)"><div class="kpi-label">Toplam Gösterim</div><div class="kpi-val">7.153.952</div></div>
+        <div class="kpi-card" style="cursor:default;background:var(--bg-alt)"><div class="kpi-label">Toplam Tıklama</div><div class="kpi-val">658.291</div></div>
+        <div class="kpi-card" style="cursor:default;background:var(--bg-alt)"><div class="kpi-label">Remarketing Havuzu</div><div class="kpi-val">470B+</div></div>
       </div>
     </div></div>
   </div>
-</section>
 
-<!-- BÜTÇE DAĞILIMI -->
-<section class="section" id="hz-butce">
-  <div class="section-header">
-    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8z"/><path d="M10 6v4l3 3"/></svg></div>
-    <div><div class="section-title">Bütçe Dağılımı Planı</div><div class="section-sub">Haziran 2026 · Kanal ve hedef kitleye göre önerilen dağılım</div></div>
-  </div>
-  <div class="accordion open" onclick="toggleAccordion(this)">
+  <!-- Bütçe Dağılımı -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
     <div class="accordion-header">
-      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 2L4 12h7l-2 6 9-10h-7l2-6z"/></svg> Google Ads Aylık Bütçe</div>
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 2L4 12h7l-2 6 9-10h-7l2-6z"/></svg> Haziran Bütçe Dağılımı — Google Ads</div>
       <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
     </div>
     <div class="accordion-body"><div class="accordion-inner">
@@ -673,7 +728,7 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
         <table>
           <thead><tr><th>Kampanya</th><th>Ülke</th><th class="num">Aylık Bütçe</th><th class="num">Günlük</th><th>Hedef</th></tr></thead>
           <tbody>
-            <tr><td><strong>PMAX Türkiye</strong></td><td><span class="badge">TR</span></td><td class="num">₺310.000</td><td class="num">₺10.333</td><td>Rezervasyon</td></tr>
+            <tr><td><strong>PMAX Türkiye</strong></td><td><span class="badge">TR</span></td><td class="num">₺310.000</td><td class="num">₺10.333</td><td>Rezervasyon Dönüşümü</td></tr>
             <tr><td>PMAX Almanya</td><td><span class="badge neutral">DE</span></td><td class="num">₺120.000</td><td class="num">₺4.000</td><td>Rezervasyon</td></tr>
             <tr><td>PMAX İngiltere</td><td><span class="badge neutral">UK</span></td><td class="num">₺75.000</td><td class="num">₺2.500</td><td>Rezervasyon</td></tr>
             <tr><td>PMAX Letonya</td><td><span class="badge neutral">LV</span></td><td class="num">₺45.000</td><td class="num">₺1.500</td><td>Yeni Pazar</td></tr>
@@ -682,15 +737,7 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
           </tbody>
         </table>
       </div>
-    </div></div>
-  </div>
-  <div class="accordion" onclick="toggleAccordion(this)">
-    <div class="accordion-header">
-      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="16" cy="4" r="2"/><circle cx="4" cy="10" r="2"/><circle cx="16" cy="16" r="2"/><path d="M6 10l8-5M6 10l8 5"/></svg> Meta &amp; Yandex Bütçe</div>
-      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
-    </div>
-    <div class="accordion-body"><div class="accordion-inner">
-      <div class="table-wrap">
+      <div style="margin-top:20px" class="table-wrap">
         <table>
           <thead><tr><th>Platform</th><th>Hedef</th><th class="num">Aylık Bütçe</th><th>Format</th></tr></thead>
           <tbody>
@@ -703,17 +750,11 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
       </div>
     </div></div>
   </div>
-</section>
 
-<!-- KAMPANYALAR -->
-<section class="section" id="hz-kampanyalar">
-  <div class="section-header">
-    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 2L4 12h7l-2 6 9-10h-7l2-6z"/></svg></div>
-    <div><div class="section-title">Aktif Kampanyalar</div><div class="section-sub">Haziran 2026 · Çalışan ve planlanan kampanyalar</div></div>
-  </div>
-  <div class="accordion open" onclick="toggleAccordion(this)">
+  <!-- Kampanyalar -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
     <div class="accordion-header">
-      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><path d="M7 10l2 2 4-4"/></svg> Canlı &amp; Planlanan Kampanyalar</div>
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><path d="M7 10l2 2 4-4"/></svg> Aktif &amp; Planlanan Kampanyalar</div>
       <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
     </div>
     <div class="accordion-body"><div class="accordion-inner">
@@ -731,118 +772,89 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
       </div>
     </div></div>
   </div>
-</section>
 
-<!-- META + YANDEX -->
-<section class="section" id="hz-meta">
-  <div class="section-header">
-    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="16" cy="4" r="2"/><circle cx="4" cy="10" r="2"/><circle cx="16" cy="16" r="2"/><path d="M6 10l8-5M6 10l8 5"/></svg></div>
-    <div><div class="section-title">Meta + Yandex Planı</div><div class="section-sub">Haziran 2026 · Remarketing + Yeni Pazar Stratejisi</div></div>
-  </div>
-  <div class="two-col">
-    <div style="border:1px solid var(--border);border-radius:var(--radius);padding:24px">
-      <div style="font-size:14px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px">
-        <div style="width:28px;height:28px;background:#1877F2;border-radius:6px;display:flex;align-items:center;justify-content:center">
-          <svg width="14" height="14" viewBox="0 0 20 20" fill="white"><path d="M18 10a8 8 0 10-9.25 7.9v-5.6H6.75V10H8.75V8.25c0-2 1.2-3.1 3-3.1.87 0 1.75.15 1.75.15V7.2h-.98c-.97 0-1.27.6-1.27 1.22V10h2.18l-.35 2.3H11.25V17.9A8 8 0 0018 10z"/></svg>
+  <!-- Meta + Yandex -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="16" cy="4" r="2"/><circle cx="4" cy="10" r="2"/><circle cx="16" cy="16" r="2"/><path d="M6 10l8-5M6 10l8 5"/></svg> Meta + Yandex Planı</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div class="two-col">
+        <div style="background:var(--bg-alt);border-radius:var(--radius-sm);padding:18px">
+          <div style="font-size:13px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px">
+            <div style="width:24px;height:24px;background:#1877F2;border-radius:5px;display:flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 20 20" fill="white"><path d="M18 10a8 8 0 10-9.25 7.9v-5.6H6.75V10H8.75V8.25c0-2 1.2-3.1 3-3.1.87 0 1.75.15 1.75.15V7.2h-.98c-.97 0-1.27.6-1.27 1.22V10h2.18l-.35 2.3H11.25V17.9A8 8 0 0018 10z"/></svg></div>
+            Meta Stratejisi
+          </div>
+          <div style="font-size:14px;color:var(--muted);line-height:1.9">470B+ kişilik remarketing havuzu yeniden aktive edilecek. Format: Carousel + Video. Bütçe: ₺23.000/ay.</div>
         </div>
-        Meta Stratejisi
-      </div>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-        <li style="font-size:13px;color:var(--muted);padding-left:16px;position:relative"><span style="position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--green);display:block"></span><strong style="color:var(--text)">Hedef:</strong> 470B+ kişilik havuzu yeniden aktive et</li>
-        <li style="font-size:13px;color:var(--muted);padding-left:16px;position:relative"><span style="position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--green);display:block"></span><strong style="color:var(--text)">Format:</strong> Carousel + Video içerik</li>
-        <li style="font-size:13px;color:var(--muted);padding-left:16px;position:relative"><span style="position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--green);display:block"></span><strong style="color:var(--text)">Kitle:</strong> Web ziyaretçisi, sepet terk, benzer kitle</li>
-        <li style="font-size:13px;color:var(--muted);padding-left:16px;position:relative"><span style="position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--green);display:block"></span><strong style="color:var(--text)">Bütçe:</strong> ₺23.000/ay</li>
-      </ul>
-    </div>
-    <div style="border:1px solid var(--border);border-radius:var(--radius);padding:24px">
-      <div style="font-size:14px;font-weight:700;margin-bottom:16px;display:flex;align-items:center;gap:8px">
-        <div style="width:28px;height:28px;background:#CC0000;border-radius:6px;display:flex;align-items:center;justify-content:center">
-          <svg width="14" height="14" viewBox="0 0 20 20" fill="white"><path d="M17.9 5.3c-.2-.8-.8-1.4-1.6-1.6C14.9 3.4 10 3.4 10 3.4s-4.9 0-6.3.3c-.8.2-1.4.8-1.6 1.6C1.8 6.7 1.8 10 1.8 10s0 3.3.3 4.7c.2.8.8 1.4 1.6 1.6 1.4.3 6.3.3 6.3.3s4.9 0 6.3-.3c.8-.2 1.4-.8 1.6-1.6.3-1.4.3-4.7.3-4.7s0-3.3-.3-4.7zM8.2 12.7V7.3l4.2 2.7-4.2 2.7z"/></svg>
+        <div style="background:var(--bg-alt);border-radius:var(--radius-sm);padding:18px">
+          <div style="font-size:13px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px">
+            <div style="width:24px;height:24px;background:#CC0000;border-radius:5px;display:flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 20 20" fill="white"><path d="M17.9 5.3c-.2-.8-.8-1.4-1.6-1.6C14.9 3.4 10 3.4 10 3.4s-4.9 0-6.3.3c-.8.2-1.4.8-1.6 1.6C1.8 6.7 1.8 10 1.8 10s0 3.3.3 4.7c.2.8.8 1.4 1.6 1.6 1.4.3 6.3.3 6.3.3s4.9 0 6.3-.3c.8-.2 1.4-.8 1.6-1.6.3-1.4.3-4.7.3-4.7s0-3.3-.3-4.7zM8.2 12.7V7.3l4.2 2.7-4.2 2.7z"/></svg></div>
+            Yandex Stratejisi
+          </div>
+          <div style="font-size:14px;color:var(--muted);line-height:1.9">Rusya ve BDT ülkeleri hedefi. Rusça kreatif ve landing page. Display + Arama kombinasyonu. Bütçe: ₺12.000/ay.</div>
         </div>
-        Yandex Stratejisi
       </div>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px">
-        <li style="font-size:13px;color:var(--muted);padding-left:16px;position:relative"><span style="position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--green);display:block"></span><strong style="color:var(--text)">Hedef Pazar:</strong> Rusya ve BDT ülkeleri</li>
-        <li style="font-size:13px;color:var(--muted);padding-left:16px;position:relative"><span style="position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--green);display:block"></span><strong style="color:var(--text)">Format:</strong> Display + Arama kombinasyonu</li>
-        <li style="font-size:13px;color:var(--muted);padding-left:16px;position:relative"><span style="position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--green);display:block"></span><strong style="color:var(--text)">Dil:</strong> Rusça kreatif ve landing page</li>
-        <li style="font-size:13px;color:var(--muted);padding-left:16px;position:relative"><span style="position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--green);display:block"></span><strong style="color:var(--text)">Bütçe:</strong> ₺12.000/ay</li>
-      </ul>
+    </div></div>
+  </div>
+
+  <!-- 14 Günlük Takvim -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg> 14 Günlük Lansman Takvimi</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
     </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-dot">G1–2</div><div class="timeline-content"><div class="timeline-title">Kreatif hazırlık &amp; onay</div><div class="timeline-sub">Banner, video, carousel formatlar — tüm kanallar için hazırlanır ve onaylanır</div></div></div>
+        <div class="timeline-item"><div class="timeline-dot">G3–4</div><div class="timeline-content"><div class="timeline-title">Google Ads kampanya kurulumu</div><div class="timeline-sub">PMAX TR, DE, UK, LV kampanyaları kurulur; bütçeler atanır, dönüşüm izleme test edilir</div></div></div>
+        <div class="timeline-item"><div class="timeline-dot">G5–6</div><div class="timeline-content"><div class="timeline-title">Meta &amp; Yandex kurulumu</div><div class="timeline-sub">Remarketing audience'ları oluşturulur, Yandex kampanyaları Rusça içerikle hazırlanır</div></div></div>
+        <div class="timeline-item"><div class="timeline-dot">G7</div><div class="timeline-content"><div class="timeline-title">Tüm kanallar yayında</div><div class="timeline-sub">Kampanyalar aktif; ilk 48 saat performans izleme başlar</div></div></div>
+        <div class="timeline-item"><div class="timeline-dot">G8–10</div><div class="timeline-content"><div class="timeline-title">İlk optimizasyon turu</div><div class="timeline-sub">CTR, dönüşüm ve bütçe dağılımı ilk verilerle optimize edilir</div></div></div>
+        <div class="timeline-item"><div class="timeline-dot">G11–14</div><div class="timeline-content"><div class="timeline-title">PPG Newsletter ilk gönderim + Haftalık rapor</div><div class="timeline-sub">İlk haftalık performans raporu hazırlanır, bülten segmentine gönderilir</div></div></div>
+      </div>
+    </div></div>
   </div>
 </section>
 
-<!-- 14 GÜNLÜK TAKVİM -->
-<section class="section" id="hz-takvim">
-  <div class="section-header">
-    <div class="section-icon-wrap"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg></div>
-    <div><div class="section-title">14 Günlük Lansman Takvimi</div><div class="section-sub">Haziran 2026 · Kampanya kurulum ve yayın planı</div></div>
-  </div>
-  <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-dot">G1–2</div>
-      <div class="timeline-content">
-        <div class="timeline-title">Kreatif hazırlık &amp; onay</div>
-        <div class="timeline-sub">Banner, video, carousel formatlar — tüm kanallar için hazırlanır ve onaylanır</div>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot">G3–4</div>
-      <div class="timeline-content">
-        <div class="timeline-title">Google Ads kampanya kurulumu</div>
-        <div class="timeline-sub">PMAX TR, DE, UK, LV kampanyaları kurulur, bütçeler atanır, dönüşüm izleme test edilir</div>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot">G5–6</div>
-      <div class="timeline-content">
-        <div class="timeline-title">Meta &amp; Yandex kurulumu</div>
-        <div class="timeline-sub">Remarketing audience'ları oluşturulur, Yandex kampanyaları Rusça içerikle kurulur</div>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot">G7</div>
-      <div class="timeline-content">
-        <div class="timeline-title">Tüm kanallar yayında</div>
-        <div class="timeline-sub">Kampanyalar aktif, ilk 48 saat performans izleme başlar</div>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot">G8–10</div>
-      <div class="timeline-content">
-        <div class="timeline-title">İlk optimizasyon turu</div>
-        <div class="timeline-sub">CTR, dönüşüm ve bütçe dağılımı ilk verilerle optimize edilir</div>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-dot">G11–14</div>
-      <div class="timeline-content">
-        <div class="timeline-title">PPG Newsletter ilk gönderim + Haftalık rapor</div>
-        <div class="timeline-sub">İlk haftalık performans raporu hazırlanır, bülten segmentine gönderilir</div>
-      </div>
-    </div>
-  </div>
-</section>
+</div><!-- /content-mayis -->
 
-</div><!-- /content-haziran -->
-
-<!-- ══════════════ TEMMUZ ══════════════ -->
-<div id="content-temmuz" class="month-content">
+<!-- ════════════════ HAZİRAN (BOŞ) ════════════════ -->
+<div id="content-haziran" class="month-content">
   <div class="coming-soon">
-    <div class="coming-soon-icon">
-      <svg width="28" height="28" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg>
-    </div>
-    <div class="coming-soon-title">Temmuz 2026 Raporu</div>
-    <div class="coming-soon-sub">Temmuz 2026 dijital performans verileri ve pazarlama planı hazırlanmaktadır. Bu sekme Temmuz ayı sonunda güncellenecektir.</div>
+    <div class="coming-soon-icon"><svg width="30" height="30" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg></div>
+    <div class="coming-soon-title">Haziran 2026 Raporu</div>
+    <div class="coming-soon-sub">Haziran 2026 dijital performans verileri ay sonunda burada yayınlanacaktır. Haziran ayı pazarlama planını Mayıs sekmesinde bulabilirsiniz.</div>
   </div>
 </div>
 
-<!-- MODAL -->
-<div class="modal-overlay" id="modal" onclick="closeModalOverlay(event)">
+<!-- ════════════════ TEMMUZ (BOŞ) ════════════════ -->
+<div id="content-temmuz" class="month-content">
+  <div class="coming-soon">
+    <div class="coming-soon-icon"><svg width="30" height="30" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg></div>
+    <div class="coming-soon-title">Temmuz 2026 Raporu</div>
+    <div class="coming-soon-sub">Temmuz 2026 dijital performans verileri ve pazarlama planı hazırlanmaktadır.</div>
+  </div>
+</div>
+
+<!-- DETAIL MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModalOv(event)">
   <div class="modal">
     <button class="modal-close" onclick="document.getElementById('modal').classList.remove('open')">&#10005;</button>
     <div class="modal-kpi-title" id="modalTitle"></div>
     <div class="modal-kpi-val" id="modalVal"></div>
     <div class="modal-details" id="modalDetails"></div>
+  </div>
+</div>
+
+<!-- CHART MODAL -->
+<div class="chart-modal" id="chartModal" onclick="closeChartModalOv(event)">
+  <div class="chart-modal-inner">
+    <button class="chart-modal-close" onclick="document.getElementById('chartModal').classList.remove('open')">&#10005;</button>
+    <div style="font-size:18px;font-weight:700;color:var(--text);margin-bottom:4px" id="chartModalTitle"></div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:28px" id="chartModalSub"></div>
+    <div class="chart-modal-canvas"><canvas id="chartModalCanvas"></canvas></div>
   </div>
 </div>
 
@@ -855,6 +867,7 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
 </footer>
 
 <script>
+// ── MONTH SWITCH ──
 function switchMonth(id, el) {
   document.querySelectorAll('.month-content').forEach(c => c.classList.remove('active'));
   document.querySelectorAll('.month-tab').forEach(t => t.classList.remove('active'));
@@ -864,96 +877,157 @@ function switchMonth(id, el) {
   document.getElementById('nav-' + id).style.display = 'flex';
   window.scrollTo({top:0, behavior:'smooth'});
 }
+
+// ── SCROLL ──
 function scrollSec(id) {
   const el = document.getElementById(id);
-  if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  if (el) { const top = el.getBoundingClientRect().top + window.scrollY - 110; window.scrollTo({top, behavior:'smooth'}); }
 }
+
+// ── ACCORDION ──
 function toggleAccordion(el) { el.classList.toggle('open'); }
+
+// ── DETAIL MODAL ──
 function openModal(title, val, details) {
   document.getElementById('modalTitle').textContent = title;
   document.getElementById('modalVal').textContent = val;
   const det = document.getElementById('modalDetails');
   det.innerHTML = '';
   details.split('|').forEach(d => {
-    const parts = d.split(':');
+    const p = d.indexOf(':');
     const div = document.createElement('div');
     div.className = 'modal-detail-row';
-    if (parts.length > 1) {
-      div.innerHTML = '<span style="color:var(--muted)">' + parts[0].trim() + '</span><span style="font-weight:600">' + parts.slice(1).join(':').trim() + '</span>';
+    if (p > 0) {
+      div.innerHTML = '<span>' + d.slice(0,p).trim() + '</span><span>' + d.slice(p+1).trim() + '</span>';
     } else {
-      div.innerHTML = '<span>' + d + '</span>';
+      div.innerHTML = '<span style="font-weight:500">' + d + '</span>';
     }
     det.appendChild(div);
   });
   document.getElementById('modal').classList.add('open');
 }
-function closeModalOverlay(e) {
-  if (e.target.id === 'modal') document.getElementById('modal').classList.remove('open');
+function closeModalOv(e) { if (e.target.id === 'modal') document.getElementById('modal').classList.remove('open'); }
+
+// ── CHART MODAL ──
+let modalChart = null;
+const chartConfigs = {};
+function openChartModal(srcId, title, sub) {
+  document.getElementById('chartModalTitle').textContent = title;
+  document.getElementById('chartModalSub').textContent = sub;
+  const src = Chart.getChart(srcId);
+  if (!src) return;
+  if (modalChart) { modalChart.destroy(); modalChart = null; }
+  const canvas = document.getElementById('chartModalCanvas');
+  const ctx = canvas.getContext('2d');
+  modalChart = new Chart(ctx, {
+    type: src.config.type,
+    data: JSON.parse(JSON.stringify(src.config.data)),
+    options: Object.assign({}, JSON.parse(JSON.stringify(src.config.options)), {
+      responsive: true, maintainAspectRatio: false,
+      plugins: Object.assign({}, (src.config.options||{}).plugins, {legend:{display:true,position:'top'}})
+    })
+  });
+  document.getElementById('chartModal').classList.add('open');
+}
+function closeChartModalOv(e) {
+  if (e.target.id === 'chartModal') { document.getElementById('chartModal').classList.remove('open'); }
 }
 
-// Scroll spy
-const navObserver = new IntersectionObserver(entries => {
+// ── SCROLL SPY ──
+const spy = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
-      const id = e.target.id;
       document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-      const a = document.querySelector('.nav-link[onclick*="' + id + '"]');
+      const a = document.querySelector('.nav-link[onclick*="' + e.target.id + '"]');
       if (a) a.classList.add('active');
     }
   });
-}, {rootMargin:'-55px 0px -60% 0px', threshold:0});
-document.querySelectorAll('section[id]').forEach(s => navObserver.observe(s));
+}, {rootMargin:'-60px 0px -55% 0px', threshold:0});
+document.querySelectorAll('section[id]').forEach(s => spy.observe(s));
 
-// Charts
+// ── CHARTS ──
+const G = '#16A34A', GL = '#86EFAC', GLL = '#DCFCE7', BDR = '#E5E7EB';
+const font = {family:"Inter,sans-serif",size:12};
+
 document.addEventListener('DOMContentLoaded', () => {
-  const g = '#16A34A', gl = '#86EFAC', b = '#E5E7EB';
-  const ctxT = document.getElementById('chartTraffic');
-  if (ctxT) new Chart(ctxT, {
+
+  // Traffic Sources
+  new Chart(document.getElementById('chartTraffic'), {
     type:'bar',
     data:{
       labels:['Cross-network','Direct','Organik Arama','Ücretli Arama'],
-      datasets:[{label:'Oturum',data:[355000,7000,6400,5800],backgroundColor:[g,gl,'#BBF7D0','#D1FAE5'],borderRadius:6,borderSkipped:false}]
+      datasets:[{label:'Oturum',data:[355000,7000,6400,5800],
+        backgroundColor:[G,GL,'#BBF7D0','#D1FAE5'],borderRadius:6,borderSkipped:false}]
     },
-    options:{
-      indexAxis:'y',responsive:true,maintainAspectRatio:false,
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
       plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' '+c.raw.toLocaleString('tr-TR')+' oturum'}}},
-      scales:{x:{grid:{color:b},ticks:{font:{size:11},callback:v=>v>=1000?(v/1000).toFixed(0)+'K':v}},y:{grid:{display:false},ticks:{font:{size:12,weight:'500'}}}}
-    }
+      scales:{x:{grid:{color:BDR},ticks:{font,callback:v=>v>=1000?(v/1000)+'K':v}},y:{grid:{display:false},ticks:{font:{...font,weight:'600'}}}}}
   });
-  const ctxG = document.getElementById('chartGads');
-  if (ctxG) new Chart(ctxG, {
+
+  // Google Ads
+  new Chart(document.getElementById('chartGads'), {
     type:'bar',
     data:{
-      labels:['PMAX TR','PMAX DE','PMAX UK','Arama Marka','Diğer'],
+      labels:['PMAX TR','PMAX DE','PMAX UK','Marka Arama','Diğer'],
       datasets:[
-        {label:'Tıklama',data:[322000,68000,38000,36935,11000],backgroundColor:g,borderRadius:4,yAxisID:'y'},
-        {label:'Harcama (₺)',data:[310000,91000,52000,48000,23315],backgroundColor:'#DCFCE7',borderRadius:4,yAxisID:'y2'}
+        {label:'Tıklama',data:[322000,68000,38000,36935,11000],backgroundColor:G,borderRadius:4,yAxisID:'y'},
+        {label:'Harcama (₺)',data:[310000,91000,52000,48000,23315],backgroundColor:GLL,borderRadius:4,yAxisID:'y2'}
       ]
     },
-    options:{
-      responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{position:'top',labels:{font:{size:12},boxWidth:12}}},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'top',labels:{font,boxWidth:12}}},
       scales:{
-        y:{position:'left',grid:{color:b},ticks:{font:{size:11},callback:v=>v>=1000?(v/1000).toFixed(0)+'K':v}},
-        y2:{position:'right',grid:{display:false},ticks:{font:{size:11},callback:v=>'₺'+(v>=1000?(v/1000).toFixed(0)+'K':v)}}
-      }
-    }
+        y:{position:'left',grid:{color:BDR},ticks:{font,callback:v=>v>=1000?(v/1000)+'K':v},title:{display:true,text:'Tıklama',font}},
+        y2:{position:'right',grid:{display:false},ticks:{font,callback:v=>'₺'+(v>=1000?(v/1000).toFixed(0)+'K':v)},title:{display:true,text:'Harcama (₺)',font}}
+      }}
   });
-  const ctxR = document.getElementById('chartRevenue');
-  if (ctxR) new Chart(ctxR, {
+
+  // Revenue
+  new Chart(document.getElementById('chartRevenue'), {
     type:'bar',
     data:{
-      labels:['CC Ciro (₺)','Google Ads Harcama','Web Rez. (₺ eşd.)','Meta Harcama'],
-      datasets:[{label:'Tutar',data:[8028716,524315,72796000,3026],backgroundColor:[g,'#DCFCE7',gl,'#D1FAE5'],borderRadius:6,borderSkipped:false}]
+      labels:['CC Ciro','Google Ads Harcama','Meta Harcama'],
+      datasets:[{label:'Tutar (₺)',
+        data:[8028716,524315,3026],
+        backgroundColor:[G,GLL,'#BBF7D0'],
+        borderRadius:8,borderSkipped:false}]
     },
-    options:{
-      responsive:true,maintainAspectRatio:false,
+    options:{responsive:true,maintainAspectRatio:false,
       plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' ₺'+c.raw.toLocaleString('tr-TR')}}},
+      scales:{x:{grid:{display:false},ticks:{font}},y:{grid:{color:BDR},ticks:{font,callback:v=>'₺'+(v>=1000000?(v/1000000).toFixed(1)+'M':v>=1000?(v/1000).toFixed(0)+'K':v)}}}}
+  });
+
+  // Kanal
+  new Chart(document.getElementById('chartKanal'), {
+    type:'bar',
+    data:{
+      labels:['Pegas Touristik','Anex Tour','FIT Holidays','Booking.com','Call Center'],
+      datasets:[
+        {label:'Kişi Sayısı',data:[1363,940,876,694,668],backgroundColor:G,borderRadius:4,yAxisID:'y'},
+        {label:'Kişi Başı €',data:[78,86,91,113,101],backgroundColor:GLL,borderRadius:4,yAxisID:'y2'}
+      ]
+    },
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'top',labels:{font,boxWidth:12}}},
       scales:{
-        x:{grid:{display:false},ticks:{font:{size:11}}},
-        y:{grid:{color:b},ticks:{font:{size:11},callback:v=>'₺'+(v>=1000000?(v/1000000).toFixed(1)+'M':v>=1000?(v/1000).toFixed(0)+'K':v)}}
-      }
-    }
+        y:{position:'left',grid:{color:BDR},ticks:{font},title:{display:true,text:'Kişi',font}},
+        y2:{position:'right',grid:{display:false},ticks:{font,callback:v=>'€'+v},title:{display:true,text:'Kişi Başı €',font}}
+      }}
+  });
+
+  // Call Center
+  new Chart(document.getElementById('chartCC'), {
+    type:'bar',
+    data:{
+      labels:['1-7 Mayıs','8-14 Mayıs','15-21 Mayıs','22-31 Mayıs'],
+      datasets:[
+        {label:'Çağrı',data:[103,120,127,251],backgroundColor:GLL,borderRadius:4,yAxisID:'y'},
+        {label:'Satış',data:[41,53,41,68],backgroundColor:G,borderRadius:4,yAxisID:'y'}
+      ]
+    },
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'top',labels:{font,boxWidth:12}}},
+      scales:{y:{grid:{color:BDR},ticks:{font}},x:{grid:{display:false},ticks:{font}}}}
   });
 });
 </script>
