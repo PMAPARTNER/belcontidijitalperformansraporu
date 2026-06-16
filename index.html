@@ -35,17 +35,17 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-
 /* ── HEADER ── */
 .report-header{padding:52px 40px 44px;border-bottom:1px solid var(--border)}
 .header-eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
-.header-title{font-size:34px;font-weight:800;color:var(--text);line-height:1.2;margin-bottom:8px}
+.header-title{font-size:40px;font-weight:800;color:var(--text);line-height:1.2;margin-bottom:8px}
 .header-sub{font-size:15px;color:var(--muted);margin-bottom:40px;line-height:1.6}
 .header-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.hkpi{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:24px 22px;position:relative;overflow:hidden;transition:all .2s;cursor:pointer}
+.hkpi{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;position:relative;overflow:hidden;transition:all .2s;cursor:pointer}
 .hkpi::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green)}
 .hkpi:hover{box-shadow:var(--shadow-md);transform:translateY(-1px)}
 .hkpi-icon{position:absolute;top:18px;right:18px;width:36px;height:36px;background:var(--green-light);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--green)}
-.hkpi-label{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-.hkpi-val{font-size:30px;font-weight:800;color:var(--green);line-height:1}
-.hkpi-sub{font-size:12px;color:var(--muted);margin-top:7px}
-.hkpi-trend{position:absolute;bottom:14px;right:18px;font-size:11px;font-weight:700}
+.hkpi-label{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.hkpi-val{font-size:42px;font-weight:800;color:var(--green);line-height:1}
+.hkpi-sub{font-size:13px;color:var(--muted);margin-top:9px}
+.hkpi-trend{position:absolute;bottom:16px;right:18px;font-size:12px;font-weight:700}
 .hkpi-trend.up{color:var(--green)}
 .hkpi-trend.neutral{color:var(--muted)}
 
@@ -54,20 +54,20 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-
 .section:last-child{border-bottom:none}
 .section-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:34px}
 .section-icon-wrap{width:46px;height:46px;border-radius:11px;background:var(--green-light);display:flex;align-items:center;justify-content:center;color:var(--green);flex-shrink:0}
-.section-title{font-size:21px;font-weight:700;color:var(--text);line-height:1.3}
+.section-title{font-size:24px;font-weight:700;color:var(--text);line-height:1.3}
 .section-sub{font-size:13px;color:var(--muted);margin-top:4px}
 
 /* ── KPI CARDS ── */
 .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .kpi-grid-3{grid-template-columns:repeat(3,1fr)}
-.kpi-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.kpi-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:24px 24px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
 .kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:transparent;transition:background .2s}
 .kpi-card:hover{border-color:var(--green-mid);box-shadow:var(--shadow-md);transform:translateY(-1px)}
 .kpi-card:hover::before{background:var(--green)}
-.kpi-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px}
-.kpi-val{font-size:27px;font-weight:800;color:var(--green);line-height:1}
-.kpi-sub{font-size:12px;color:var(--muted);margin-top:7px}
-.kpi-trend{display:inline-flex;align-items:center;gap:3px;font-size:12px;font-weight:700;margin-top:8px;padding:2px 8px;border-radius:99px}
+.kpi-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:12px}
+.kpi-val{font-size:36px;font-weight:800;color:var(--green);line-height:1}
+.kpi-sub{font-size:13px;color:var(--muted);margin-top:9px}
+.kpi-trend{display:inline-flex;align-items:center;gap:3px;font-size:12px;font-weight:700;margin-top:10px;padding:3px 10px;border-radius:99px}
 .kpi-trend.up{background:var(--green-light);color:var(--green-dark)}
 .kpi-trend.down{background:#FEF2F2;color:#DC2626}
 .kpi-trend.neutral{background:#F3F4F6;color:var(--muted)}
@@ -148,7 +148,7 @@ tbody tr:hover td{background:var(--bg-alt)}
 .modal-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:8px;border:1px solid var(--border);background:var(--bg);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:18px}
 .modal-close:hover{background:var(--bg-alt)}
 .modal-kpi-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px}
-.modal-kpi-val{font-size:42px;font-weight:800;color:var(--green);line-height:1;margin-bottom:24px}
+.modal-kpi-val{font-size:52px;font-weight:800;color:var(--green);line-height:1;margin-bottom:24px}
 .modal-details{display:flex;flex-direction:column}
 .modal-detail-row{font-size:14px;color:var(--text);padding:12px 0;border-bottom:1px solid var(--border-light);display:flex;justify-content:space-between;gap:16px;line-height:1.5}
 .modal-detail-row:last-child{border-bottom:none}
@@ -177,9 +177,9 @@ tbody tr:hover td{background:var(--bg-alt)}
 
 /* ── PLAN KPI ── */
 .plan-kpi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
-.plan-kpi{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:22px;text-align:center}
-.plan-kpi-val{font-size:26px;font-weight:800;color:var(--green)}
-.plan-kpi-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:6px}
+.plan-kpi{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:26px;text-align:center}
+.plan-kpi-val{font-size:36px;font-weight:800;color:var(--green)}
+.plan-kpi-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:8px}
 
 /* ── FOOTER ── */
 footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
