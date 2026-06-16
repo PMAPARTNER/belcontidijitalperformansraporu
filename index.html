@@ -225,6 +225,7 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
   <button class="nav-link" onclick="scrollSec('sec-faaliyet')">Faaliyet Raporu</button>
   <button class="nav-link" onclick="scrollSec('sec-ozet')">Özet</button>
   <button class="nav-link" onclick="scrollSec('sec-haziran-plan')" style="color:var(--green);font-weight:700">Haziran Planı</button>
+  <button class="nav-link" onclick="scrollSec('sec-gads-sezon')" style="color:var(--green);font-weight:700">Google Ads Sezon Planı</button>
 </nav>
 <!-- NAV HAZIRAN -->
 <nav class="section-nav" id="nav-haziran" style="display:none">
@@ -818,6 +819,479 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
   </div>
 </section>
 
+<!-- ═══════════════════ GOOGLE ADS SEZON BAŞI PLANI ═══════════════════ -->
+<section class="section" id="sec-gads-sezon" style="background:#F8FAFF;border-top:2px solid #BFDBFE">
+  <div class="section-header">
+    <div class="section-icon-wrap" style="background:#EFF6FF;color:#2563EB">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M11 2L4 12h7l-2 6 9-10h-7l2-6z"/></svg>
+    </div>
+    <div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#2563EB;margin-bottom:4px">KAMPANYALAR YAYINDA · PMA PARTNER</div>
+      <div class="section-title">Google Ads Sezon Başı — Performans &amp; Büyüme Planı</div>
+      <div class="section-sub">Belconti Resort Belek · 5★ Ultra Herşey Dahil · Sezon Başı 2026 · Aylık Bütçe ₺500–700K</div>
+    </div>
+  </div>
+
+  <!-- Yönetici Özeti KPI -->
+  <div class="kpi-grid" style="margin-bottom:28px">
+    <div class="kpi-card" onclick="openModal('90 Günlük Yatırım','₺763.382','Hesap aktif ve yüksek hacimde çalışıyor|65 kampanya kaydı|Google Ads API v21|Sağlam temel üzerine kuruyoruz')">
+      <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 14l5-5 3 3 5-6"/><path d="M12 6h4v4"/></svg></div>
+      <div class="kpi-label">90 Günlük Yatırım</div>
+      <div class="kpi-val">₺763.382</div>
+      <div class="kpi-sub">Aktif &amp; yüksek hacim</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Gösterim &amp; Tıklama','7.154.453 gösterim','680.852 tıklama|Marka geniş kitlelere ulaşıyor|Yüksek niyetli aramaya yönlendiriyoruz|PMAX + Arama ağı')">
+      <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4 4"/></svg></div>
+      <div class="kpi-label">Gösterim</div>
+      <div class="kpi-val">7.154.453</div>
+      <div class="kpi-sub">680.852 tıklama</div>
+    </div>
+    <div class="kpi-card" onclick="openModal('Remarketing Kitlesi','470B+','All Users of Belconti Resort Hotel|AdWords Optimized List: 480.000|Sitede 2dk+ kalanlar: 62.000|Geri kazanım için ideal')">
+      <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M14 17v-1a4 4 0 00-4-4H7a4 4 0 00-4 4v1"/><circle cx="8.5" cy="7" r="3"/></svg></div>
+      <div class="kpi-label">Remarketing Kitlesi</div>
+      <div class="kpi-val">470B+</div>
+      <div class="kpi-sub">Win-back hazır</div>
+      <span class="kpi-trend up">↑ Geri kazanım</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Yeni Kampanya','2 Kampanya Canlı','TR Arama — Jenerik+Marka+Rakip|Almanya-Türkler Arama kampanyası|Maksimum Dönüşüm teklif stratejisi|Win-back kitleleri bağlı')">
+      <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M7 10l2 2 4-4"/></svg></div>
+      <div class="kpi-label">Yeni Kampanya</div>
+      <div class="kpi-val">2 Canlı</div>
+      <div class="kpi-sub">TR + Almanya-Türkler</div>
+      <span class="kpi-trend up">↑ Yayında</span>
+    </div>
+  </div>
+
+  <!-- Marka Konumu -->
+  <div class="accordion open" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/></svg> Marka Konumlandırma Analizi</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <div style="background:#EFF6FF;border-radius:var(--radius-sm);padding:18px">
+          <div style="font-size:12px;font-weight:700;color:#1E40AF;margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">Kimlik</div>
+          <div style="font-size:14px;color:#1D4ED8;line-height:1.75">Belek sahilinde, çam ormanı içinde, <strong>köklü ve tanınan</strong> bir 5★ ultra herşey dahil resort. Geniş plaj, havuzlar, aile aktiviteleri.</div>
+        </div>
+        <div style="background:#F0FDF4;border-radius:var(--radius-sm);padding:18px">
+          <div style="font-size:12px;font-weight:700;color:#166534;margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">Hedef Kitle</div>
+          <div style="font-size:14px;color:#166534;line-height:1.75"><strong>Aileler ve çiftler</strong> · Türkiye içi tatilciler + <strong>Almanya'daki Türkler</strong> (gurbetçi) · Herşey dahil konfor arayan, fiyat-değer dengesine duyarlı kitle.</div>
+        </div>
+        <div style="background:#FEF9C3;border-radius:var(--radius-sm);padding:18px">
+          <div style="font-size:12px;font-weight:700;color:#92400E;margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">Güçlü Yönler</div>
+          <div style="font-size:14px;color:#B45309;line-height:1.75"><strong>Sahil + aile dostu + ultra herşey dahil</strong> üçlüsü · 470B+ hazır ziyaretçi kitlesi · Güçlü Almanya geçmişi</div>
+        </div>
+        <div style="background:#FDF4FF;border-radius:var(--radius-sm);padding:18px">
+          <div style="font-size:12px;font-weight:700;color:#7E22CE;margin-bottom:8px;text-transform:uppercase;letter-spacing:.05em">Fiyat Konumu</div>
+          <div style="font-size:14px;color:#7C3AED;line-height:1.75">"4 gece 2 kişi ₺46.000'den" = <strong>erişilebilir lüks</strong> · Mesajlarda sahil · aile · ultra herşey dahil · erişilebilir fiyat öne çıkar</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Tespit & İyileştirme -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><path d="M10 8v4M10 14v.5"/></svg> Tespit Edilen Gelişim Alanları &amp; Aksiyonlar</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;background:var(--bg)">
+          <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:8px">Arama Ağı Yeniden Devrede</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.7"><strong>Tespit:</strong> En yüksek niyetli kanal kısıtlıydı.<br><strong>Aksiyon:</strong> "Belek 5 yıldız / ultra herşey dahil / erken rezervasyon" temalı yeni TR Arama kampanyası canlıya alındı.</div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;background:var(--bg)">
+          <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:8px">Ölçüm Gelir &amp; Rezervasyon Odaklı</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.7"><strong>Tespit:</strong> Sinyaller etkileşime ağırlıklıydı.<br><strong>Aksiyon:</strong> Rezervasyon, WhatsApp ve telefon talebini önceliklendiren gelir izlemeye hazır yapı kuruldu.</div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;background:var(--bg)">
+          <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:8px">Bütçe Çekirdek Pazarlara</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.7"><strong>Tespit:</strong> Harcamanın bir kısmı odak dışı ülkelere gidiyordu.<br><strong>Aksiyon:</strong> Bütçe Türkiye + Almanya-Türkler eksenine odaklandı.</div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;background:var(--bg)">
+          <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:8px">Eski Misafirler Yeniden Hedefte</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.7"><strong>Tespit:</strong> 470B+ kişilik kitle pasif bekliyordu.<br><strong>Aksiyon:</strong> Win-back kitleler yeni kampanyalara gözlem katmanı olarak bağlandı.</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Geçmiş Performans Tabloları -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="3" width="10" height="14" rx="2"/><path d="M8 7h4M8 10h4M8 13h2"/></svg> Geçmiş 90 Gün — Kanal &amp; Ülke Dağılımı</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div style="margin-bottom:18px">
+        <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Kanal Türüne Göre Yatırım</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Kanal</th><th class="num">Maliyet</th><th class="num">Gösterim</th><th class="num">Tıklama</th><th class="num">TO</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Performance Max</strong></td><td class="num">₺565.797</td><td class="num">6.832.694</td><td class="num">669.504</td><td class="num">%9.8</td></tr>
+              <tr><td>Arama Ağı</td><td class="num">₺197.585</td><td class="num">321.759</td><td class="num">11.348</td><td class="num">%3.5</td></tr>
+              <tr class="total-row"><td>Toplam</td><td class="num">₺763.382</td><td class="num">7.154.453</td><td class="num">680.852</td><td class="num">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout" style="margin-top:12px"><div class="callout-text">Yatırımın büyük kısmı Performance Max'te; arama ağı görece düşük kalmış. <strong>Aksiyonumuz:</strong> arama ağını güçlendirip dengeyi yüksek niyetli talebe çekiyoruz.</div></div>
+      </div>
+      <div style="margin-bottom:18px">
+        <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Ülkeye Göre Yatırım — 90 Gün</div>
+        <div class="chart-wrap" onclick="openChartModal('chartUlke','Ülke Bazlı Reklam Harcaması — Detay','90 günlük dağılım')">
+          <div class="chart-title">Ülke Bazlı Harcama Dağılımı <span class="chart-expand-hint"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8V3h5M17 12v5h-5M3 12l14-9M17 8L3 17"/></svg> büyüt</span></div>
+          <div class="chart-sub">Çekirdek pazarlar vs odak dışı ülkeler</div>
+          <div class="chart-inner"><canvas id="chartUlke"></canvas></div>
+        </div>
+        <div class="table-wrap" style="margin-top:14px">
+          <table>
+            <thead><tr><th>Ülke</th><th>Kategori</th><th class="num">Maliyet</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Türkiye</strong></td><td><span class="badge">Çekirdek</span></td><td class="num">₺316.358</td></tr>
+              <tr><td><strong>Almanya</strong></td><td><span class="badge">Çekirdek</span></td><td class="num">₺221.517</td></tr>
+              <tr><td>Birleşik Krallık</td><td><span class="badge neutral">Odak Dışı</span></td><td class="num">₺126.755</td></tr>
+              <tr><td>Polonya</td><td><span class="badge neutral">Odak Dışı</span></td><td class="num">₺30.143</td></tr>
+              <tr><td>Diğer (KG, RO, LT, LV)</td><td><span class="badge neutral">Odak Dışı</span></td><td class="num">₺68.609</td></tr>
+              <tr class="total-row"><td>Toplam</td><td>—</td><td class="num">₺763.382</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Hazır Remarketing Kitleleri</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Kitle</th><th class="num">Arama Ağı</th><th class="num">Görüntülü</th></tr></thead>
+            <tbody>
+              <tr><td><strong>AdWords Optimized List</strong></td><td class="num">480.000</td><td class="num">230.000</td></tr>
+              <tr><td>All Users — Belconti Resort Hotel</td><td class="num">470.000</td><td class="num">230.000</td></tr>
+              <tr><td>Sitede 2dk. üzeri kalanlar</td><td class="num">62.000</td><td class="num">26.000</td></tr>
+              <tr><td>Alışveriş sepetini terk edenler</td><td class="num">130</td><td class="num">48</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Üç Eksen -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 14l5-5 3 3 5-6"/><path d="M12 6h4v4"/></svg> Üç Eksen Sezon Başı Yaklaşımı</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div class="three-col">
+        <div style="border:2px solid var(--green);border-radius:var(--radius);padding:22px;text-align:center">
+          <div style="width:40px;height:40px;background:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:white;font-size:16px;font-weight:800">1</div>
+          <div style="font-size:13px;font-weight:700;color:var(--green-dark);margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em">Talebi Yakala</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.75">TR Arama yüksek niyetli kelimeler · Marka + jenerik + rakip ayrımı · %10 teklif mesajı reklam metninde</div>
+        </div>
+        <div style="border:2px solid #60A5FA;border-radius:var(--radius);padding:22px;text-align:center">
+          <div style="width:40px;height:40px;background:#2563EB;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:white;font-size:16px;font-weight:800">2</div>
+          <div style="font-size:13px;font-weight:700;color:#1E40AF;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em">Talebi Artır</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.75">PMAX ile geniş talep oluşturma · Almanya-Türkler büyüme · Görsel + video ile bilinirlik</div>
+        </div>
+        <div style="border:2px solid #F59E0B;border-radius:var(--radius);padding:22px;text-align:center">
+          <div style="width:40px;height:40px;background:#F59E0B;border-radius:10px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;color:white;font-size:16px;font-weight:800">3</div>
+          <div style="font-size:13px;font-weight:700;color:#92400E;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em">Geri Kazan</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.75">470B+ ziyaretçi kitlesi win-back · Geçmiş misafir listesi Customer Match · Remarketing + RLSA katmanı</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Anahtar Kelimeler -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8.5" cy="8.5" r="5.5"/><path d="M13 13l4 4"/></svg> Anahtar Kelime Grupları &amp; Hedefleme</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div class="table-wrap" style="margin-bottom:20px">
+        <table>
+          <thead><tr><th>Grup</th><th>Örnek Kelimeler</th><th>Eşleme</th><th>Amaç</th></tr></thead>
+          <tbody>
+            <tr><td><span class="badge">Marka</span></td><td>belconti · belconti resort · belconti belek</td><td>Tam / Sıralı</td><td>En sıcak talep, rakibe kaptırma</td></tr>
+            <tr><td><span class="badge blue">Yüksek Niyetli</span></td><td>belek 5 yıldız otel · belek ultra herşey dahil</td><td>Sıralı / Tam</td><td>Aktif tatil arayan yeni misafir</td></tr>
+            <tr><td><span class="badge neutral">Erken Rezervasyon</span></td><td>belek erken rezervasyon · belek yaz tatili 2026</td><td>Sıralı</td><td>Planlama aşamasındaki talep</td></tr>
+            <tr><td><span class="badge neutral">Aile &amp; Segment</span></td><td>belek aile oteli · çocuklu otel belek · balayı</td><td>Sıralı</td><td>Otelin güçlü segmentleri</td></tr>
+            <tr><td><span class="badge amber">Rakip</span></td><td>rakip 5★ Belek otel adları</td><td>Sıralı</td><td>Rakip arayana alternatif sun</td></tr>
+            <tr><td><span class="badge red">Negatif</span></td><td>ucuz · bedava · iş ilanı · şikayet · kiralık</td><td>—</td><td>Alakasız tıklamayı engelle</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Hedefleme Ayarları</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Boyut</th><th>Türkiye Kampanyası</th><th>Almanya-Türkler</th></tr></thead>
+          <tbody>
+            <tr><td>Konum</td><td>Türkiye</td><td>Almanya</td></tr>
+            <tr><td>Dil</td><td>Türkçe</td><td>Türkçe (gurbetçi)</td></tr>
+            <tr><td>Cihaz</td><td>Tümü (mobil ağırlık)</td><td>Tümü</td></tr>
+            <tr><td>Kitle (gözlem)</td><td>Tüm Ziyaretçiler · 2dk+ · Optimize</td><td>Aynı kitleler</td></tr>
+            <tr><td>Teklif Stratejisi</td><td>Maksimum Dönüşüm</td><td>Maksimum Dönüşüm</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Bütçe Dağılımı -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M3 8h14M8 3v14"/></svg> ₺500–700K Aylık Bütçe Tahsisi</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div class="table-wrap" style="margin-bottom:20px">
+        <table>
+          <thead><tr><th>Blok</th><th class="num">Bütçe/ay</th><th class="num">Pay</th><th class="num">Günlük</th></tr></thead>
+          <tbody>
+            <tr><td><strong>TR Arama — Jenerik + Marka + Rakip</strong></td><td class="num">₺200K</td><td class="num">%33</td><td class="num">₺6.670</td></tr>
+            <tr><td>TR PMAX (talep artırma)</td><td class="num">₺120K</td><td class="num">%20</td><td class="num">₺4.000</td></tr>
+            <tr><td>Almanya-Türkler (Arama + PMAX)</td><td class="num">₺120K</td><td class="num">%20</td><td class="num">₺4.000</td></tr>
+            <tr><td>Remarketing / Geri Kazanım</td><td class="num">₺90K</td><td class="num">%15</td><td class="num">₺3.000</td></tr>
+            <tr><td>%10 Son Dakika (10 Temmuz)</td><td class="num">₺70K</td><td class="num">%12</td><td class="num">₺2.333</td></tr>
+            <tr class="total-row"><td>Toplam</td><td class="num">₺600K</td><td class="num">%100</td><td class="num">₺20.000</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="chart-wrap" onclick="openChartModal('chartBudget','Aylık Bütçe Dağılımı — Detay','₺600K kampanya bazlı dağılım')">
+        <div class="chart-title">Kampanya Bazlı Bütçe Dağılımı <span class="chart-expand-hint"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8V3h5M17 12v5h-5M3 12l14-9M17 8L3 17"/></svg> büyüt</span></div>
+        <div class="chart-sub">₺600K baz bütçe — kampanya blokları</div>
+        <div class="chart-inner"><canvas id="chartBudget"></canvas></div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Hedef ROAS -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 14l5-5 3 3 5-6"/><path d="M12 6h4v4"/></svg> Hedef ROAS &amp; Beklenen Getiriler</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div class="plan-kpi-grid" style="margin-bottom:22px">
+        <div class="plan-kpi"><div class="plan-kpi-val">%3–4</div><div class="plan-kpi-label">Hedef Reklam Maliyeti</div></div>
+        <div class="plan-kpi"><div class="plan-kpi-val">~28x</div><div class="plan-kpi-label">Hedef ROAS</div></div>
+        <div class="plan-kpi"><div class="plan-kpi-val">~304</div><div class="plan-kpi-label">Hedef Rezervasyon/Ay</div></div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Kanal</th><th class="num">Bütçe/ay</th><th class="num">Rek. Mal.</th><th class="num">ROAS</th><th class="num">Beklenen Ciro</th><th class="num">~Rezervasyon</th></tr></thead>
+          <tbody>
+            <tr><td><strong>TR Arama (Marka+Jenerik+Rakip)</strong></td><td class="num">₺200K</td><td class="num">%3.5</td><td class="num">29x</td><td class="num">₺5.714.286</td><td class="num">~104</td></tr>
+            <tr><td>Almanya-Türkler (Arama+PMAX)</td><td class="num">₺120K</td><td class="num">%4.0</td><td class="num">25x</td><td class="num">₺3.000.000</td><td class="num">~55</td></tr>
+            <tr><td>TR PMAX (talep artırma)</td><td class="num">₺120K</td><td class="num">%5.0</td><td class="num">20x</td><td class="num">₺2.400.000</td><td class="num">~44</td></tr>
+            <tr><td>Remarketing / Geri Kazanım</td><td class="num">₺90K</td><td class="num">%2.5</td><td class="num">40x</td><td class="num">₺3.600.000</td><td class="num">~65</td></tr>
+            <tr><td>%10 Son Dakika (10 Tem.)</td><td class="num">₺70K</td><td class="num">%3.5</td><td class="num">29x</td><td class="num">₺2.000.000</td><td class="num">~36</td></tr>
+            <tr class="total-row"><td>Toplam</td><td class="num">₺600K</td><td class="num">%3.6</td><td class="num">~28x</td><td class="num">₺16.714.286</td><td class="num">~304</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout" style="margin-top:16px">
+        <div class="callout-title">Varsayımlar</div>
+        <div class="callout-text">Ortalama rezervasyon değeri ≈ <strong>₺55.000</strong> (4–6 gece, 2+ kişi, ultra herşey dahil). Rakamlar hedeftir — kesin ölçüm booking motorundaki rezervasyon-gelir takibi tamamlanınca netleşir. İlk ay öğrenme dönemi olduğundan oran başta biraz yüksek, sonra hedefe iner.</div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- %10 Teklif -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3L2 17h16L10 3z"/><path d="M10 8v4M10 14v.5"/></svg> %10 Son Dakika Teklifi — 10 Temmuz'a Kadar</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div style="background:var(--green-light);border:2px solid var(--green);border-radius:var(--radius);padding:24px;display:flex;align-items:center;gap:28px;flex-wrap:wrap">
+        <div style="flex:1;min-width:220px">
+          <div style="font-size:28px;font-weight:800;color:var(--green);margin-bottom:6px">%10 Ek İndirim</div>
+          <div style="font-size:14px;font-weight:600;color:#166534;margin-bottom:12px">Belconti Resort Belek · Ultra Herşey Dahil</div>
+          <div style="font-size:13px;color:#166534;line-height:1.8">
+            10 Temmuz 2026'ya kadar geçerli<br>
+            <strong>Yalnızca Türkiye'de geçerli</strong> (Almanya hariç)<br>
+            Sadece TR kampanyalarında canlı<br>
+            Geri sayım odaklı reklam başlıkları
+          </div>
+        </div>
+        <div style="background:var(--green);color:white;border-radius:var(--radius);padding:22px 28px;text-align:center;min-width:160px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.06em;opacity:.8;margin-bottom:6px;text-transform:uppercase">başlayan fiyatlarla</div>
+          <div style="font-size:32px;font-weight:800;line-height:1">₺46.000</div>
+          <div style="font-size:12px;opacity:.8;margin-top:4px">4 gece · 2 kişi</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Canlı Kampanyalar -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><path d="M7 10l2 2 4-4"/></svg> Bugün Canlıya Alınan Kampanyalar</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div style="background:var(--green-light);border-radius:var(--radius-sm);padding:16px 20px;margin-bottom:18px;font-size:13px;color:#166534;line-height:1.7">
+        <strong>2 yeni Arama kampanyası Google Ads'te yayında.</strong> Mevcut TR Performance Max ile birlikte aylık aktif yatırım ~₺536K — hedef ₺500–700K aralığında.
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Kampanya</th><th>Hedef</th><th class="num">Bütçe</th><th>İçerik</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><span class="badge" style="margin-right:6px">CANLI</span><strong>Belconti_Search_Jenerik_TR_2026_REV</strong></td>
+              <td>Türkiye · Türkçe</td>
+              <td class="num">₺6.670/gün (~₺200K/ay)</td>
+              <td>8 kelime + RSA + 3 win-back kitlesi</td>
+            </tr>
+            <tr>
+              <td><span class="badge" style="margin-right:6px">CANLI</span><strong>Belconti_Search_Almanya_Turkler_2026_REV</strong></td>
+              <td>Almanya · Türkçe</td>
+              <td class="num">₺4.000/gün (~₺120K/ay)</td>
+              <td>7 kelime + RSA + 3 win-back kitlesi</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout" style="margin-top:14px"><div class="callout-text">%10 / ₺46.000 teklifi <strong>yalnızca Türkiye kampanyasında</strong> — Almanya-Türkler kampanyası teklifsiz genel mesajla devam ediyor (fiyat Türkiye dışında geçerli değil).</div></div>
+    </div></div>
+  </div>
+
+  <!-- Meta Planı -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="16" cy="4" r="2"/><circle cx="4" cy="10" r="2"/><circle cx="16" cy="16" r="2"/><path d="M6 10l8-5M6 10l8 5"/></svg> Meta Reklam Planı — Google Talebi Yakalar, Meta Talebi Yaratır</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div class="three-col" style="margin-bottom:20px">
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px">
+          <div style="font-size:12px;font-weight:700;color:var(--green);margin-bottom:8px;text-transform:uppercase">1 · Bilinirlik &amp; Talep</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.75">Hedef: Erişim / Video izlenme<br>Kitle: geniş ilgi (tatil, herşey dahil, Belek)<br>Kreatif: Reels / dikey dron videosu<br>TR + Almanya-Türkler</div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px">
+          <div style="font-size:12px;font-weight:700;color:#2563EB;margin-bottom:8px;text-transform:uppercase">2 · İlgi &amp; Trafik</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.75">Hedef: Trafik / Etkileşim<br>Kitle: ilgi + Lookalike %1–3<br>Kreatif: carousel (oda · havuz · plaj)<br>Mesaj: %10 ek indirim (yalnızca TR)</div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px">
+          <div style="font-size:12px;font-weight:700;color:#F59E0B;margin-bottom:8px;text-transform:uppercase">3 · Dönüşüm &amp; Remarketing</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.75">Hedef: Satış / Dönüşüm<br>Kitle: Pixel ziyaretçisi, Customer Match<br>Kreatif: güçlü CTA "Şimdi Rezervasyon"<br>%10 / son dakika yalnızca TR</div>
+        </div>
+      </div>
+      <div class="table-wrap" style="margin-bottom:14px">
+        <table>
+          <thead><tr><th>Katman</th><th class="num">Pay</th><th class="num">Aylık (₺150K örnek)</th><th class="num">Hedef Rek. Mal.</th></tr></thead>
+          <tbody>
+            <tr><td>Bilinirlik &amp; Talep</td><td class="num">%30</td><td class="num">₺45.000</td><td class="num">%6–7</td></tr>
+            <tr><td>İlgi &amp; Trafik</td><td class="num">%25</td><td class="num">₺37.500</td><td class="num">%5</td></tr>
+            <tr><td><strong>Dönüşüm &amp; Remarketing</strong></td><td class="num"><strong>%45</strong></td><td class="num"><strong>₺67.500</strong></td><td class="num"><strong>%2–3</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="kpi-grid kpi-grid-3">
+        <div class="kpi-card" style="cursor:default;background:var(--bg-alt)"><div class="kpi-label">Aylık Meta Bütçesi</div><div class="kpi-val">₺120–180K</div></div>
+        <div class="kpi-card" style="cursor:default;background:var(--bg-alt)"><div class="kpi-label">Blended Rek. Maliyeti</div><div class="kpi-val">~%4–5</div></div>
+        <div class="kpi-card" style="cursor:default;background:var(--bg-alt)"><div class="kpi-label">~Aylık Rezervasyon</div><div class="kpi-val">~60</div></div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- Yandex -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="8"/><path d="M10 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/><path d="M2 10h16"/></svg> Yandex Reklam Planı — Rusya Pazarı (Sadece Arama)</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div class="callout" style="margin-bottom:18px"><div class="callout-text">Rusya'da arama motoru lideri Yandex'tir. Bu planda <strong>sadece arama ağı</strong> (Поиск) kullanılıyor — aktif tatil arayan kullanıcıyı yakalamak için. ₺46.000 / %10 teklifi Rusya'da gösterilmez (yalnızca Türkiye).</div></div>
+      <div class="two-col" style="margin-bottom:18px">
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Kampanya</th><th>Amaç</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Marka</strong></td><td>Belconti'yi arayanı yakala</td></tr>
+              <tr><td>Jenerik — Herşey Dahil</td><td>Belek/Antalya ultra herşey dahil</td></tr>
+              <tr><td>Erken Rezervasyon</td><td>Sezon planlayan Rus tatilci</td></tr>
+              <tr><td>Aile &amp; Segment</td><td>Aile / deniz tatili arayan</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Rusça Örnek Kelimeler</div>
+          <div style="display:flex;flex-wrap:wrap;gap:7px">
+            <span class="badge neutral" style="font-size:11px">отель белек всё включено</span>
+            <span class="badge neutral" style="font-size:11px">белек 5 звёзд</span>
+            <span class="badge neutral" style="font-size:11px">анталия всё включено</span>
+            <span class="badge neutral" style="font-size:11px">белек раннее бронирование</span>
+            <span class="badge neutral" style="font-size:11px">белконти резорт</span>
+            <span class="badge neutral" style="font-size:11px">турция отель у моря</span>
+            <span class="badge neutral" style="font-size:11px">ультра всё включено турция</span>
+          </div>
+          <div style="margin-top:18px;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px">Bütçe &amp; Hedef</div>
+          <div class="stat-row"><div class="stat-label">Aylık Yandex bütçesi</div><div class="stat-val" style="font-weight:700">₺80–120K</div></div>
+          <div class="stat-row"><div class="stat-label">Hedef reklam maliyeti</div><div class="stat-val" style="font-weight:700">~%4–5</div></div>
+          <div class="stat-row"><div class="stat-label">Beklenen aylık ciro (₺100K)</div><div class="stat-val" style="font-weight:700">~₺2.2M</div></div>
+          <div class="stat-row"><div class="stat-label">~Rezervasyon/ay</div><div class="stat-val" style="font-weight:700">~40</div></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+
+  <!-- 14 Günlük Plan -->
+  <div class="accordion" onclick="toggleAccordion(this)" style="background:var(--bg)">
+    <div class="accordion-header">
+      <div class="accordion-title"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="14" height="14" rx="2"/><path d="M3 8h14M7 2v4M13 2v4"/></svg> 14 Günlük Devreye Alma Planı</div>
+      <svg class="accordion-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l5 5 5-5"/></svg>
+    </div>
+    <div class="accordion-body"><div class="accordion-inner">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background:var(--green);border-color:var(--green-dark);color:white">G0</div>
+          <div class="timeline-content">
+            <div class="timeline-title" style="display:flex;align-items:center;gap:8px"><span class="badge">Yayında</span> TR Arama + Almanya-Türkler Arama Canlı</div>
+            <div class="timeline-sub">Win-back kitleleri bağlı · %10 teklif mesajı işlendi · Maksimum Dönüşüm teklif stratejisi aktif</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">G1–5</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Genişleme</div>
+            <div class="timeline-sub">PMAX talep artırma + remarketing/RLSA katmanı · Arama terimi izleme · Negatif kelime optimizasyonu</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">G5–14</div>
+          <div class="timeline-content">
+            <div class="timeline-title">Optimizasyon</div>
+            <div class="timeline-sub">Teklif &amp; bütçe ayarı · RSA varyant testi · Yeterli veride gelire (tROAS) geçiş</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:22px;font-size:13px;font-weight:700;color:var(--text);margin-bottom:14px">Etkiyi Büyütmek için 3 Adım</div>
+      <div class="three-col">
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center">
+          <div style="width:32px;height:32px;background:var(--green-light);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;color:var(--green);font-weight:800">1</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px">Rezervasyon Değeri Ölçümü</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.6">Booking motorunda rezervasyon-gelir izleme → tam ROAS görünürlüğü</div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center">
+          <div style="width:32px;height:32px;background:var(--green-light);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;color:var(--green);font-weight:800">2</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px">Geçmiş Misafir Listesi</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.6">Customer Match için misafir e-posta/telefonu (özellikle Almanya) → geri kazanım gücü artar</div>
+        </div>
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center">
+          <div style="width:32px;height:32px;background:var(--green-light);border-radius:8px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;color:var(--green);font-weight:800">3</div>
+          <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px">Kreatif Zenginleştirme</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.6">Otel görselleri + kısa videolar → PMAX ve görüntülü kanallarda daha yüksek performans</div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</section>
+
 </div><!-- /content-mayis -->
 
 <!-- ════════════════ HAZİRAN (BOŞ) ════════════════ -->
@@ -1013,6 +1487,36 @@ document.addEventListener('DOMContentLoaded', () => {
         y:{position:'left',grid:{color:BDR},ticks:{font},title:{display:true,text:'Kişi',font}},
         y2:{position:'right',grid:{display:false},ticks:{font,callback:v=>'€'+v},title:{display:true,text:'Kişi Başı €',font}}
       }}
+  });
+
+  // Ülke Harcama
+  new Chart(document.getElementById('chartUlke'), {
+    type:'bar',
+    data:{
+      labels:['Türkiye','Almanya','B. Krallık','Polonya','Diğer'],
+      datasets:[{label:'Harcama (₺)',
+        data:[316358,221517,126755,30143,58056],
+        backgroundColor:[G,GL,'#FDE68A','#FCA5A5','#CBD5E1'],
+        borderRadius:6,borderSkipped:false}]
+    },
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' ₺'+c.raw.toLocaleString('tr-TR')}}},
+      scales:{x:{grid:{color:BDR},ticks:{font,callback:v=>'₺'+(v>=1000?(v/1000).toFixed(0)+'K':v)}},y:{grid:{display:false},ticks:{font:{...font,weight:'600'}}}}}
+  });
+
+  // Bütçe Dağılımı
+  new Chart(document.getElementById('chartBudget'), {
+    type:'bar',
+    data:{
+      labels:['TR Arama','TR PMAX','Almanya-Türkler','Remarketing','Son Dakika'],
+      datasets:[{label:'Bütçe (₺)',
+        data:[200000,120000,120000,90000,70000],
+        backgroundColor:[G,GL,'#60A5FA','#FDE68A','#FCA5A5'],
+        borderRadius:6,borderSkipped:false}]
+    },
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' ₺'+c.raw.toLocaleString('tr-TR')}}},
+      scales:{x:{grid:{display:false},ticks:{font}},y:{grid:{color:BDR},ticks:{font,callback:v=>'₺'+(v>=1000?(v/1000).toFixed(0)+'K':v)}}}}
   });
 
   // Call Center
