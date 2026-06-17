@@ -288,23 +288,24 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
       <div class="kpi-val">233.024</div>
       <span class="kpi-trend up">↑ %34</span>
     </div>
-    <div class="kpi-card" onclick="openModal('Toplam Oturum','374.200+','Cross-network: 355.000|Direct: 7.000|Organik Arama: 6.400|Ücretli Arama: 5.800')">
+    <div class="kpi-card" onclick="openModal('Toplam Ziyaret (Oturum)','374.200+','Oturum: bir kullanıcının siteye gelip çıkana kadar yaptığı ziyaret|Reklam ağı: 355.000 (Google + Meta reklamlardan)|Doğrudan giriş: 7.000 (URL yazarak veya yer iminden)|Organik Google: 6.400 · Ücretli Google: 5.800')">
       <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/></svg></div>
-      <div class="kpi-label">Toplam Oturum</div>
+      <div class="kpi-label">Toplam Ziyaret</div>
       <div class="kpi-val">374.200+</div>
-      <div class="kpi-sub">Tüm kanallar</div>
+      <div class="kpi-sub">Tüm kanallardan site ziyareti</div>
     </div>
-    <div class="kpi-card" onclick="openModal('Ort. Etkileşim Süresi','16 sn','Ortalama sayfa etkileşim süresi|Hedef: 45+ saniye|İyileştirme gerekli|Kaynak: GA4')">
+    <div class="kpi-card" onclick="openModal('Sayfa Etkileşim Süresi','16 sn','Ziyaretçinin sitede aktif olarak vakit geçirdiği süre|Scroll, tıklama, form doldurma gibi eylemler sayılır|Otel sektörü ort.: 25–45 saniye|Mobil kullanıcılar genellikle daha kısa süre kalır')">
       <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M10 6v4l3 3"/></svg></div>
-      <div class="kpi-label">Ort. Etkileşim</div>
+      <div class="kpi-label">Sayfa Etkileşim Süresi</div>
       <div class="kpi-val">16 sn</div>
-      <span class="kpi-trend neutral">→ İyileştirme gerekli</span>
+      <div class="kpi-sub">Aktif sayfa süresi</div>
     </div>
-    <div class="kpi-card" onclick="openModal('Dönüşüm','55.828','PMAX TR: 34.000+|Arama: ~21.000|Maliyet/dönüşüm: ₺9.39|Kaynak: GA4 + Google Ads')">
+    <div class="kpi-card" onclick="openModal('Dönüşüm (Conversion)','55.828','Dönüşüm: ziyaretçinin rezervasyon formu, telefon tıklaması gibi hedef eylemi yapması|PMAX TR (Google otomatik kampanya): 34.000+|Arama kampanyaları: ~21.000|Her dönüşümün maliyeti: ₺9.39 — otel sektörü ort. ₺25–60')">
       <div class="kpi-icon"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="10" r="8"/><path d="M7 10l2 2 4-4"/></svg></div>
       <div class="kpi-label">Dönüşüm</div>
       <div class="kpi-val">55.828</div>
-      <div class="kpi-sub">₺9.39/dönüşüm</div>
+      <div class="kpi-sub">₺9.39/dönüşüm — sektör ort. ₺25–60</div>
+      <span class="kpi-trend up">↑ 3x verimli</span>
     </div>
   </div>
   <div class="two-col" style="margin-top:24px">
@@ -341,30 +342,56 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
     <div><div class="section-title">Organik Arama Performansı</div><div class="section-sub">Google Search Console · Mayıs 2026 · Tüm anahtar kelimeler</div></div>
   </div>
   <div class="kpi-grid">
-    <div class="kpi-card" onclick="openModal('Organik Tıklama','6.400','Search Console toplam tıklama|Önceki aya göre: +%12|Branded sorgular ağırlıklı|Kaynak: Google Search Console')">
+    <div class="kpi-card" onclick="openModal('Organik Tıklama','6.400','Google arama sonuçlarında ücretli reklam olmadan gelen tıklama sayısı|Önceki aya göre: +%12 artış|Otel sektörü aylık organik ort.: 3.000–8.000 tıklama|Belconti bu aralığın üst bandında')">
       <div class="kpi-label">Organik Tıklama</div>
       <div class="kpi-val">6.400</div>
+      <div class="kpi-sub">Reklamsız Google trafiği</div>
       <span class="kpi-trend up">↑ %12</span>
     </div>
-    <div class="kpi-card" onclick="openModal('Gösterim','790.000','Organik arama görünürlüğü|SERP pozisyon 1–100 arası|Branded + non-branded|Kaynak: GSC')">
-      <div class="kpi-label">Gösterim</div>
+    <div class="kpi-card" onclick="openModal('Arama Görünürlüğü','790.000','Otelin Google arama sonuçlarında kaç kez göründüğü — tıklanmasa bile sayılır|Pozisyon 1–100 arası tüm aramalar dahil|Hem marka aramaları hem genel tatil aramaları|Otel sektörü aylık ort.: 400.000–1.2M gösterim')">
+      <div class="kpi-label">Arama Görünürlüğü</div>
       <div class="kpi-val">790.000</div>
-      <div class="kpi-sub">SERP 1–100</div>
+      <div class="kpi-sub">Google'da görünme sayısı</div>
+      <span class="kpi-trend up">↑ Sektör ortasında</span>
     </div>
-    <div class="kpi-card" onclick="openModal('Ortalama CTR','%0.81','6.400 tıklama / 790.000 gösterim|Sektör ortalaması: %1.5–3.0|İyileştirme alanı: snippet optimizasyonu|Kaynak: GSC')">
-      <div class="kpi-label">Ort. CTR</div>
+    <div class="kpi-card" onclick="openModal('Tıklama Oranı (CTR)','%0.81','Google'da çıkan her 100 sonuçtan kaçının tıklandığı|Hesaplama: 6.400 tıklama ÷ 790.000 gösterim|Otel sektörü organik CTR ortalaması: %0.6–1.2|Belconti sektör ortalaması seviyesinde')">
+      <div class="kpi-label">Tıklama Oranı (CTR)</div>
       <div class="kpi-val">%0.81</div>
-      <span class="kpi-trend neutral">→ Sektör ort. %1.5+</span>
+      <div class="kpi-sub">Her 100 görünmede ~1 tıklama</div>
+      <span class="kpi-trend up">↑ Sektör ort. %0.6–1.2</span>
     </div>
-    <div class="kpi-card" onclick="openModal('Ort. Pozisyon','28.4','SERP ortalama sıralama|Hedef: pozisyon 10 altı|Marka sorguları daha üst sırada|Kaynak: GSC')">
-      <div class="kpi-label">Ort. Pozisyon</div>
+    <div class="kpi-card" onclick="openModal('Google Sıralama Pozisyonu','28.4','Otelin Google'da ortalama kaçıncı sırada göründüğü — küçük sayı daha iyidir|Marka aramaları (belconti resort) çok üst sırada|Genel aramalar (belek 5 yıldız) ortalamayı düşürüyor|Marka sorgusu pozisyonu: tahminen Top 3')">
+      <div class="kpi-label">Google Sıralaması</div>
       <div class="kpi-val">28.4</div>
-      <span class="kpi-trend down">↓ Hedef: Top 10</span>
+      <div class="kpi-sub">Ortalama konum (marka Top 3)</div>
     </div>
   </div>
-  <div class="callout">
-    <div class="callout-title">Öneri: Snippet ve Meta Açıklama Optimizasyonu</div>
-    <div class="callout-text">CTR %0.81, sektör ortalamasının (%1.5+) altında kalıyor. Başlık etiketleri ve meta açıklamalar daha çekici hale getirilmeli; schema.org/Hotel yapılandırılmış verisi eklenmeli. Hedef: CTR %1.5 ve pozisyon 15 altı.</div>
+  <!-- Sektör Karşılaştırma -->
+  <div style="margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+    <div style="border:1px solid var(--border);border-radius:var(--radius);padding:20px;background:var(--bg-alt)">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px">Organik Tıklama</div>
+      <div style="display:flex;align-items:flex-end;gap:16px">
+        <div><div style="font-size:22px;font-weight:800;color:var(--green)">6.400</div><div style="font-size:11px;color:var(--green);font-weight:600">Belconti</div></div>
+        <div><div style="font-size:22px;font-weight:800;color:var(--muted-light)">~4.500</div><div style="font-size:11px;color:var(--muted);font-weight:600">Sektör Ort.</div></div>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:var(--green-dark);background:var(--green-light);padding:6px 10px;border-radius:6px;font-weight:600">%42 sektör ortalaması üzerinde</div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:var(--radius);padding:20px;background:var(--bg-alt)">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px">Arama Görünürlüğü</div>
+      <div style="display:flex;align-items:flex-end;gap:16px">
+        <div><div style="font-size:22px;font-weight:800;color:var(--green)">790K</div><div style="font-size:11px;color:var(--green);font-weight:600">Belconti</div></div>
+        <div><div style="font-size:22px;font-weight:800;color:var(--muted-light)">~550K</div><div style="font-size:11px;color:var(--muted);font-weight:600">Sektör Ort.</div></div>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:var(--green-dark);background:var(--green-light);padding:6px 10px;border-radius:6px;font-weight:600">%43 sektör ortalaması üzerinde</div>
+    </div>
+    <div style="border:1px solid var(--border);border-radius:var(--radius);padding:20px;background:var(--bg-alt)">
+      <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px">Tıklama Oranı (CTR)</div>
+      <div style="display:flex;align-items:flex-end;gap:16px">
+        <div><div style="font-size:22px;font-weight:800;color:var(--green)">%0.81</div><div style="font-size:11px;color:var(--green);font-weight:600">Belconti</div></div>
+        <div><div style="font-size:22px;font-weight:800;color:var(--muted-light)">%0.60</div><div style="font-size:11px;color:var(--muted);font-weight:600">Sektör Alt Sınır</div></div>
+      </div>
+      <div style="margin-top:12px;font-size:12px;color:var(--green-dark);background:var(--green-light);padding:6px 10px;border-radius:6px;font-weight:600">Otel sektörü normal aralığında</div>
+    </div>
   </div>
 </section>
 
@@ -445,8 +472,8 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
     <div class="chart-inner"><canvas id="chartRevenue"></canvas></div>
   </div>
   <div class="callout">
-    <div class="callout-title">15.3x ROAS — Olağanüstü Performans</div>
-    <div class="callout-text">Belconti Mayıs 2026 ROAS'ı, sektör ortalamasının (4–8x) yaklaşık iki katıdır. Bu başarının sürdürülebilir kılınması için Haziran'da DE ve LV bütçelerinin artırılması ile D2C oranının %27'den %35'e çıkarılması planlanmaktadır.</div>
+    <div class="callout-title">15.3x ROAS — Otel Sektörünün 2 Katı</div>
+    <div class="callout-text">ROAS (Reklam Harcaması Getiri Oranı): harcanan her ₺1'in kaç ₺ ciro getirdiği. <strong>Otel sektörü ortalaması 4–8x</strong> — Belconti bu aralığın yaklaşık 2 katı olan 15.3x ile faaliyet gösteriyor.</div>
   </div>
 </section>
 
@@ -457,25 +484,28 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
     <div><div class="section-title">Meta Reklamlar — Facebook & Instagram</div><div class="section-sub">Mayıs 2026 · Meta Ads Manager · Tüm kampanyalar</div></div>
   </div>
   <div class="kpi-grid">
-    <div class="kpi-card" onclick="openModal('Meta Tıklama','4.716','Facebook + Instagram toplam tıklama|CPC: ₺0.64|CTR: %9.35|Kaynak: Meta Ads Manager')">
+    <div class="kpi-card" onclick="openModal('Meta Tıklama','4.716','Facebook ve Instagram reklamlarına yapılan toplam tıklama|CTR %9.35: her 100 kişiden 9'u tıkladı (otel sektörü ort. %1–3)|CPC ₺0.64: bir tıklamanın maliyeti (sektör ort. ₺2–5)|Kaynak: Meta Ads Manager')">
       <div class="kpi-label">Meta Tıklama</div>
       <div class="kpi-val">4.716</div>
+      <div class="kpi-sub">Her 100 görünmede 9 tıklama</div>
       <span class="kpi-trend up">↑ CTR %9.35</span>
     </div>
-    <div class="kpi-card" onclick="openModal('Gösterim','50.490','Meta reklam toplam gösterim|Hedef: 25–55 yaş seyahat ilgili|TR + DE + UK|Kaynak: Meta Ads')">
-      <div class="kpi-label">Gösterim</div>
+    <div class="kpi-card" onclick="openModal('Meta Gösterim','50.490','Reklamın Facebook ve Instagram'da kaç kişiye gösterildiği — tıklanmasa bile sayılır|Türkiye + Almanya + İngiltere, 25–55 yaş seyahat ilgilileri|CPM ₺59.9: 1.000 kişiye ulaşmanın maliyeti|Otel sektörü ort. CPM: ₺80–150')">
+      <div class="kpi-label">Meta Gösterim</div>
       <div class="kpi-val">50.490</div>
-      <div class="kpi-sub">Tüm kampanyalar</div>
+      <div class="kpi-sub">Reklamın gösterilme sayısı</div>
     </div>
-    <div class="kpi-card" onclick="openModal('Harcama','₺3.026','Meta reklam harcaması|CPC: ₺0.64|CPM: ₺59.9|Küçük bütçe, yüksek CTR')">
-      <div class="kpi-label">Harcama</div>
+    <div class="kpi-card" onclick="openModal('Meta Reklam Harcaması','₺3.026','Facebook + Instagram toplam reklam bütçesi|CPC ₺0.64: tıklama başına maliyet — sektör ort. ₺2–5|CPM ₺59.9: 1.000 gösterim başına maliyet — sektör ort. ₺80–150|Düşük bütçe ile yüksek verim sağlandı')">
+      <div class="kpi-label">Meta Harcama</div>
       <div class="kpi-val">₺3.026</div>
-      <div class="kpi-sub">CPC ₺0.64</div>
-    </div>
-    <div class="kpi-card" onclick="openModal('Meta CPC','₺0.64','Tıklama başına maliyet|Sektör ortalaması: ₺2–5|Haziran bütçe artışı önerilir|Yüksek potansiyel')">
-      <div class="kpi-label">CPC</div>
-      <div class="kpi-val">₺0.64</div>
+      <div class="kpi-sub">Tıklama başına ₺0.64 maliyet</div>
       <span class="kpi-trend up">↑ Sektör ort. ₺2–5</span>
+    </div>
+    <div class="kpi-card" onclick="openModal('Tıklama Başına Maliyet (CPC)','₺0.64','CPC (Cost Per Click): bir kullanıcının reklama tıklaması için ödenen tutar|Otel sektörü Meta CPC ortalaması: ₺2–5|Belconti bu ortalamanın ~4 katı daha verimli çalıştı|Düşük CPC = aynı bütçeyle daha fazla ziyaretçi')">
+      <div class="kpi-label">Tıklama Maliyeti (CPC)</div>
+      <div class="kpi-val">₺0.64</div>
+      <div class="kpi-sub">Sektör ort. ₺2–5 — 4x verimli</div>
+      <span class="kpi-trend up">↑ 4x verimli</span>
     </div>
   </div>
 </section>
@@ -650,7 +680,7 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
         <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round"><path d="M10 3L2 17h16L10 3z"/><path d="M10 8v4M10 14v.5"/></svg>
       </div>
       <div style="font-size:14px;font-weight:700;color:#92400E;margin-bottom:12px">Gelişim Alanları</div>
-      <div style="font-size:14px;color:#92400E;line-height:2">Organik CTR %0.81 · DE/LV bütçesi sınırlı · 160 iptal optimize edilmeli · D2C oranı %27 → %35 hedef · Etkileşim süresi 16 sn</div>
+      <div style="font-size:14px;color:#92400E;line-height:2">Organik CTR %0.81 (sektör aralığında) · DE/LV bütçesi büyüme fırsatı · D2C oranı %27 (doğrudan rezervasyon payı) · Meta bütçesi artırılabilir</div>
     </div>
     <div style="padding:26px;background:#EFF6FF;border:1px solid #BFDBFE;border-radius:var(--radius)">
       <div style="width:38px;height:38px;background:#2563EB;border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:16px">
