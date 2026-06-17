@@ -32,6 +32,24 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);font-
 .nav-link:hover{color:var(--text);background:var(--bg-alt)}
 .nav-link.active{color:var(--green);background:var(--green-light);font-weight:600}
 
+/* ── ROAS CALCULATOR ── */
+.roas-calc{background:#F8FAFC;border:2px solid #C7D2FE;border-radius:14px;padding:24px;margin-top:20px}
+.roas-calc-title{font-size:13px;font-weight:700;color:#3730A3;text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center;gap:8px;margin-bottom:18px}
+.roas-calc-body{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.roas-inputs{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start}
+.roas-input-group label{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:4px}
+.roas-input-val{font-size:18px;font-weight:800;color:var(--text)}
+.roas-result-area{background:#fff;border-radius:10px;padding:18px;border:1px solid #C7D2FE;display:flex;flex-direction:column;gap:10px}
+.roas-result-row{display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.roas-result-label{color:var(--muted);font-weight:500}
+.roas-result-val{font-weight:700;color:var(--text)}
+.roas-result-main{border-top:1px solid var(--border);padding-top:10px;margin-top:2px}
+.roas-result-big{font-size:32px;font-weight:900;color:var(--green)}
+.roas-badge{font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;text-align:center;margin-top:4px}
+.roas-badge-green{background:#DCFCE7;color:#15803D}
+.roas-badge-red{background:#FEE2E2;color:#DC2626}
+@media(max-width:800px){.roas-calc-body{grid-template-columns:1fr}.roas-inputs{grid-template-columns:1fr 1fr}}
+
 /* ── EXEC SUMMARY ── */
 .exec-summary{margin-bottom:36px}
 .exec-summary-text{background:#F0FDF4;border:1px solid #BBF7D0;border-radius:12px;padding:20px 24px;margin-bottom:14px;line-height:1.75;color:var(--text);font-size:15px}
@@ -320,11 +338,17 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
       <div class="hkpi-sub">GA4 · Tüm kanallar</div>
       <div class="hkpi-trend up">↑ Sektör üst bandı</div>
     </div>
-    <div class="hkpi" onclick="openModal('Call Center Ciro','₺8.028.716','601 çağrı · 203 satış|%33.8 kapanış oranı|En iyi hafta: H2 %44.2|+ €57.703 EUR ayrıca')">
+    <div class="hkpi" onclick="openModal('Call Center Ciro','₺8.028.716 + €57.703','601 çağrı · 203 satış|%33.8 kapanış oranı|En iyi hafta: H2 %44.2|TL Ciro: ₺8.028.716|EUR Ciro: €57.703|EUR→TL (kur ₺42): ₺2.423.526|Toplam TL Eşdeğeri: ₺10.452.242|ROAS (EUR dahil): 19.8x')">
       <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 3h3l1.5 3.5-2 1.5c.8 1.8 2 3 3.8 3.8l1.5-2L16 11v3a2 2 0 01-2 2C6.5 16 4 9.5 5 3z"/></svg></div>
       <div class="hkpi-label">Call Center Ciro</div>
-      <div class="hkpi-val">₺8.02M</div>
-      <div class="hkpi-sub">+ €57.703 EUR</div>
+      <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap">
+        <div class="hkpi-val" style="font-size:32px">₺8.02M</div>
+        <div style="font-size:18px;font-weight:700;color:#7C3AED">+ €57.703</div>
+      </div>
+      <div class="hkpi-sub" style="margin-top:4px">
+        <span style="color:var(--muted);font-size:11px">Toplam TL eşd. (kur ₺42):</span><br>
+        <span style="font-weight:800;font-size:15px;color:var(--green)">≈ ₺10.45M</span>
+      </div>
       <div class="hkpi-trend up">↑ 203 satış</div>
     </div>
     <div class="hkpi" onclick="openModal('Web Rezervasyon','€1.999.905','1.676 rezervasyon|9.201 oda gecelemesi|Ort. €217.36/oda|Kaynak: SednaBI')">
@@ -334,10 +358,13 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
       <div class="hkpi-sub">1.676 rezervasyon</div>
       <div class="hkpi-trend up">↑ 9.201 gece</div>
     </div>
-    <div class="hkpi" onclick="openModal('ROAS','15.3x','₺524.315 harcama → ₺8.02M ciro|Hesaplama: 8.028.716 / 524.315|Sektör ortalaması: 4–8x|Hedef 2026: 12x+')">
+    <div class="hkpi" onclick="openModal('ROAS Analizi','TL+EUR Dahil: 19.8x','TL bazlı ROAS: 8.028.716 / 527.341 = 15.2x|EUR dahil toplam ROAS: 10.452.242 / 527.341 = 19.8x|Harcama: ₺527.341 (Google+Meta)|TL Ciro: ₺8.028.716|EUR Ciro: €57.703 → ₺2.423.526 (kur ₺42)|Toplam Ciro: ₺10.452.242|Sektör ortalaması: 4–8x|Hedef 2026: 12x+')">
       <div class="hkpi-icon"><svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M2 14l5-5 3 3 5-6"/><path d="M12 6h4v4"/></svg></div>
-      <div class="hkpi-label">ROAS</div>
-      <div class="hkpi-val">15.3x</div>
+      <div class="hkpi-label">ROAS (TL+EUR)</div>
+      <div style="display:flex;align-items:baseline;gap:6px">
+        <div class="hkpi-val" style="font-size:32px">19.8x</div>
+        <div style="font-size:12px;color:var(--muted);font-weight:600">TL bazı: 15.2x</div>
+      </div>
       <div class="hkpi-sub">Sektör ort. 4–8x</div>
       <div class="hkpi-trend up">↑ 2x sektör</div>
     </div>
@@ -519,9 +546,9 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
     <div><div class="section-title">ROAS Analizi</div><div class="section-sub">Mayıs 2026 · Reklam Harcaması Getiri Oranı · Tüm kanallar</div></div>
   </div>
   <div class="kpi-grid kpi-grid-3">
-    <div class="kpi-card" onclick="openModal('ROAS','15.3x','₺524.315 harcama → ₺8.028.716 ciro|Hesaplama: 8.028.716 / 524.315 = 15.31|Sektör ortalaması: 4–8x|Hedef 2026: 12x+')">
-      <div class="kpi-label">ROAS</div>
-      <div class="kpi-val">15.3x</div>
+    <div class="kpi-card" onclick="openModal('ROAS (TL Bazı)','15.2x','Sadece TL ciro kullanıldığında|₺527.341 harcama → ₺8.028.716 ciro|Hesaplama: 8.028.716 / 527.341 = 15.22|Sektör ortalaması: 4–8x|EUR dahil hesap için aşağıdaki araca bkz.')">
+      <div class="kpi-label">ROAS (TL Bazı)</div>
+      <div class="kpi-val">15.2x</div>
       <span class="kpi-trend up">↑ Sektör 2x üstü</span>
     </div>
     <div class="kpi-card" onclick="openModal('Toplam Harcama','₺527.341','Google Ads: ₺524.315|Meta Ads: ₺3.026|Toplam dijital reklam harcaması')">
@@ -529,20 +556,66 @@ footer{padding:32px 40px;border-top:1px solid var(--border);display:flex;align-i
       <div class="kpi-val">₺527.341</div>
       <div class="kpi-sub">Google + Meta</div>
     </div>
-    <div class="kpi-card" onclick="openModal('CC Ciro','₺8.028.716','Call Center cirosu ROAS hesabında kullanıldı|+ €57.703 EUR ek gelir|Web rezervasyon €1.999.905 ayrı|ROAS: 15.3x')">
-      <div class="kpi-label">CC Ciro (ROAS Baz)</div>
-      <div class="kpi-val">₺8.02M</div>
-      <div class="kpi-sub">+ €57.703 ayrıca</div>
+    <div class="kpi-card" onclick="openModal('ROAS (TL+EUR Dahil)','19.8x','EUR de dahil edildiğinde|TL Ciro: ₺8.028.716|EUR Ciro: €57.703 × ₺42 = ₺2.423.526|Toplam Ciro: ₺10.452.242|ROAS: 10.452.242 / 527.341 = 19.82x|Kur aşağıdaki araçtan değiştirilebilir')">
+      <div class="kpi-label">ROAS (TL+EUR)</div>
+      <div class="kpi-val" id="roasFullDisplay">19.8x</div>
+      <div class="kpi-sub" id="roasFullSub">EUR dahil · kur ₺42</div>
+      <span class="kpi-trend up">↑ 15'in üzerinde</span>
     </div>
   </div>
+
+  <!-- İNTERAKTİF ROAS HESAPLAYICI -->
+  <div class="roas-calc">
+    <div class="roas-calc-title">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M7 7h6M7 10h6M7 13h4"/></svg>
+      ROAS Hesaplama Aracı — EUR/TL Kura Göre
+    </div>
+    <div class="roas-calc-body">
+      <div class="roas-inputs">
+        <div class="roas-input-group">
+          <label>TL Ciro (₺)</label>
+          <div class="roas-input-val">8.028.716</div>
+        </div>
+        <div class="roas-input-group">
+          <label>EUR Ciro (€)</label>
+          <div class="roas-input-val">57.703</div>
+        </div>
+        <div class="roas-input-group roas-input-editable">
+          <label>EUR/TL Kur ₺ <span style="font-size:10px;opacity:.7">(değiştir)</span></label>
+          <input type="number" id="eurKurInput" value="42" min="1" max="200" step="0.5" oninput="calcRoas()" style="width:90px;font-size:20px;font-weight:800;border:2px solid var(--green);border-radius:8px;padding:6px 10px;outline:none;font-family:inherit;color:var(--text)">
+        </div>
+        <div class="roas-input-group">
+          <label>Toplam Harcama (₺)</label>
+          <div class="roas-input-val">527.341</div>
+        </div>
+      </div>
+      <div class="roas-result-area">
+        <div class="roas-result-row">
+          <span class="roas-result-label">EUR → TL (hesaplanan)</span>
+          <span class="roas-result-val" id="eurTlVal">₺2.423.526</span>
+        </div>
+        <div class="roas-result-row">
+          <span class="roas-result-label">Toplam Ciro (TL + EUR→TL)</span>
+          <span class="roas-result-val" id="totalCiroVal">₺10.452.242</span>
+        </div>
+        <div class="roas-result-row roas-result-main">
+          <span class="roas-result-label">Genel ROAS (EUR dahil)</span>
+          <span class="roas-result-big" id="totalRoasVal">19.8x</span>
+        </div>
+        <div id="roas15badge" class="roas-badge roas-badge-green">✓ ROAS 15'in üzerinde</div>
+      </div>
+    </div>
+    <div style="font-size:11px;color:var(--muted);margin-top:10px">* Kur güncellendiğinde hesap otomatik yenilenir. Belirtilen kur Mayıs 2026 piyasa ortalamalarına dayanmaktadır.</div>
+  </div>
+
   <div class="chart-wrap" style="margin-top:20px" onclick="openChartModal('chartRevenue','Gelir ve Harcama Karşılaştırması — Detay','₺ bazlı büyütülmüş görünüm')">
     <div class="chart-title">Gelir ve Harcama Karşılaştırması <span class="chart-expand-hint"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8V3h5M17 12v5h-5M3 12l14-9M17 8L3 17"/></svg> büyüt</span></div>
-    <div class="chart-sub">Call Center ciroya karşı reklam harcaması — ₺ eşdeğeri</div>
+    <div class="chart-sub">Call Center ciro (TL+EUR) vs reklam harcaması — ₺ eşdeğeri</div>
     <div class="chart-inner"><canvas id="chartRevenue"></canvas></div>
   </div>
   <div class="callout">
-    <div class="callout-title">15.3x ROAS — Otel Sektörünün 2 Katı</div>
-    <div class="callout-text">ROAS (Reklam Harcaması Getiri Oranı): harcanan her ₺1'in kaç ₺ ciro getirdiği. <strong>Otel sektörü ortalaması 4–8x</strong> — Belconti bu aralığın yaklaşık 2 katı olan 15.3x ile faaliyet gösteriyor.</div>
+    <div class="callout-title">ROAS: 15.2x (TL) → 19.8x (TL+EUR) — Sektörün 2–4 Katı</div>
+    <div class="callout-text">ROAS (Reklam Harcaması Getiri Oranı — Return on Ad Spend): reklama harcanan her ₺1'in kaç ₺ ciro getirdiği. <strong>Otel sektörü ortalaması 4–8x.</strong> Yalnızca TL ciroyla 15.2x, EUR geliri ₺42 kurdan dahil edildiğinde <strong>19.8x</strong>'e ulaşıyor — sektörün yaklaşık 2,5 katı.</div>
   </div>
 </section>
 
@@ -1298,6 +1371,27 @@ function switchMonth(id, el) {
 function scrollSec(id) {
   const el = document.getElementById(id);
   if (el) { const top = el.getBoundingClientRect().top + window.scrollY - 110; window.scrollTo({top, behavior:'smooth'}); }
+}
+
+// ── ROAS CALCULATOR ──
+const CC_TL = 8028716;
+const CC_EUR = 57703;
+const AD_SPEND = 527341;
+function fmt(n){return '₺'+Math.round(n).toLocaleString('tr-TR')}
+function calcRoas(){
+  const kur = parseFloat(document.getElementById('eurKurInput').value)||42;
+  const eurTl = CC_EUR * kur;
+  const total = CC_TL + eurTl;
+  const roas = (total / AD_SPEND).toFixed(1);
+  document.getElementById('eurTlVal').textContent = fmt(eurTl);
+  document.getElementById('totalCiroVal').textContent = fmt(total);
+  document.getElementById('totalRoasVal').textContent = roas+'x';
+  document.getElementById('roasFullDisplay').textContent = roas+'x';
+  document.getElementById('roasFullSub').textContent = 'EUR dahil · kur ₺'+kur;
+  const badge = document.getElementById('roas15badge');
+  const above = parseFloat(roas) >= 15;
+  badge.textContent = above ? '✓ ROAS 15\'in üzerinde' : '⚠ ROAS 15\'in altında';
+  badge.className = 'roas-badge '+(above?'roas-badge-green':'roas-badge-red');
 }
 
 // ── AI ACTIONS TOGGLE ──
