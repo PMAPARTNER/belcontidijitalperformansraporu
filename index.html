@@ -1971,10 +1971,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (elTH) new Chart(elTH, {
     type:'bar',
     data:{
-      labels:['Google CPC','Organik','Doğrudan','Paid Social','E-posta / Diğer'],
-      datasets:[{label:'Aktif Kullanıcı',data:[169000,5100,12000,4200,8730],backgroundColor:[G,GL,GLL,'#C084FC','#93C5FD'],borderRadius:4}]
+      labels:['Reklam Ağı (Google+Meta)','Doğrudan Giriş','Organik Google','Paid Social'],
+      datasets:[{label:'Kullanıcı',data:[169000,12000,5100,4200],
+        backgroundColor:[G,GL,'#BBF7D0','#D1FAE5'],borderRadius:6,borderSkipped:false}]
     },
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{ticks:{callback:v=>v>=1000?(v/1000).toFixed(0)+'K':v,font:{size:11}},grid:{color:BDR}},x:{ticks:{font:{size:11}},grid:{display:false}}}}
+    options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' '+c.raw.toLocaleString('tr-TR')+' kullanıcı'}}},
+      scales:{x:{grid:{color:BDR},ticks:{font,callback:v=>v>=1000?(v/1000)+'K':v}},y:{grid:{display:false},ticks:{font:{...font,weight:'600'}}}}}
   });
 
   const elGH = document.getElementById('chartGadsH');
@@ -1983,21 +1986,31 @@ document.addEventListener('DOMContentLoaded', () => {
     data:{
       labels:['TR Jenerik','Son Dakika TR','İngiltere','Romanya','Polonya','Rakip TR'],
       datasets:[
-        {label:'Tıklama',data:[4516,159,137,141,81,48],backgroundColor:GL,borderRadius:4,yAxisID:'y'},
-        {label:'Harcama (₺)',data:[51078,7150,4814,3536,1427,1227],backgroundColor:G,borderRadius:4,yAxisID:'y2'}
+        {label:'Tıklama',data:[4516,159,137,141,81,48],backgroundColor:G,borderRadius:4,yAxisID:'y'},
+        {label:'Harcama (₺)',data:[51078,7150,4814,3536,1427,1227],backgroundColor:GLL,borderRadius:4,yAxisID:'y2'}
       ]
     },
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{font:{size:11}}}},scales:{y:{position:'left',title:{display:true,text:'Tıklama',font:{size:11}},ticks:{font:{size:11}},grid:{color:BDR}},y2:{position:'right',title:{display:true,text:'Harcama (₺)',font:{size:11}},ticks:{callback:v=>'₺'+(v/1000).toFixed(0)+'K',font:{size:11}},grid:{display:false}},x:{ticks:{font:{size:11}},grid:{display:false}}}}
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{position:'top',labels:{font,boxWidth:12}}},
+      scales:{
+        y:{position:'left',grid:{color:BDR},ticks:{font,callback:v=>v>=1000?(v/1000)+'K':v},title:{display:true,text:'Tıklama',font}},
+        y2:{position:'right',grid:{display:false},ticks:{font,callback:v=>'₺'+(v>=1000?(v/1000).toFixed(0)+'K':v)},title:{display:true,text:'Harcama (₺)',font}}
+      }}
   });
 
   const elRH = document.getElementById('chartRevenueH');
   if (elRH) new Chart(elRH, {
     type:'bar',
     data:{
-      labels:['Google Ads Harcama','Meta Harcama','Toplam Harcama','Call Center Geliri'],
-      datasets:[{label:'₺',data:[69233,14142,83375,8489202],backgroundColor:[GLL,GLL,GL,G],borderRadius:4}]
+      labels:['CC Ciro','Google Ads Harcama','Meta Harcama'],
+      datasets:[{label:'Tutar (₺)',
+        data:[8489202,69233,14142],
+        backgroundColor:[G,GLL,'#BBF7D0'],
+        borderRadius:8,borderSkipped:false}]
     },
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'₺'+ctx.parsed.y.toLocaleString('tr-TR')}}},scales:{y:{ticks:{callback:v=>v>=1000000?'₺'+(v/1000000).toFixed(1)+'M':v>=1000?'₺'+(v/1000).toFixed(0)+'K':'₺'+v,font:{size:11}},grid:{color:BDR}},x:{ticks:{font:{size:11}},grid:{display:false}}}}
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' ₺'+c.raw.toLocaleString('tr-TR')}}},
+      scales:{x:{grid:{display:false},ticks:{font}},y:{grid:{color:BDR},ticks:{font,callback:v=>'₺'+(v>=1000000?(v/1000000).toFixed(1)+'M':v>=1000?(v/1000).toFixed(0)+'K':v)}}}}
   });
 
 });
